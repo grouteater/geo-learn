@@ -1,0 +1,2282 @@
+[
+{
+"id": "nile",
+"name": "Nile",
+"type": "River",
+"wiki": "Nile",
+"lat": 24.0,
+"lng": 32.9,
+"where": "Egypt, Sudan, Uganda and more",
+"fact": "Traditionally ranked the longest river in the world at about 6,650 km, flowing north into the Mediterranean."
+},
+{
+"id": "amazon",
+"name": "Amazon River",
+"type": "River",
+"wiki": "Amazon River",
+"lat": -3.1,
+"lng": -60.0,
+"where": "Brazil, Peru, Colombia",
+"fact": "Carries more water than any other river on Earth, roughly a fifth of all river discharge into the oceans."
+},
+{
+"id": "yangtze",
+"name": "Yangtze",
+"type": "River",
+"wiki": "Yangtze",
+"lat": 30.6,
+"lng": 114.3,
+"where": "China",
+"fact": "The longest river in Asia and home to the Three Gorges Dam, the world's largest power station by capacity."
+},
+{
+"id": "mississippi",
+"name": "Mississippi River",
+"type": "River",
+"wiki": "Mississippi River",
+"lat": 35.1,
+"lng": -90.1,
+"where": "United States",
+"fact": "Its drainage basin covers all or part of 32 US states and two Canadian provinces."
+},
+{
+"id": "yenisei",
+"name": "Yenisei",
+"type": "River",
+"wiki": "Yenisei",
+"lat": 61.5,
+"lng": 90.0,
+"where": "Russia, Mongolia",
+"fact": "Often treated as the dividing line between Western and Eastern Siberia; it flows north into the Kara Sea."
+},
+{
+"id": "yellow",
+"name": "Yellow River",
+"type": "River",
+"wiki": "Yellow River",
+"lat": 34.8,
+"lng": 113.6,
+"where": "China",
+"fact": "Named for the huge loads of yellowish loess silt it carries; called both the cradle of Chinese civilization and China's Sorrow."
+},
+{
+"id": "ob",
+"name": "Ob River",
+"type": "River",
+"wiki": "Ob (river)",
+"lat": 61.0,
+"lng": 69.0,
+"where": "Russia",
+"fact": "Its estuary, the Gulf of Ob, is one of the longest estuaries in the world at around 1,000 km."
+},
+{
+"id": "congo",
+"name": "Congo River",
+"type": "River",
+"wiki": "Congo River",
+"lat": -4.3,
+"lng": 15.3,
+"where": "DR Congo, Republic of the Congo",
+"fact": "The deepest river in the world, with measured depths over 220 m, and it crosses the equator twice."
+},
+{
+"id": "mekong",
+"name": "Mekong",
+"type": "River",
+"wiki": "Mekong",
+"lat": 11.6,
+"lng": 104.9,
+"where": "China, Myanmar, Laos, Thailand, Cambodia, Vietnam",
+"fact": "Flows through six countries and ends in a vast delta in southern Vietnam known as the Nine Dragons."
+},
+{
+"id": "danube",
+"name": "Danube",
+"type": "River",
+"wiki": "Danube",
+"lat": 47.5,
+"lng": 19.05,
+"where": "Germany to Romania",
+"fact": "Flows through ten countries, more than any other river, and passes four capitals: Vienna, Bratislava, Budapest and Belgrade."
+},
+{
+"id": "volga",
+"name": "Volga",
+"type": "River",
+"wiki": "Volga",
+"lat": 48.7,
+"lng": 44.5,
+"where": "Russia",
+"fact": "The longest river in Europe; it drains into the Caspian Sea, which has no outlet to the ocean."
+},
+{
+"id": "rhine",
+"name": "Rhine",
+"type": "River",
+"wiki": "Rhine",
+"lat": 50.1,
+"lng": 7.7,
+"where": "Switzerland, Germany, France, Netherlands",
+"fact": "Rises in the Swiss Alps and reaches the North Sea at Rotterdam, Europe's busiest port."
+},
+{
+"id": "ganges",
+"name": "Ganges",
+"type": "River",
+"wiki": "Ganges",
+"lat": 25.3,
+"lng": 83.0,
+"where": "India, Bangladesh",
+"fact": "Sacred in Hinduism; together with the Brahmaputra it forms the world's largest delta, the Sundarbans region."
+},
+{
+"id": "indus",
+"name": "Indus River",
+"type": "River",
+"wiki": "Indus River",
+"lat": 27.7,
+"lng": 68.8,
+"where": "Pakistan, India, China",
+"fact": "Gave its name to India and the Indus Valley Civilisation; most of its length is in Pakistan."
+},
+{
+"id": "euphrates",
+"name": "Euphrates",
+"type": "River",
+"wiki": "Euphrates",
+"lat": 33.4,
+"lng": 43.3,
+"where": "Turkey, Syria, Iraq",
+"fact": "With the Tigris it bounds Mesopotamia, 'the land between the rivers'; they merge as the Shatt al-Arab."
+},
+{
+"id": "tigris",
+"name": "Tigris",
+"type": "River",
+"wiki": "Tigris",
+"lat": 33.3,
+"lng": 44.4,
+"where": "Turkey, Syria, Iraq",
+"fact": "Baghdad was built on its banks; the ancient city of Nineveh sat across from modern Mosul."
+},
+{
+"id": "niger",
+"name": "Niger River",
+"type": "River",
+"wiki": "Niger River",
+"lat": 16.8,
+"lng": -3.0,
+"where": "Guinea, Mali, Niger, Nigeria",
+"fact": "Takes a strange boomerang route, first flowing away from the sea toward the Sahara near Timbuktu before turning south."
+},
+{
+"id": "zambezi",
+"name": "Zambezi",
+"type": "River",
+"wiki": "Zambezi",
+"lat": -17.9,
+"lng": 25.9,
+"where": "Zambia, Zimbabwe, Mozambique and more",
+"fact": "Plunges over Victoria Falls and feeds two giant reservoirs, Lake Kariba and Cahora Bassa."
+},
+{
+"id": "orinoco",
+"name": "Orinoco",
+"type": "River",
+"wiki": "Orinoco",
+"lat": 8.1,
+"lng": -63.5,
+"where": "Venezuela, Colombia",
+"fact": "Linked to the Amazon basin by the Casiquiare canal, a natural river that splits and flows into two systems."
+},
+{
+"id": "parana",
+"name": "Paraná River",
+"type": "River",
+"wiki": "Paraná River",
+"lat": -27.5,
+"lng": -58.8,
+"where": "Brazil, Paraguay, Argentina",
+"fact": "Joins the Uruguay River to form the Río de la Plata; the Itaipu Dam sits on it at the Brazil and Paraguay border."
+},
+{
+"id": "murray",
+"name": "Murray River",
+"type": "River",
+"wiki": "Murray River",
+"lat": -34.2,
+"lng": 142.2,
+"where": "Australia",
+"fact": "Australia's longest river; for much of its length it forms the border between New South Wales and Victoria."
+},
+{
+"id": "colorado",
+"name": "Colorado River",
+"type": "River",
+"wiki": "Colorado River",
+"lat": 36.1,
+"lng": -112.1,
+"where": "United States, Mexico",
+"fact": "Carved the Grand Canyon; so much of it is diverted that it often fails to reach the Gulf of California."
+},
+{
+"id": "stlawrence",
+"name": "Saint Lawrence River",
+"type": "River",
+"wiki": "Saint Lawrence River",
+"lat": 46.8,
+"lng": -71.2,
+"where": "Canada, United States",
+"fact": "Drains the Great Lakes to the Atlantic, passing Montreal and Quebec City."
+},
+{
+"id": "mackenzie",
+"name": "Mackenzie River",
+"type": "River",
+"wiki": "Mackenzie River",
+"lat": 65.3,
+"lng": -126.8,
+"where": "Canada",
+"fact": "Canada's longest river system, flowing north through the Northwest Territories into the Beaufort Sea."
+},
+{
+"id": "thames",
+"name": "River Thames",
+"type": "River",
+"wiki": "River Thames",
+"lat": 51.5,
+"lng": -0.1,
+"where": "England",
+"fact": "Flows through Oxford and London; the stretch through Oxford is traditionally called the Isis."
+},
+{
+"id": "seine",
+"name": "Seine",
+"type": "River",
+"wiki": "Seine",
+"lat": 48.86,
+"lng": 2.33,
+"where": "France",
+"fact": "The riverbanks through central Paris are a UNESCO World Heritage Site."
+},
+{
+"id": "jordan",
+"name": "Jordan River",
+"type": "River",
+"wiki": "Jordan River",
+"lat": 31.8,
+"lng": 35.55,
+"where": "Israel, Jordan, West Bank",
+"fact": "Flows from the Sea of Galilee to the Dead Sea, ending at the lowest land point on Earth."
+},
+{
+"id": "brahmaputra",
+"name": "Brahmaputra",
+"type": "River",
+"wiki": "Brahmaputra River",
+"lat": 26.2,
+"lng": 91.7,
+"where": "China, India, Bangladesh",
+"fact": "Called the Yarlung Tsangpo in Tibet, where it cuts one of the deepest canyons on Earth."
+},
+{
+"id": "lena",
+"name": "Lena",
+"type": "River",
+"wiki": "Lena (river)",
+"lat": 62.0,
+"lng": 129.7,
+"where": "Russia",
+"fact": "Its delta in the Laptev Sea is one of the largest in the world and freezes for most of the year."
+},
+{
+"id": "amur",
+"name": "Amur River",
+"type": "River",
+"wiki": "Amur River",
+"lat": 48.5,
+"lng": 135.1,
+"where": "Russia, China",
+"fact": "Forms a long stretch of the border between Russia and China, where it is called the Heilong Jiang, Black Dragon River."
+},
+{
+"id": "everest",
+"name": "Mount Everest",
+"type": "Mountain",
+"wiki": "Mount Everest",
+"lat": 27.99,
+"lng": 86.93,
+"where": "Nepal, China",
+"fact": "Highest point above sea level at 8,849 m; Nepalis call it Sagarmatha and Tibetans Chomolungma."
+},
+{
+"id": "k2",
+"name": "K2",
+"type": "Mountain",
+"wiki": "K2",
+"lat": 35.88,
+"lng": 76.51,
+"where": "Pakistan, China",
+"fact": "The second highest mountain, nicknamed the Savage Mountain for its high fatality rate; first climbed in winter only in 2021."
+},
+{
+"id": "kangchenjunga",
+"name": "Kangchenjunga",
+"type": "Mountain",
+"wiki": "Kangchenjunga",
+"lat": 27.7,
+"lng": 88.15,
+"where": "Nepal, India",
+"fact": "The third highest mountain and the highest point in India."
+},
+{
+"id": "aconcagua",
+"name": "Aconcagua",
+"type": "Mountain",
+"wiki": "Aconcagua",
+"lat": -32.65,
+"lng": -70.01,
+"where": "Argentina",
+"fact": "At 6,961 m it is the highest mountain outside Asia and the highest in both the Southern and Western Hemispheres."
+},
+{
+"id": "denali",
+"name": "Denali",
+"type": "Mountain",
+"wiki": "Denali",
+"lat": 63.07,
+"lng": -151.0,
+"where": "Alaska, United States",
+"fact": "North America's highest peak; its base to peak rise of about 5,500 m is larger than Everest's."
+},
+{
+"id": "kilimanjaro",
+"name": "Mount Kilimanjaro",
+"type": "Mountain",
+"wiki": "Mount Kilimanjaro",
+"lat": -3.07,
+"lng": 37.35,
+"where": "Tanzania",
+"fact": "Africa's highest peak and the tallest free-standing mountain in the world, a dormant volcano with shrinking glaciers."
+},
+{
+"id": "elbrus",
+"name": "Mount Elbrus",
+"type": "Mountain",
+"wiki": "Mount Elbrus",
+"lat": 43.35,
+"lng": 42.44,
+"where": "Russia",
+"fact": "A dormant volcano in the Caucasus, often counted as Europe's highest peak at 5,642 m."
+},
+{
+"id": "montblanc",
+"name": "Mont Blanc",
+"type": "Mountain",
+"wiki": "Mont Blanc",
+"lat": 45.83,
+"lng": 6.86,
+"where": "France, Italy",
+"fact": "Highest peak in the Alps; France and Italy still disagree over exactly where the border runs on the summit."
+},
+{
+"id": "vinson",
+"name": "Vinson Massif",
+"type": "Mountain",
+"wiki": "Vinson Massif",
+"lat": -78.53,
+"lng": -85.62,
+"where": "Antarctica",
+"fact": "Antarctica's highest mountain, one of the Seven Summits, first climbed in 1966."
+},
+{
+"id": "puncakjaya",
+"name": "Puncak Jaya",
+"type": "Mountain",
+"wiki": "Puncak Jaya",
+"lat": -4.08,
+"lng": 137.16,
+"where": "Indonesia (New Guinea)",
+"fact": "Highest island peak in the world and the highest point in Oceania, near the huge Grasberg mine."
+},
+{
+"id": "chimborazo",
+"name": "Chimborazo",
+"type": "Mountain",
+"wiki": "Chimborazo",
+"lat": -1.47,
+"lng": -78.82,
+"where": "Ecuador",
+"fact": "Thanks to Earth's equatorial bulge, its summit is the farthest point from Earth's center."
+},
+{
+"id": "fuji",
+"name": "Mount Fuji",
+"type": "Mountain",
+"wiki": "Mount Fuji",
+"lat": 35.36,
+"lng": 138.73,
+"where": "Japan",
+"fact": "Japan's highest peak at 3,776 m, an active stratovolcano that last erupted in 1707."
+},
+{
+"id": "matterhorn",
+"name": "Matterhorn",
+"type": "Mountain",
+"wiki": "Matterhorn",
+"lat": 45.98,
+"lng": 7.66,
+"where": "Switzerland, Italy",
+"fact": "Its near-perfect pyramid shape makes it one of the most photographed mountains; first climbed in 1865."
+},
+{
+"id": "olympus",
+"name": "Mount Olympus",
+"type": "Mountain",
+"wiki": "Mount Olympus",
+"lat": 40.09,
+"lng": 22.36,
+"where": "Greece",
+"fact": "Highest mountain in Greece and mythical home of the twelve Olympian gods."
+},
+{
+"id": "ararat",
+"name": "Mount Ararat",
+"type": "Mountain",
+"wiki": "Mount Ararat",
+"lat": 39.7,
+"lng": 44.3,
+"where": "Turkey",
+"fact": "Sits in Turkey but is a national symbol of Armenia and appears on its coat of arms."
+},
+{
+"id": "damavand",
+"name": "Mount Damavand",
+"type": "Mountain",
+"wiki": "Mount Damavand",
+"lat": 35.95,
+"lng": 52.11,
+"where": "Iran",
+"fact": "The highest volcano in Asia and the highest peak in the Middle East."
+},
+{
+"id": "etna",
+"name": "Mount Etna",
+"type": "Volcano",
+"wiki": "Mount Etna",
+"lat": 37.75,
+"lng": 14.99,
+"where": "Sicily, Italy",
+"fact": "One of the most active volcanoes on Earth and the tallest active volcano in Europe."
+},
+{
+"id": "vesuvius",
+"name": "Mount Vesuvius",
+"type": "Volcano",
+"wiki": "Mount Vesuvius",
+"lat": 40.82,
+"lng": 14.43,
+"where": "Italy",
+"fact": "Buried Pompeii and Herculaneum in AD 79; around three million people live near it today."
+},
+{
+"id": "krakatoa",
+"name": "Krakatoa",
+"type": "Volcano",
+"wiki": "Krakatoa",
+"lat": -6.1,
+"lng": 105.42,
+"where": "Indonesia",
+"fact": "Its 1883 eruption was heard nearly 5,000 km away, possibly the loudest sound in recorded history."
+},
+{
+"id": "tambora",
+"name": "Mount Tambora",
+"type": "Volcano",
+"wiki": "Mount Tambora",
+"lat": -8.25,
+"lng": 118.0,
+"where": "Indonesia",
+"fact": "Its 1815 eruption caused 1816's 'Year Without a Summer' across Europe and North America."
+},
+{
+"id": "maunakea",
+"name": "Mauna Kea",
+"type": "Volcano",
+"wiki": "Mauna Kea",
+"lat": 19.82,
+"lng": -155.47,
+"where": "Hawaii, United States",
+"fact": "Measured from its base on the sea floor it is over 10,000 m tall, taller than Everest."
+},
+{
+"id": "eyja",
+"name": "Eyjafjallajökull",
+"type": "Volcano",
+"wiki": "Eyjafjallajökull",
+"lat": 63.63,
+"lng": -19.62,
+"where": "Iceland",
+"fact": "Its 2010 eruption grounded most European air traffic for about a week."
+},
+{
+"id": "ojos",
+"name": "Ojos del Salado",
+"type": "Volcano",
+"wiki": "Ojos del Salado",
+"lat": -27.11,
+"lng": -68.54,
+"where": "Argentina, Chile",
+"fact": "The highest active volcano in the world at 6,893 m."
+},
+{
+"id": "himalayas",
+"name": "Himalayas",
+"type": "Mountain range",
+"wiki": "Himalayas",
+"lat": 28.6,
+"lng": 83.9,
+"where": "Nepal, India, Bhutan, China, Pakistan",
+"fact": "Contains 10 of the 14 peaks over 8,000 m, including Everest; the name means 'abode of snow' in Sanskrit."
+},
+{
+"id": "andes",
+"name": "Andes",
+"type": "Mountain range",
+"wiki": "Andes",
+"lat": -16.0,
+"lng": -69.0,
+"where": "Seven South American countries",
+"fact": "The longest continental mountain range, about 7,000 km, running through seven countries."
+},
+{
+"id": "alps",
+"name": "Alps",
+"type": "Mountain range",
+"wiki": "Alps",
+"lat": 46.5,
+"lng": 10.0,
+"where": "France, Switzerland, Italy, Austria and more",
+"fact": "Stretch across eight countries in an arc about 1,200 km long."
+},
+{
+"id": "rockies",
+"name": "Rocky Mountains",
+"type": "Mountain range",
+"wiki": "Rocky Mountains",
+"lat": 40.0,
+"lng": -106.0,
+"where": "Canada, United States",
+"fact": "Their highest peak is Mount Elbert in Colorado at 4,401 m."
+},
+{
+"id": "urals",
+"name": "Ural Mountains",
+"type": "Mountain range",
+"wiki": "Ural Mountains",
+"lat": 60.0,
+"lng": 59.5,
+"where": "Russia, Kazakhstan",
+"fact": "Form the conventional boundary between Europe and Asia."
+},
+{
+"id": "atlas",
+"name": "Atlas Mountains",
+"type": "Mountain range",
+"wiki": "Atlas Mountains",
+"lat": 31.06,
+"lng": -7.92,
+"where": "Morocco, Algeria, Tunisia",
+"fact": "Separate the Mediterranean coast from the Sahara; highest point Toubkal at 4,167 m."
+},
+{
+"id": "appalachians",
+"name": "Appalachian Mountains",
+"type": "Mountain range",
+"wiki": "Appalachian Mountains",
+"lat": 37.5,
+"lng": -80.5,
+"where": "United States, Canada",
+"fact": "Among the oldest mountains on Earth, once as tall as the Alps; highest point Mount Mitchell in North Carolina."
+},
+{
+"id": "carpathians",
+"name": "Carpathian Mountains",
+"type": "Mountain range",
+"wiki": "Carpathian Mountains",
+"lat": 47.5,
+"lng": 24.5,
+"where": "Romania, Slovakia, Poland, Ukraine and more",
+"fact": "Europe's second longest range, curving in an arc through Central and Eastern Europe, home to large brown bear populations."
+},
+{
+"id": "pyrenees",
+"name": "Pyrenees",
+"type": "Mountain range",
+"wiki": "Pyrenees",
+"lat": 42.7,
+"lng": 0.7,
+"where": "France, Spain, Andorra",
+"fact": "Form the natural border between France and Spain, with Andorra nestled inside."
+},
+{
+"id": "caucasus",
+"name": "Caucasus Mountains",
+"type": "Mountain range",
+"wiki": "Caucasus Mountains",
+"lat": 42.7,
+"lng": 44.0,
+"where": "Russia, Georgia, Azerbaijan, Armenia",
+"fact": "One of the most linguistically diverse regions on Earth, with dozens of languages."
+},
+{
+"id": "karakoram",
+"name": "Karakoram",
+"type": "Mountain range",
+"wiki": "Karakoram",
+"lat": 35.8,
+"lng": 76.5,
+"where": "Pakistan, India, China",
+"fact": "Has the highest concentration of peaks over 8,000 m, including K2, and huge glaciers like Siachen."
+},
+{
+"id": "tianshan",
+"name": "Tian Shan",
+"type": "Mountain range",
+"wiki": "Tian Shan",
+"lat": 42.0,
+"lng": 80.0,
+"where": "China, Kyrgyzstan, Kazakhstan",
+"fact": "The name means 'Heavenly Mountains' in Chinese; about 80 percent of Kyrgyzstan is mountainous."
+},
+{
+"id": "greatdividing",
+"name": "Great Dividing Range",
+"type": "Mountain range",
+"wiki": "Great Dividing Range",
+"lat": -30.0,
+"lng": 151.0,
+"where": "Australia",
+"fact": "Australia's longest range, running over 3,500 km down the east coast."
+},
+{
+"id": "drakensberg",
+"name": "Drakensberg",
+"type": "Mountain range",
+"wiki": "Drakensberg",
+"lat": -29.3,
+"lng": 29.4,
+"where": "South Africa, Lesotho",
+"fact": "Means 'dragon mountains' in Afrikaans; famous for San rock art."
+},
+{
+"id": "sahara",
+"name": "Sahara",
+"type": "Desert",
+"wiki": "Sahara",
+"lat": 23.0,
+"lng": 13.0,
+"where": "North Africa",
+"fact": "The largest hot desert, about the size of the United States; only a small part is sand dunes."
+},
+{
+"id": "gobi",
+"name": "Gobi Desert",
+"type": "Desert",
+"wiki": "Gobi Desert",
+"lat": 42.8,
+"lng": 105.0,
+"where": "Mongolia, China",
+"fact": "A cold desert where dinosaur eggs were first found by scientists in the 1920s."
+},
+{
+"id": "atacama",
+"name": "Atacama Desert",
+"type": "Desert",
+"wiki": "Atacama Desert",
+"lat": -24.5,
+"lng": -69.25,
+"where": "Chile",
+"fact": "The driest non-polar desert; some weather stations have never recorded rain."
+},
+{
+"id": "kalahari",
+"name": "Kalahari Desert",
+"type": "Desert",
+"wiki": "Kalahari Desert",
+"lat": -23.0,
+"lng": 22.0,
+"where": "Botswana, Namibia, South Africa",
+"fact": "Technically a semi-desert since it gets enough rain to support grasses and wildlife."
+},
+{
+"id": "namib",
+"name": "Namib",
+"type": "Desert",
+"wiki": "Namib",
+"lat": -24.7,
+"lng": 15.3,
+"where": "Namibia, Angola, South Africa",
+"fact": "Considered the oldest desert in the world, with some of the tallest sand dunes at Sossusvlei."
+},
+{
+"id": "arabian",
+"name": "Rub' al Khali",
+"type": "Desert",
+"wiki": "Rub' al Khali",
+"lat": 20.0,
+"lng": 50.0,
+"where": "Saudi Arabia, Oman, UAE, Yemen",
+"fact": "The Empty Quarter is the largest continuous sand desert on Earth."
+},
+{
+"id": "taklamakan",
+"name": "Taklamakan Desert",
+"type": "Desert",
+"wiki": "Taklamakan Desert",
+"lat": 38.9,
+"lng": 82.2,
+"where": "China",
+"fact": "The Silk Road split to skirt its northern and southern edges rather than cross it."
+},
+{
+"id": "thar",
+"name": "Thar Desert",
+"type": "Desert",
+"wiki": "Thar Desert",
+"lat": 27.0,
+"lng": 71.0,
+"where": "India, Pakistan",
+"fact": "One of the most densely populated deserts in the world."
+},
+{
+"id": "mojave",
+"name": "Mojave Desert",
+"type": "Desert",
+"wiki": "Mojave Desert",
+"lat": 35.0,
+"lng": -115.5,
+"where": "United States",
+"fact": "Contains Death Valley, where the highest air temperature on Earth, 56.7 C, was recorded."
+},
+{
+"id": "patagonian",
+"name": "Patagonian Desert",
+"type": "Desert",
+"wiki": "Patagonian Desert",
+"lat": -45.0,
+"lng": -69.0,
+"where": "Argentina",
+"fact": "The largest desert in the Americas, a cold rain shadow desert behind the Andes."
+},
+{
+"id": "danakil",
+"name": "Danakil Desert",
+"type": "Desert",
+"wiki": "Danakil Desert",
+"lat": 14.24,
+"lng": 40.3,
+"where": "Ethiopia, Eritrea",
+"fact": "One of the hottest places on Earth by year-round average temperature, sitting largely below sea level."
+},
+{
+"id": "caspian",
+"name": "Caspian Sea",
+"type": "Lake",
+"wiki": "Caspian Sea",
+"lat": 41.9,
+"lng": 50.7,
+"where": "Russia, Kazakhstan, Turkmenistan, Iran, Azerbaijan",
+"fact": "The largest lake on Earth by area; whether it is legally a sea or lake affected how five countries split its oil."
+},
+{
+"id": "superior",
+"name": "Lake Superior",
+"type": "Lake",
+"wiki": "Lake Superior",
+"lat": 47.7,
+"lng": -87.5,
+"where": "Canada, United States",
+"fact": "The largest freshwater lake by surface area; it holds enough water to cover North and South America 30 cm deep."
+},
+{
+"id": "baikal",
+"name": "Lake Baikal",
+"type": "Lake",
+"wiki": "Lake Baikal",
+"lat": 53.5,
+"lng": 108.2,
+"where": "Russia",
+"fact": "The deepest and oldest lake in the world, holding about 20 percent of Earth's unfrozen fresh surface water."
+},
+{
+"id": "victoria",
+"name": "Lake Victoria",
+"type": "Lake",
+"wiki": "Lake Victoria",
+"lat": -1.0,
+"lng": 33.0,
+"where": "Uganda, Kenya, Tanzania",
+"fact": "Africa's largest lake and the main source of the White Nile."
+},
+{
+"id": "tanganyika",
+"name": "Lake Tanganyika",
+"type": "Lake",
+"wiki": "Lake Tanganyika",
+"lat": -6.5,
+"lng": 29.8,
+"where": "Tanzania, DR Congo, Burundi, Zambia",
+"fact": "The longest freshwater lake in the world and the second deepest after Baikal."
+},
+{
+"id": "malawi",
+"name": "Lake Malawi",
+"type": "Lake",
+"wiki": "Lake Malawi",
+"lat": -12.0,
+"lng": 34.5,
+"where": "Malawi, Mozambique, Tanzania",
+"fact": "Has more fish species than any other lake, most of them colorful cichlids found nowhere else."
+},
+{
+"id": "titicaca",
+"name": "Lake Titicaca",
+"type": "Lake",
+"wiki": "Lake Titicaca",
+"lat": -15.9,
+"lng": -69.3,
+"where": "Peru, Bolivia",
+"fact": "Often called the highest navigable lake in the world at 3,812 m; the Uros people live on floating reed islands."
+},
+{
+"id": "deadsea",
+"name": "Dead Sea",
+"type": "Lake",
+"wiki": "Dead Sea",
+"lat": 31.5,
+"lng": 35.5,
+"where": "Jordan, Israel, West Bank",
+"fact": "Its shore is the lowest land on Earth, over 430 m below sea level, and its water is nearly ten times saltier than the ocean."
+},
+{
+"id": "aral",
+"name": "Aral Sea",
+"type": "Lake",
+"wiki": "Aral Sea",
+"lat": 45.0,
+"lng": 60.0,
+"where": "Kazakhstan, Uzbekistan",
+"fact": "Once the fourth largest lake, it largely dried up after Soviet irrigation projects diverted its rivers."
+},
+{
+"id": "chad",
+"name": "Lake Chad",
+"type": "Lake",
+"wiki": "Lake Chad",
+"lat": 13.0,
+"lng": 14.0,
+"where": "Chad, Cameroon, Niger, Nigeria",
+"fact": "Shrank by about 90 percent after the 1960s, though it has partly stabilized."
+},
+{
+"id": "tonlesap",
+"name": "Tonlé Sap",
+"type": "Lake",
+"wiki": "Tonlé Sap",
+"lat": 12.9,
+"lng": 104.1,
+"where": "Cambodia",
+"fact": "Its river reverses direction each monsoon, making the lake swell to several times its dry season size."
+},
+{
+"id": "ladoga",
+"name": "Lake Ladoga",
+"type": "Lake",
+"wiki": "Lake Ladoga",
+"lat": 60.8,
+"lng": 31.5,
+"where": "Russia",
+"fact": "Europe's largest lake; its frozen surface was the 'Road of Life' supplying besieged Leningrad."
+},
+{
+"id": "great_salt",
+"name": "Great Salt Lake",
+"type": "Lake",
+"wiki": "Great Salt Lake",
+"lat": 41.2,
+"lng": -112.5,
+"where": "Utah, United States",
+"fact": "The largest saltwater lake in the Western Hemisphere; its level rises and falls dramatically."
+},
+{
+"id": "crater",
+"name": "Crater Lake",
+"type": "Lake",
+"wiki": "Crater Lake",
+"lat": 42.94,
+"lng": -122.1,
+"where": "Oregon, United States",
+"fact": "The deepest lake in the US, filling the caldera of the collapsed volcano Mount Mazama."
+},
+{
+"id": "geneva",
+"name": "Lake Geneva",
+"type": "Lake",
+"wiki": "Lake Geneva",
+"lat": 46.45,
+"lng": 6.55,
+"where": "Switzerland, France",
+"fact": "Called Lac Léman in French; one of Western Europe's largest lakes."
+},
+{
+"id": "issykkul",
+"name": "Issyk-Kul",
+"type": "Lake",
+"wiki": "Issyk-Kul",
+"lat": 42.4,
+"lng": 77.3,
+"where": "Kyrgyzstan",
+"fact": "A salty mountain lake that never freezes despite its altitude; the name means 'warm lake'."
+},
+{
+"id": "victoriafalls",
+"name": "Victoria Falls",
+"type": "Waterfall",
+"wiki": "Victoria Falls",
+"lat": -17.92,
+"lng": 25.86,
+"where": "Zambia, Zimbabwe",
+"fact": "Locally called Mosi-oa-Tunya, 'the smoke that thunders'; the largest sheet of falling water."
+},
+{
+"id": "angel",
+"name": "Angel Falls",
+"type": "Waterfall",
+"wiki": "Angel Falls",
+"lat": 5.97,
+"lng": -62.54,
+"where": "Venezuela",
+"fact": "The world's tallest uninterrupted waterfall at 979 m, falling off a flat-topped tepui."
+},
+{
+"id": "iguazu",
+"name": "Iguazu Falls",
+"type": "Waterfall",
+"wiki": "Iguazu Falls",
+"lat": -25.69,
+"lng": -54.44,
+"where": "Argentina, Brazil",
+"fact": "About 275 separate falls; the biggest is called the Devil's Throat."
+},
+{
+"id": "niagara",
+"name": "Niagara Falls",
+"type": "Waterfall",
+"wiki": "Niagara Falls",
+"lat": 43.08,
+"lng": -79.07,
+"where": "Canada, United States",
+"fact": "Three falls on the border; the Horseshoe Falls is mostly in Canada."
+},
+{
+"id": "kaieteur",
+"name": "Kaieteur Falls",
+"type": "Waterfall",
+"wiki": "Kaieteur Falls",
+"lat": 5.17,
+"lng": -59.48,
+"where": "Guyana",
+"fact": "One of the most powerful single-drop waterfalls, about four times taller than Niagara."
+},
+{
+"id": "gullfoss",
+"name": "Gullfoss",
+"type": "Waterfall",
+"wiki": "Gullfoss",
+"lat": 64.33,
+"lng": -20.12,
+"where": "Iceland",
+"fact": "The 'Golden Falls', part of Iceland's popular Golden Circle route."
+},
+{
+"id": "greenland",
+"name": "Greenland",
+"type": "Island",
+"wiki": "Greenland",
+"lat": 72.0,
+"lng": -40.0,
+"where": "Kingdom of Denmark",
+"fact": "The world's largest island; about 80 percent is covered by an ice sheet up to 3 km thick."
+},
+{
+"id": "newguinea",
+"name": "New Guinea",
+"type": "Island",
+"wiki": "New Guinea",
+"lat": -5.5,
+"lng": 141.0,
+"where": "Papua New Guinea, Indonesia",
+"fact": "The second largest island, with over 800 languages spoken on it."
+},
+{
+"id": "borneo",
+"name": "Borneo",
+"type": "Island",
+"wiki": "Borneo",
+"lat": 0.9,
+"lng": 114.0,
+"where": "Indonesia, Malaysia, Brunei",
+"fact": "The only island shared by three countries."
+},
+{
+"id": "madagascar",
+"name": "Madagascar",
+"type": "Island",
+"wiki": "Madagascar",
+"lat": -19.0,
+"lng": 46.7,
+"where": "Madagascar",
+"fact": "About 90 percent of its wildlife is found nowhere else, including all lemurs."
+},
+{
+"id": "baffin",
+"name": "Baffin Island",
+"type": "Island",
+"wiki": "Baffin Island",
+"lat": 68.0,
+"lng": -70.0,
+"where": "Canada",
+"fact": "The fifth largest island in the world, part of Nunavut."
+},
+{
+"id": "sumatra",
+"name": "Sumatra",
+"type": "Island",
+"wiki": "Sumatra",
+"lat": 0.0,
+"lng": 101.0,
+"where": "Indonesia",
+"fact": "The equator crosses it; home to the Sumatran tiger and orangutan."
+},
+{
+"id": "honshu",
+"name": "Honshu",
+"type": "Island",
+"wiki": "Honshu",
+"lat": 36.0,
+"lng": 138.0,
+"where": "Japan",
+"fact": "The seventh largest island and the second most populous island after Java."
+},
+{
+"id": "java",
+"name": "Java",
+"type": "Island",
+"wiki": "Java",
+"lat": -7.5,
+"lng": 110.0,
+"where": "Indonesia",
+"fact": "The most populous island on Earth, with over 150 million people."
+},
+{
+"id": "greatbritain",
+"name": "Great Britain",
+"type": "Island",
+"wiki": "Great Britain",
+"lat": 54.0,
+"lng": -2.0,
+"where": "United Kingdom",
+"fact": "The largest island in Europe and the ninth largest in the world."
+},
+{
+"id": "tasmania",
+"name": "Tasmania",
+"type": "Island",
+"wiki": "Tasmania",
+"lat": -42.0,
+"lng": 146.6,
+"where": "Australia",
+"fact": "Separated from mainland Australia by the Bass Strait; about 40 percent is protected land."
+},
+{
+"id": "socotra",
+"name": "Socotra",
+"type": "Island",
+"wiki": "Socotra",
+"lat": 12.5,
+"lng": 53.9,
+"where": "Yemen",
+"fact": "Its dragon's blood trees and other plants are so unusual it's been called the most alien place on Earth."
+},
+{
+"id": "galapagos",
+"name": "Galápagos Islands",
+"type": "Archipelago",
+"wiki": "Galápagos Islands",
+"lat": -0.95,
+"lng": -90.97,
+"where": "Ecuador",
+"fact": "Their finches and tortoises helped inspire Darwin's theory of natural selection."
+},
+{
+"id": "svalbard",
+"name": "Svalbard",
+"type": "Archipelago",
+"wiki": "Svalbard",
+"lat": 78.2,
+"lng": 15.6,
+"where": "Norway",
+"fact": "Home to the Global Seed Vault; polar bears outnumber the roughly 3,000 residents."
+},
+{
+"id": "faroe",
+"name": "Faroe Islands",
+"type": "Archipelago",
+"wiki": "Faroe Islands",
+"lat": 62.0,
+"lng": -6.8,
+"where": "Kingdom of Denmark",
+"fact": "More sheep than people; the name is thought to mean 'sheep islands'."
+},
+{
+"id": "azores",
+"name": "Azores",
+"type": "Archipelago",
+"wiki": "Azores",
+"lat": 38.5,
+"lng": -28.0,
+"where": "Portugal",
+"fact": "Nine volcanic islands sitting on the Mid-Atlantic Ridge where three tectonic plates meet."
+},
+{
+"id": "canaries",
+"name": "Canary Islands",
+"type": "Archipelago",
+"wiki": "Canary Islands",
+"lat": 28.3,
+"lng": -16.6,
+"where": "Spain",
+"fact": "Named after dogs (Latin canis), not birds; Teide on Tenerife is Spain's highest peak."
+},
+{
+"id": "maldives",
+"name": "Maldives",
+"type": "Archipelago",
+"wiki": "Maldives",
+"lat": 3.2,
+"lng": 73.2,
+"where": "Maldives",
+"fact": "The lowest country on Earth, averaging about 1.5 m above sea level."
+},
+{
+"id": "gibraltar_strait",
+"name": "Strait of Gibraltar",
+"type": "Strait",
+"wiki": "Strait of Gibraltar",
+"lat": 35.97,
+"lng": -5.6,
+"where": "Spain, Morocco",
+"fact": "Connects the Atlantic and Mediterranean; only about 13 km wide at its narrowest."
+},
+{
+"id": "hormuz",
+"name": "Strait of Hormuz",
+"type": "Strait",
+"wiki": "Strait of Hormuz",
+"lat": 26.57,
+"lng": 56.25,
+"where": "Iran, Oman",
+"fact": "About a fifth of the world's oil passes through this chokepoint."
+},
+{
+"id": "malacca",
+"name": "Strait of Malacca",
+"type": "Strait",
+"wiki": "Strait of Malacca",
+"lat": 2.5,
+"lng": 101.3,
+"where": "Malaysia, Indonesia, Singapore",
+"fact": "One of the world's busiest shipping lanes, linking the Indian and Pacific Oceans."
+},
+{
+"id": "bosphorus",
+"name": "Bosphorus",
+"type": "Strait",
+"wiki": "Bosporus",
+"lat": 41.1,
+"lng": 29.05,
+"where": "Turkey",
+"fact": "Splits Istanbul between Europe and Asia, making it a city on two continents."
+},
+{
+"id": "bering",
+"name": "Bering Strait",
+"type": "Strait",
+"wiki": "Bering Strait",
+"lat": 65.8,
+"lng": -169.0,
+"where": "Russia, United States",
+"fact": "The Diomede Islands in the middle are 4 km apart but on opposite sides of the International Date Line."
+},
+{
+"id": "magellan",
+"name": "Strait of Magellan",
+"type": "Strait",
+"wiki": "Strait of Magellan",
+"lat": -53.5,
+"lng": -70.5,
+"where": "Chile",
+"fact": "Sailed by Magellan in 1520; it separates mainland South America from Tierra del Fuego."
+},
+{
+"id": "drake",
+"name": "Drake Passage",
+"type": "Strait",
+"wiki": "Drake Passage",
+"lat": -58.0,
+"lng": -65.0,
+"where": "Southern Ocean",
+"fact": "Between Cape Horn and Antarctica; famous for some of the roughest seas on the planet."
+},
+{
+"id": "dover",
+"name": "Strait of Dover",
+"type": "Strait",
+"wiki": "Strait of Dover",
+"lat": 51.0,
+"lng": 1.45,
+"where": "United Kingdom, France",
+"fact": "The narrowest part of the English Channel at about 33 km, crossed by the Channel Tunnel beneath."
+},
+{
+"id": "babelmandeb",
+"name": "Bab-el-Mandeb",
+"type": "Strait",
+"wiki": "Bab-el-Mandeb",
+"lat": 12.6,
+"lng": 43.3,
+"where": "Yemen, Djibouti, Eritrea",
+"fact": "The name means 'Gate of Grief'; it links the Red Sea to the Gulf of Aden."
+},
+{
+"id": "suez",
+"name": "Suez Canal",
+"type": "Canal",
+"wiki": "Suez Canal",
+"lat": 30.6,
+"lng": 32.33,
+"where": "Egypt",
+"fact": "Opened in 1869, it lets ships skip sailing around Africa; the Ever Given blocked it for six days in 2021."
+},
+{
+"id": "panama",
+"name": "Panama Canal",
+"type": "Canal",
+"wiki": "Panama Canal",
+"lat": 9.08,
+"lng": -79.68,
+"where": "Panama",
+"fact": "Uses locks to lift ships 26 m to Gatun Lake; ships heading to the Pacific actually travel southeast."
+},
+{
+"id": "grandcanyon",
+"name": "Grand Canyon",
+"type": "Canyon",
+"wiki": "Grand Canyon",
+"lat": 36.1,
+"lng": -112.1,
+"where": "Arizona, United States",
+"fact": "Up to 1,800 m deep, exposing nearly two billion years of rock layers."
+},
+{
+"id": "fishriver",
+"name": "Fish River Canyon",
+"type": "Canyon",
+"wiki": "Fish River Canyon",
+"lat": -27.6,
+"lng": 17.6,
+"where": "Namibia",
+"fact": "The largest canyon in Africa."
+},
+{
+"id": "yarlung",
+"name": "Yarlung Tsangpo Grand Canyon",
+"type": "Canyon",
+"wiki": "Yarlung Tsangpo Grand Canyon",
+"lat": 29.8,
+"lng": 95.0,
+"where": "Tibet, China",
+"fact": "Considered the deepest canyon on Earth, over 5,000 m in places."
+},
+{
+"id": "tibetan",
+"name": "Tibetan Plateau",
+"type": "Plateau",
+"wiki": "Tibetan Plateau",
+"lat": 33.0,
+"lng": 88.0,
+"where": "China, India",
+"fact": "The 'Roof of the World', averaging over 4,500 m; its glaciers feed rivers for nearly two billion people."
+},
+{
+"id": "altiplano",
+"name": "Altiplano",
+"type": "Plateau",
+"wiki": "Altiplano",
+"lat": -18.0,
+"lng": -68.0,
+"where": "Bolivia, Peru, Chile, Argentina",
+"fact": "The largest high plateau outside Tibet, holding Lake Titicaca and the Uyuni salt flat."
+},
+{
+"id": "uyuni",
+"name": "Salar de Uyuni",
+"type": "Salt flat",
+"wiki": "Salar de Uyuni",
+"lat": -20.13,
+"lng": -67.49,
+"where": "Bolivia",
+"fact": "The world's largest salt flat, so flat that satellites use it for calibration; turns into a giant mirror after rain."
+},
+{
+"id": "greatbarrier",
+"name": "Great Barrier Reef",
+"type": "Reef",
+"wiki": "Great Barrier Reef",
+"lat": -18.3,
+"lng": 147.7,
+"where": "Australia",
+"fact": "The largest structure built by living things, stretching over 2,300 km."
+},
+{
+"id": "belize_reef",
+"name": "Great Blue Hole",
+"type": "Sinkhole",
+"wiki": "Great Blue Hole",
+"lat": 17.32,
+"lng": -87.53,
+"where": "Belize",
+"fact": "A 300 m wide marine sinkhole made famous by Jacques Cousteau."
+},
+{
+"id": "uluru",
+"name": "Uluru",
+"type": "Rock formation",
+"wiki": "Uluru",
+"lat": -25.34,
+"lng": 131.04,
+"where": "Australia",
+"fact": "A sacred sandstone monolith that seems to change color at sunrise and sunset; climbing was banned in 2019."
+},
+{
+"id": "giants",
+"name": "Giant's Causeway",
+"type": "Rock formation",
+"wiki": "Giant's Causeway",
+"lat": 55.24,
+"lng": -6.51,
+"where": "Northern Ireland, UK",
+"fact": "About 40,000 interlocking basalt columns from an ancient lava flow."
+},
+{
+"id": "halong",
+"name": "Ha Long Bay",
+"type": "Bay",
+"wiki": "Ha Long Bay",
+"lat": 20.9,
+"lng": 107.18,
+"where": "Vietnam",
+"fact": "Thousands of limestone karst islands; the name means 'descending dragon'."
+},
+{
+"id": "fundy",
+"name": "Bay of Fundy",
+"type": "Bay",
+"wiki": "Bay of Fundy",
+"lat": 45.0,
+"lng": -65.8,
+"where": "Canada",
+"fact": "Has the highest tides in the world, up to 16 m."
+},
+{
+"id": "bengal",
+"name": "Bay of Bengal",
+"type": "Bay",
+"wiki": "Bay of Bengal",
+"lat": 15.0,
+"lng": 88.0,
+"where": "India, Bangladesh, Myanmar, Sri Lanka",
+"fact": "The largest bay in the world."
+},
+{
+"id": "hudson",
+"name": "Hudson Bay",
+"type": "Bay",
+"wiki": "Hudson Bay",
+"lat": 60.0,
+"lng": -85.0,
+"where": "Canada",
+"fact": "A huge inland sea; the land around it is still rising after the weight of Ice Age glaciers lifted."
+},
+{
+"id": "mediterranean",
+"name": "Mediterranean Sea",
+"type": "Sea",
+"wiki": "Mediterranean Sea",
+"lat": 35.0,
+"lng": 18.0,
+"where": "Europe, Africa, Asia",
+"fact": "Nearly dried out about 6 million years ago in the Messinian salinity crisis."
+},
+{
+"id": "sargasso",
+"name": "Sargasso Sea",
+"type": "Sea",
+"wiki": "Sargasso Sea",
+"lat": 28.0,
+"lng": -66.0,
+"where": "North Atlantic",
+"fact": "The only sea with no land coastline, bounded only by ocean currents."
+},
+{
+"id": "blacksea",
+"name": "Black Sea",
+"type": "Sea",
+"wiki": "Black Sea",
+"lat": 43.4,
+"lng": 34.0,
+"where": "Turkey, Ukraine, Russia, Romania, Bulgaria, Georgia",
+"fact": "Its deep waters have almost no oxygen, preserving ancient shipwrecks remarkably well."
+},
+{
+"id": "redsea",
+"name": "Red Sea",
+"type": "Sea",
+"wiki": "Red Sea",
+"lat": 20.0,
+"lng": 38.5,
+"where": "Egypt, Saudi Arabia, Sudan and more",
+"fact": "One of the saltiest seas; no rivers flow into it."
+},
+{
+"id": "baltic",
+"name": "Baltic Sea",
+"type": "Sea",
+"wiki": "Baltic Sea",
+"lat": 58.5,
+"lng": 20.0,
+"where": "Northern Europe",
+"fact": "Brackish, with low salinity, because many rivers feed it and it is nearly enclosed."
+},
+{
+"id": "southchina",
+"name": "South China Sea",
+"type": "Sea",
+"wiki": "South China Sea",
+"lat": 12.0,
+"lng": 114.0,
+"where": "China, Vietnam, Philippines, Malaysia and more",
+"fact": "Contains the disputed Spratly and Paracel Islands."
+},
+{
+"id": "marianatrench",
+"name": "Mariana Trench",
+"type": "Ocean trench",
+"wiki": "Mariana Trench",
+"lat": 11.35,
+"lng": 142.2,
+"where": "Western Pacific",
+"fact": "Its Challenger Deep is about 10,900 m, the deepest known point in the oceans."
+},
+{
+"id": "iberian",
+"name": "Iberian Peninsula",
+"type": "Peninsula",
+"wiki": "Iberian Peninsula",
+"lat": 40.0,
+"lng": -4.0,
+"where": "Spain, Portugal, Andorra, Gibraltar",
+"fact": "Includes the southwesternmost point of mainland Europe, Cabo de São Vicente."
+},
+{
+"id": "arabianpen",
+"name": "Arabian Peninsula",
+"type": "Peninsula",
+"wiki": "Arabian Peninsula",
+"lat": 23.0,
+"lng": 46.0,
+"where": "Saudi Arabia and neighbors",
+"fact": "The largest peninsula in the world."
+},
+{
+"id": "kamchatka",
+"name": "Kamchatka Peninsula",
+"type": "Peninsula",
+"wiki": "Kamchatka Peninsula",
+"lat": 56.0,
+"lng": 159.0,
+"where": "Russia",
+"fact": "Has around 160 volcanoes, about 29 of them active, and the Valley of Geysers."
+},
+{
+"id": "yucatan",
+"name": "Yucatán Peninsula",
+"type": "Peninsula",
+"wiki": "Yucatán Peninsula",
+"lat": 19.5,
+"lng": -89.0,
+"where": "Mexico, Belize, Guatemala",
+"fact": "Nearly riverless; water flows underground through thousands of sinkholes called cenotes, near the Chicxulub crater."
+},
+{
+"id": "horn",
+"name": "Horn of Africa",
+"type": "Peninsula",
+"wiki": "Horn of Africa",
+"lat": 9.0,
+"lng": 46.0,
+"where": "Somalia, Ethiopia, Eritrea, Djibouti",
+"fact": "The easternmost projection of the African continent."
+},
+{
+"id": "capehorn",
+"name": "Cape Horn",
+"type": "Cape",
+"wiki": "Cape Horn",
+"lat": -55.98,
+"lng": -67.27,
+"where": "Chile",
+"fact": "Sailors who rounded it traditionally earned the right to wear a gold earring."
+},
+{
+"id": "capegood",
+"name": "Cape of Good Hope",
+"type": "Cape",
+"wiki": "Cape of Good Hope",
+"lat": -34.36,
+"lng": 18.47,
+"where": "South Africa",
+"fact": "Not Africa's southernmost point; that is Cape Agulhas, about 150 km away."
+},
+{
+"id": "nordkapp",
+"name": "North Cape",
+"type": "Cape",
+"wiki": "North Cape (Norway)",
+"lat": 71.17,
+"lng": 25.78,
+"where": "Norway",
+"fact": "Often billed as Europe's northernmost point, though a nearby spit called Knivskjellodden goes slightly farther."
+},
+{
+"id": "serengeti",
+"name": "Serengeti",
+"type": "Grassland",
+"wiki": "Serengeti",
+"lat": -2.33,
+"lng": 34.83,
+"where": "Tanzania, Kenya",
+"fact": "Hosts the Great Migration of over a million wildebeest each year."
+},
+{
+"id": "pampas",
+"name": "Pampas",
+"type": "Grassland",
+"wiki": "Pampas",
+"lat": -35.0,
+"lng": -62.0,
+"where": "Argentina, Uruguay, Brazil",
+"fact": "Fertile lowlands and home of the gaucho, Argentina's cowboy."
+},
+{
+"id": "steppe",
+"name": "Eurasian Steppe",
+"type": "Grassland",
+"wiki": "Eurasian Steppe",
+"lat": 48.0,
+"lng": 65.0,
+"where": "Hungary to Mongolia",
+"fact": "A grassland highway across Eurasia used by Scythians, Huns and Mongols."
+},
+{
+"id": "okavango",
+"name": "Okavango Delta",
+"type": "Delta",
+"wiki": "Okavango Delta",
+"lat": -19.3,
+"lng": 22.9,
+"where": "Botswana",
+"fact": "An inland delta where a river floods into the Kalahari and evaporates without reaching the sea."
+},
+{
+"id": "pantanal",
+"name": "Pantanal",
+"type": "Wetland",
+"wiki": "Pantanal",
+"lat": -18.0,
+"lng": -57.0,
+"where": "Brazil, Bolivia, Paraguay",
+"fact": "The world's largest tropical wetland and one of the best places to see jaguars."
+},
+{
+"id": "sundarbans",
+"name": "Sundarbans",
+"type": "Mangrove forest",
+"wiki": "Sundarbans",
+"lat": 21.9,
+"lng": 89.2,
+"where": "Bangladesh, India",
+"fact": "The largest mangrove forest, home to Bengal tigers that swim between islands."
+},
+{
+"id": "amazonforest",
+"name": "Amazon rainforest",
+"type": "Rainforest",
+"wiki": "Amazon rainforest",
+"lat": -4.0,
+"lng": -63.0,
+"where": "Brazil and eight other countries or territories",
+"fact": "The largest tropical rainforest, spanning nine countries and territories."
+},
+{
+"id": "daintree",
+"name": "Daintree Rainforest",
+"type": "Rainforest",
+"wiki": "Daintree Rainforest",
+"lat": -16.17,
+"lng": 145.42,
+"where": "Australia",
+"fact": "Believed to be one of the oldest continuously surviving tropical rainforests, around 180 million years old."
+},
+{
+"id": "blackforest",
+"name": "Black Forest",
+"type": "Forest",
+"wiki": "Black Forest",
+"lat": 48.3,
+"lng": 8.2,
+"where": "Germany",
+"fact": "Birthplace of the cuckoo clock and the source of the Danube."
+},
+{
+"id": "greatrift",
+"name": "Great Rift Valley",
+"type": "Rift valley",
+"wiki": "Great Rift Valley",
+"lat": 0.5,
+"lng": 36.0,
+"where": "East Africa",
+"fact": "Africa is slowly splitting apart here; one day the east may become a separate landmass."
+},
+{
+"id": "thingvellir",
+"name": "Þingvellir",
+"type": "Rift valley",
+"wiki": "Þingvellir",
+"lat": 64.26,
+"lng": -21.13,
+"where": "Iceland",
+"fact": "You can snorkel between the North American and Eurasian plates in the Silfra fissure; also site of one of the oldest parliaments."
+},
+{
+"id": "cappadocia",
+"name": "Cappadocia",
+"type": "Region",
+"wiki": "Cappadocia",
+"lat": 38.66,
+"lng": 34.85,
+"where": "Turkey",
+"fact": "Known for fairy chimney rock spires and whole underground cities carved into soft volcanic rock."
+},
+{
+"id": "zhangjiajie",
+"name": "Zhangjiajie National Forest Park",
+"type": "Rock formation",
+"wiki": "Zhangjiajie National Forest Park",
+"lat": 29.32,
+"lng": 110.43,
+"where": "China",
+"fact": "Towering sandstone pillars that helped inspire the floating mountains in the film Avatar."
+},
+{
+"id": "pamukkale",
+"name": "Pamukkale",
+"type": "Terraces",
+"wiki": "Pamukkale",
+"lat": 37.92,
+"lng": 29.12,
+"where": "Turkey",
+"fact": "White travertine terraces from hot springs; the name means 'cotton castle'."
+},
+{
+"id": "milford",
+"name": "Milford Sound",
+"type": "Fjord",
+"wiki": "Milford Sound",
+"lat": -44.64,
+"lng": 167.9,
+"where": "New Zealand",
+"fact": "Technically a fjord, not a sound; one of the wettest inhabited places on Earth."
+},
+{
+"id": "geirangerfjord",
+"name": "Geirangerfjord",
+"type": "Fjord",
+"wiki": "Geirangerfjord",
+"lat": 62.1,
+"lng": 7.1,
+"where": "Norway",
+"fact": "A UNESCO site famous for the Seven Sisters waterfalls."
+},
+{
+"id": "sognefjord",
+"name": "Sognefjord",
+"type": "Fjord",
+"wiki": "Sognefjord",
+"lat": 61.1,
+"lng": 6.0,
+"where": "Norway",
+"fact": "The longest and deepest fjord in Norway, reaching over 200 km inland."
+},
+{
+"id": "meteora",
+"name": "Meteora",
+"type": "Rock formation",
+"wiki": "Meteora",
+"lat": 39.72,
+"lng": 21.63,
+"where": "Greece",
+"fact": "Monasteries perched atop giant rock pillars; monks once reached them by rope baskets."
+},
+{
+"id": "vatnajokull",
+"name": "Vatnajökull",
+"type": "Glacier",
+"wiki": "Vatnajökull",
+"lat": 64.4,
+"lng": -16.8,
+"where": "Iceland",
+"fact": "Europe's largest glacier by volume, covering active volcanoes beneath."
+},
+{
+"id": "peritomoreno",
+"name": "Perito Moreno Glacier",
+"type": "Glacier",
+"wiki": "Perito Moreno Glacier",
+"lat": -50.5,
+"lng": -73.05,
+"where": "Argentina",
+"fact": "One of the few glaciers not retreating; it periodically dams a lake and then ruptures spectacularly."
+},
+{
+"id": "lambert",
+"name": "Lambert Glacier",
+"type": "Glacier",
+"wiki": "Lambert Glacier",
+"lat": -73.0,
+"lng": 70.0,
+"where": "Antarctica",
+"fact": "The world's largest glacier, draining about 8 percent of the Antarctic ice sheet."
+},
+{
+"id": "yellowstone",
+"name": "Yellowstone Caldera",
+"type": "Volcano",
+"wiki": "Yellowstone Caldera",
+"lat": 44.4,
+"lng": -110.7,
+"where": "Wyoming, United States",
+"fact": "A supervolcano under the first national park in the world, home to half of Earth's geysers."
+},
+{
+"id": "lakenatron",
+"name": "Lake Natron",
+"type": "Lake",
+"wiki": "Lake Natron",
+"lat": -2.42,
+"lng": 36.0,
+"where": "Tanzania",
+"fact": "So alkaline it can calcify dead animals; still a key breeding ground for lesser flamingos."
+},
+{
+"id": "lakehillier",
+"name": "Lake Hillier",
+"type": "Lake",
+"wiki": "Lake Hillier",
+"lat": -34.1,
+"lng": 123.2,
+"where": "Australia",
+"fact": "A bubblegum pink lake, colored by salt-loving algae and bacteria."
+},
+{
+"id": "dallol",
+"name": "Dallol",
+"type": "Hydrothermal field",
+"wiki": "Dallol (hydrothermal system)",
+"lat": 14.24,
+"lng": 40.3,
+"where": "Ethiopia",
+"fact": "Acidic hot springs create yellow, green and orange mineral landscapes that look extraterrestrial."
+},
+{
+"id": "lencois",
+"name": "Lençóis Maranhenses National Park",
+"type": "Dunes",
+"wiki": "Lençóis Maranhenses National Park",
+"lat": -2.5,
+"lng": -43.1,
+"where": "Brazil",
+"fact": "White sand dunes with blue rainwater lagoons between them every rainy season."
+},
+{
+"id": "chocolatehills",
+"name": "Chocolate Hills",
+"type": "Hills",
+"wiki": "Chocolate Hills",
+"lat": 9.83,
+"lng": 124.17,
+"where": "Philippines",
+"fact": "Over 1,200 cone-shaped hills that turn brown in the dry season, like chocolate kisses."
+},
+{
+"id": "darvaza",
+"name": "Darvaza gas crater",
+"type": "Crater",
+"wiki": "Darvaza gas crater",
+"lat": 40.25,
+"lng": 58.44,
+"where": "Turkmenistan",
+"fact": "Nicknamed the Door to Hell, a natural gas crater that has been burning since around 1971."
+},
+{
+"id": "sossusvlei",
+"name": "Sossusvlei",
+"type": "Dunes",
+"wiki": "Sossusvlei",
+"lat": -24.73,
+"lng": 15.29,
+"where": "Namibia",
+"fact": "Rust red dunes over 300 m tall surround Deadvlei's ancient dead trees."
+},
+{
+"id": "tablemountain",
+"name": "Table Mountain",
+"type": "Mountain",
+"wiki": "Table Mountain",
+"lat": -33.96,
+"lng": 18.4,
+"where": "South Africa",
+"fact": "A flat-topped mountain over Cape Town, often draped in cloud called the 'tablecloth'."
+},
+{
+"id": "roraima",
+"name": "Mount Roraima",
+"type": "Tepui",
+"wiki": "Mount Roraima",
+"lat": 5.14,
+"lng": -60.76,
+"where": "Venezuela, Brazil, Guyana",
+"fact": "A tabletop mountain where three countries meet; it inspired Arthur Conan Doyle's The Lost World."
+},
+{
+"id": "mountcook",
+"name": "Aoraki / Mount Cook",
+"type": "Mountain",
+"wiki": "Aoraki / Mount Cook",
+"lat": -43.6,
+"lng": 170.14,
+"where": "New Zealand",
+"fact": "New Zealand's highest mountain; Edmund Hillary trained here before Everest."
+},
+{
+"id": "kosciuszko",
+"name": "Mount Kosciuszko",
+"type": "Mountain",
+"wiki": "Mount Kosciuszko",
+"lat": -36.46,
+"lng": 148.26,
+"where": "Australia",
+"fact": "Mainland Australia's highest point at just 2,228 m, named after a Polish hero."
+},
+{
+"id": "benNevis",
+"name": "Ben Nevis",
+"type": "Mountain",
+"wiki": "Ben Nevis",
+"lat": 56.8,
+"lng": -5.0,
+"where": "Scotland, UK",
+"fact": "The highest mountain in the British Isles at 1,345 m."
+},
+{
+"id": "mountsinai",
+"name": "Mount Sinai",
+"type": "Mountain",
+"wiki": "Mount Sinai",
+"lat": 28.54,
+"lng": 33.98,
+"where": "Egypt",
+"fact": "Traditionally where Moses received the Ten Commandments; Saint Catherine's Monastery sits at its foot."
+},
+{
+"id": "stelena",
+"name": "Mount St. Helens",
+"type": "Volcano",
+"wiki": "Mount St. Helens",
+"lat": 46.19,
+"lng": -122.19,
+"where": "Washington, United States",
+"fact": "Its 1980 eruption blew away the top 400 m of the mountain."
+},
+{
+"id": "popocatepetl",
+"name": "Popocatépetl",
+"type": "Volcano",
+"wiki": "Popocatépetl",
+"lat": 19.02,
+"lng": -98.62,
+"where": "Mexico",
+"fact": "One of the most active volcanoes in Mexico, visible from Mexico City; nicknamed El Popo."
+},
+{
+"id": "pinatubo",
+"name": "Mount Pinatubo",
+"type": "Volcano",
+"wiki": "Mount Pinatubo",
+"lat": 15.13,
+"lng": 120.35,
+"where": "Philippines",
+"fact": "Its 1991 eruption cooled global temperatures by about 0.5 C for over a year."
+},
+{
+"id": "nyiragongo",
+"name": "Mount Nyiragongo",
+"type": "Volcano",
+"wiki": "Mount Nyiragongo",
+"lat": -1.52,
+"lng": 29.25,
+"where": "DR Congo",
+"fact": "Holds one of the world's largest lava lakes; its lava is unusually fast and runny."
+},
+{
+"id": "erebus",
+"name": "Mount Erebus",
+"type": "Volcano",
+"wiki": "Mount Erebus",
+"lat": -77.53,
+"lng": 167.15,
+"where": "Antarctica",
+"fact": "The southernmost active volcano, with a persistent lava lake."
+},
+{
+"id": "stromboli",
+"name": "Stromboli",
+"type": "Volcano",
+"wiki": "Stromboli",
+"lat": 38.79,
+"lng": 15.21,
+"where": "Italy",
+"fact": "Erupts so often it's called the Lighthouse of the Mediterranean."
+},
+{
+"id": "camargue",
+"name": "Camargue",
+"type": "Delta",
+"wiki": "Camargue",
+"lat": 43.5,
+"lng": 4.5,
+"where": "France",
+"fact": "The Rhône delta, famous for white horses, black bulls and pink flamingos."
+},
+{
+"id": "lakebled",
+"name": "Lake Bled",
+"type": "Lake",
+"wiki": "Lake Bled",
+"lat": 46.36,
+"lng": 14.09,
+"where": "Slovenia",
+"fact": "Has Slovenia's only natural island, topped by a church with a wishing bell."
+},
+{
+"id": "plitvice",
+"name": "Plitvice Lakes National Park",
+"type": "Lakes",
+"wiki": "Plitvice Lakes National Park",
+"lat": 44.88,
+"lng": 15.62,
+"where": "Croatia",
+"fact": "Sixteen terraced lakes linked by waterfalls, with colors shifting from turquoise to green."
+},
+{
+"id": "lakelouise",
+"name": "Lake Louise",
+"type": "Lake",
+"wiki": "Lake Louise, Alberta",
+"lat": 51.42,
+"lng": -116.22,
+"where": "Canada",
+"fact": "Its turquoise color comes from glacial rock flour suspended in the water."
+},
+{
+"id": "lakeinle",
+"name": "Inle Lake",
+"type": "Lake",
+"wiki": "Inle Lake",
+"lat": 20.55,
+"lng": 96.9,
+"where": "Myanmar",
+"fact": "Fishermen row with one leg wrapped around the oar."
+},
+{
+"id": "moeraki",
+"name": "Moeraki Boulders",
+"type": "Rock formation",
+"wiki": "Moeraki Boulders",
+"lat": -45.35,
+"lng": 170.83,
+"where": "New Zealand",
+"fact": "Nearly spherical boulders on a beach, formed like pearls in ancient seafloor mud."
+},
+{
+"id": "kerguelen",
+"name": "Kerguelen Islands",
+"type": "Archipelago",
+"wiki": "Kerguelen Islands",
+"lat": -49.35,
+"lng": 70.2,
+"where": "France",
+"fact": "Nicknamed the Desolation Islands, among the most isolated places on Earth."
+},
+{
+"id": "tristan",
+"name": "Tristan da Cunha",
+"type": "Island",
+"wiki": "Tristan da Cunha",
+"lat": -37.11,
+"lng": -12.28,
+"where": "United Kingdom",
+"fact": "The most remote inhabited archipelago, about 2,400 km from the nearest inhabited land."
+},
+{
+"id": "easter",
+"name": "Easter Island",
+"type": "Island",
+"wiki": "Easter Island",
+"lat": -27.12,
+"lng": -109.35,
+"where": "Chile",
+"fact": "Home to nearly 1,000 moai statues; locals call it Rapa Nui."
+},
+{
+"id": "pitcairn",
+"name": "Pitcairn Islands",
+"type": "Archipelago",
+"wiki": "Pitcairn Islands",
+"lat": -25.07,
+"lng": -130.1,
+"where": "United Kingdom",
+"fact": "Settled by HMS Bounty mutineers; about 50 residents, one of the least populous jurisdictions on Earth."
+},
+{
+"id": "bouvet",
+"name": "Bouvet Island",
+"type": "Island",
+"wiki": "Bouvet Island",
+"lat": -54.42,
+"lng": 3.36,
+"where": "Norway",
+"fact": "Often called the most remote island in the world; it's mostly covered by a glacier."
+},
+{
+"id": "point_nemo",
+"name": "Point Nemo",
+"type": "Oceanic pole",
+"wiki": "Pole of inaccessibility",
+"lat": -48.88,
+"lng": -123.39,
+"where": "South Pacific",
+"fact": "The farthest ocean point from land; astronauts on the ISS are often closer than the nearest humans on Earth."
+},
+{
+"id": "benagil",
+"name": "Benagil Cave",
+"type": "Sea cave",
+"wiki": "Benagil Cave",
+"lat": 37.09,
+"lng": -8.43,
+"where": "Portugal",
+"fact": "A sea cave on the Algarve coast with a hole in its dome that lets in a beam of sunlight."
+},
+{
+"id": "sondoong",
+"name": "Sơn Đoòng Cave",
+"type": "Cave",
+"wiki": "Sơn Đoòng Cave",
+"lat": 17.46,
+"lng": 106.29,
+"where": "Vietnam",
+"fact": "The largest known cave passage in the world, with its own jungle and clouds inside."
+},
+{
+"id": "mammoth",
+"name": "Mammoth Cave National Park",
+"type": "Cave",
+"wiki": "Mammoth Cave National Park",
+"lat": 37.19,
+"lng": -86.1,
+"where": "Kentucky, United States",
+"fact": "The longest known cave system in the world, with over 680 km surveyed."
+},
+{
+"id": "waitomo",
+"name": "Waitomo Glowworm Caves",
+"type": "Cave",
+"wiki": "Waitomo Glowworm Caves",
+"lat": -38.26,
+"lng": 175.1,
+"where": "New Zealand",
+"fact": "Thousands of glowworms light the ceilings like a starry sky."
+},
+{
+"id": "deathvalley",
+"name": "Death Valley",
+"type": "Valley",
+"wiki": "Death Valley",
+"lat": 36.5,
+"lng": -117.0,
+"where": "California, United States",
+"fact": "Holds the record high air temperature and the lowest point in North America, Badwater Basin at 86 m below sea level."
+},
+{
+"id": "qattara",
+"name": "Qattara Depression",
+"type": "Depression",
+"wiki": "Qattara Depression",
+"lat": 29.5,
+"lng": 27.0,
+"where": "Egypt",
+"fact": "A huge low basin reaching 133 m below sea level; it anchored the El Alamein battle line in World War II."
+},
+{
+"id": "danube_delta",
+"name": "Danube Delta",
+"type": "Delta",
+"wiki": "Danube Delta",
+"lat": 45.1,
+"lng": 29.3,
+"where": "Romania, Ukraine",
+"fact": "Europe's best preserved delta and a paradise for pelicans."
+},
+{
+"id": "cliffsmoher",
+"name": "Cliffs of Moher",
+"type": "Cliffs",
+"wiki": "Cliffs of Moher",
+"lat": 52.97,
+"lng": -9.43,
+"where": "Ireland",
+"fact": "Rising about 214 m over the Atlantic; they appeared in Harry Potter and the Half-Blood Prince."
+},
+{
+"id": "whitecliffs",
+"name": "White Cliffs of Dover",
+"type": "Cliffs",
+"wiki": "White Cliffs of Dover",
+"lat": 51.13,
+"lng": 1.36,
+"where": "England",
+"fact": "Chalk cliffs made of tiny fossil plankton, visible from France on a clear day."
+},
+{
+"id": "nazca",
+"name": "Nazca Lines",
+"type": "Geoglyphs",
+"wiki": "Nazca Lines",
+"lat": -14.74,
+"lng": -75.13,
+"where": "Peru",
+"fact": "Giant ancient desert drawings of animals and lines, best seen from the air."
+},
+{
+"id": "fjordland",
+"name": "Lofoten",
+"type": "Archipelago",
+"wiki": "Lofoten",
+"lat": 68.2,
+"lng": 14.0,
+"where": "Norway",
+"fact": "Arctic islands with an unusually mild climate thanks to the Gulf Stream."
+},
+{
+"id": "cabo_roca",
+"name": "Cabo da Roca",
+"type": "Cape",
+"wiki": "Cabo da Roca",
+"lat": 38.78,
+"lng": -9.5,
+"where": "Portugal",
+"fact": "The westernmost point of mainland Europe."
+},
+{
+"id": "tierra",
+"name": "Tierra del Fuego",
+"type": "Archipelago",
+"wiki": "Tierra del Fuego",
+"lat": -54.0,
+"lng": -68.5,
+"where": "Argentina, Chile",
+"fact": "'Land of Fire', named for fires Magellan's crew saw burning on shore; Ushuaia claims to be the world's southernmost city."
+},
+{
+"id": "zanzibar",
+"name": "Zanzibar",
+"type": "Archipelago",
+"wiki": "Zanzibar",
+"lat": -6.13,
+"lng": 39.31,
+"where": "Tanzania",
+"fact": "The Spice Islands; its 1896 war with Britain is often called the shortest war in history."
+},
+{
+"id": "sicily",
+"name": "Sicily",
+"type": "Island",
+"wiki": "Sicily",
+"lat": 37.6,
+"lng": 14.0,
+"where": "Italy",
+"fact": "The largest island in the Mediterranean."
+},
+{
+"id": "cyprus",
+"name": "Cyprus",
+"type": "Island",
+"wiki": "Cyprus",
+"lat": 35.0,
+"lng": 33.2,
+"where": "Cyprus",
+"fact": "Has British military bases that are sovereign UK territory."
+},
+{
+"id": "srilanka",
+"name": "Sri Lanka",
+"type": "Island",
+"wiki": "Sri Lanka",
+"lat": 7.9,
+"lng": 80.7,
+"where": "Sri Lanka",
+"fact": "Once called Ceylon; a chain of shoals called Adam's Bridge almost links it to India."
+},
+{
+"id": "kinabalu",
+"name": "Kinabalu",
+"type": "Mountain",
+"wiki": "Mount Kinabalu",
+"lat": 6.08,
+"lng": 116.56,
+"where": "Malaysia",
+"fact": "The highest peak on Borneo, home to carnivorous pitcher plants."
+}
+]

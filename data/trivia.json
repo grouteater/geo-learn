@@ -1,0 +1,3110 @@
+[
+{
+"id": "t000",
+"q": "Which country has the most time zones, counting overseas territories?",
+"a": "France",
+"w": [
+"Russia",
+"United States",
+"United Kingdom"
+],
+"cat": "Borders",
+"note": "France spans 12 time zones thanks to territories like French Polynesia and Réunion."
+},
+{
+"id": "t001",
+"q": "What is the only country that borders both the Atlantic and Indian Oceans?",
+"a": "South Africa",
+"w": [
+"Australia",
+"Mozambique",
+"Namibia"
+],
+"cat": "Borders",
+"note": "Its coastline wraps around the southern tip of Africa."
+},
+{
+"id": "t002",
+"q": "Which country is completely surrounded by South Africa?",
+"a": "Lesotho",
+"w": [
+"Eswatini",
+"Botswana",
+"Zimbabwe"
+],
+"cat": "Enclaves",
+"note": "Lesotho is also the only country entirely above 1,000 m in elevation."
+},
+{
+"id": "t003",
+"q": "Which two countries are the world's only doubly landlocked nations?",
+"a": "Liechtenstein and Uzbekistan",
+"w": [
+"Andorra and Mongolia",
+"Switzerland and Laos",
+"Austria and Nepal"
+],
+"cat": "Borders",
+"note": "A doubly landlocked country is surrounded only by landlocked countries."
+},
+{
+"id": "t004",
+"q": "What is the highest capital city in the world?",
+"a": "La Paz, Bolivia",
+"w": [
+"Quito, Ecuador",
+"Thimphu, Bhutan",
+"Bogotá, Colombia"
+],
+"cat": "Capitals",
+"note": "La Paz is the seat of government at about 3,640 m; Sucre is the constitutional capital."
+},
+{
+"id": "t005",
+"q": "What is the southernmost national capital?",
+"a": "Wellington",
+"w": [
+"Canberra",
+"Buenos Aires",
+"Montevideo"
+],
+"cat": "Capitals",
+"note": "Wellington also has a reputation as one of the windiest cities in the world."
+},
+{
+"id": "t006",
+"q": "What is the northernmost national capital?",
+"a": "Reykjavík",
+"w": [
+"Helsinki",
+"Oslo",
+"Nuuk"
+],
+"cat": "Capitals",
+"note": "Nuuk is further north, but Greenland is not a sovereign state."
+},
+{
+"id": "t007",
+"q": "Which country's flag is the only non-rectangular national flag?",
+"a": "Nepal",
+"w": [
+"Switzerland",
+"Vatican City",
+"Qatar"
+],
+"cat": "Flags",
+"note": "Nepal's flag is two stacked pennants representing the Himalayas."
+},
+{
+"id": "t008",
+"q": "Which two national flags are square?",
+"a": "Switzerland and Vatican City",
+"w": [
+"Nepal and Qatar",
+"Denmark and Norway",
+"Japan and Palau"
+],
+"cat": "Flags",
+"note": "Most other flags are rectangles of ratios like 2:3 or 1:2."
+},
+{
+"id": "t009",
+"q": "The flag of which country features an AK-47?",
+"a": "Mozambique",
+"w": [
+"Angola",
+"Zimbabwe",
+"Eritrea"
+],
+"cat": "Flags",
+"note": "The rifle with bayonet symbolizes defense and vigilance."
+},
+{
+"id": "t010",
+"q": "Which country's flag has a different design on each side?",
+"a": "Paraguay",
+"w": [
+"Uruguay",
+"Bolivia",
+"Peru"
+],
+"cat": "Flags",
+"note": "The front shows the national arms and the back shows the treasury seal."
+},
+{
+"id": "t011",
+"q": "Which country's flag features a map of the country itself?",
+"a": "Cyprus",
+"w": [
+"Malta",
+"Iceland",
+"Sri Lanka"
+],
+"cat": "Flags",
+"note": "Kosovo's flag also shows the country's outline."
+},
+{
+"id": "t012",
+"q": "What color is most common on national flags?",
+"a": "Red",
+"w": [
+"Blue",
+"White",
+"Green"
+],
+"cat": "Flags",
+"note": "Roughly three quarters of national flags contain red."
+},
+{
+"id": "t013",
+"q": "Which is the world's smallest country by area?",
+"a": "Vatican City",
+"w": [
+"Monaco",
+"San Marino",
+"Nauru"
+],
+"cat": "Size",
+"note": "At about 0.44 km², it fits inside Rome."
+},
+{
+"id": "t014",
+"q": "Which is the largest country entirely in Africa by area?",
+"a": "Algeria",
+"w": [
+"DR Congo",
+"Sudan",
+"Libya"
+],
+"cat": "Size",
+"note": "Algeria became Africa's largest after South Sudan split from Sudan in 2011."
+},
+{
+"id": "t015",
+"q": "Which is the newest widely recognized country?",
+"a": "South Sudan",
+"w": [
+"Kosovo",
+"Montenegro",
+"East Timor"
+],
+"cat": "History",
+"note": "South Sudan gained independence in 2011."
+},
+{
+"id": "t016",
+"q": "Canberra was chosen as Australia's capital as a compromise between which two cities?",
+"a": "Sydney and Melbourne",
+"w": [
+"Sydney and Brisbane",
+"Melbourne and Adelaide",
+"Perth and Sydney"
+],
+"cat": "Capitals",
+"note": "It was purpose-built and designed by American architects Walter Burley Griffin and Marion Mahony Griffin."
+},
+{
+"id": "t017",
+"q": "What is the capital of Kazakhstan?",
+"a": "Astana",
+"w": [
+"Almaty",
+"Bishkek",
+"Tashkent"
+],
+"cat": "Capitals",
+"note": "It moved from Almaty in 1997 and has been renamed several times."
+},
+{
+"id": "t018",
+"q": "Which country moved its capital from Rio de Janeiro to a planned city in 1960?",
+"a": "Brazil",
+"w": [
+"Argentina",
+"Venezuela",
+"Colombia"
+],
+"cat": "Capitals",
+"note": "Brasília's layout looks like an airplane or bird from above."
+},
+{
+"id": "t019",
+"q": "Myanmar's capital since 2005 is?",
+"a": "Naypyidaw",
+"w": [
+"Yangon",
+"Mandalay",
+"Bago"
+],
+"cat": "Capitals",
+"note": "Naypyidaw has huge highways that are famously empty."
+},
+{
+"id": "t020",
+"q": "Nigeria's capital is?",
+"a": "Abuja",
+"w": [
+"Lagos",
+"Kano",
+"Ibadan"
+],
+"cat": "Capitals",
+"note": "Abuja replaced Lagos in 1991 for a more central, neutral location."
+},
+{
+"id": "t021",
+"q": "What is the capital of Côte d'Ivoire?",
+"a": "Yamoussoukro",
+"w": [
+"Abidjan",
+"Bouaké",
+"Accra"
+],
+"cat": "Capitals",
+"note": "Abidjan is still the economic hub; Yamoussoukro has one of the largest churches in the world."
+},
+{
+"id": "t022",
+"q": "Tanzania's official capital is?",
+"a": "Dodoma",
+"w": [
+"Dar es Salaam",
+"Arusha",
+"Zanzibar City"
+],
+"cat": "Capitals",
+"note": "Many government functions are still in Dar es Salaam."
+},
+{
+"id": "t023",
+"q": "Which country has three capital cities: Pretoria, Cape Town and Bloemfontein?",
+"a": "South Africa",
+"w": [
+"Botswana",
+"Bolivia",
+"Netherlands"
+],
+"cat": "Capitals",
+"note": "South Africa actually has three: executive, legislative and judicial."
+},
+{
+"id": "t024",
+"q": "The Netherlands' capital is Amsterdam, but its government sits in which city?",
+"a": "The Hague",
+"w": [
+"Rotterdam",
+"Utrecht",
+"Leiden"
+],
+"cat": "Capitals",
+"note": "The Hague also hosts the International Court of Justice."
+},
+{
+"id": "t025",
+"q": "What is the official legislative capital of Sri Lanka?",
+"a": "Sri Jayawardenepura Kotte",
+"w": [
+"Colombo",
+"Kandy",
+"Galle"
+],
+"cat": "Capitals",
+"note": "Colombo remains the largest city and commercial capital."
+},
+{
+"id": "t026",
+"q": "Which country has the longest coastline?",
+"a": "Canada",
+"w": [
+"Russia",
+"Indonesia",
+"Norway"
+],
+"cat": "Coasts",
+"note": "Canada's coastline is over 200,000 km thanks to its Arctic islands."
+},
+{
+"id": "t027",
+"q": "Which country has the most islands?",
+"a": "Sweden",
+"w": [
+"Indonesia",
+"Philippines",
+"Finland"
+],
+"cat": "Islands",
+"note": "Sweden counts over 260,000 islands, though most are tiny."
+},
+{
+"id": "t028",
+"q": "Which country has the most lakes?",
+"a": "Canada",
+"w": [
+"Finland",
+"Russia",
+"Sweden"
+],
+"cat": "Lakes",
+"note": "Canada holds more lakes than the rest of the world combined, by many counts."
+},
+{
+"id": "t029",
+"q": "Which country is nicknamed the 'Land of a Thousand Lakes'?",
+"a": "Finland",
+"w": [
+"Canada",
+"Sweden",
+"Estonia"
+],
+"cat": "Nicknames",
+"note": "Finland actually has around 188,000 lakes."
+},
+{
+"id": "t030",
+"q": "Which country is called the 'Land of the Thunder Dragon'?",
+"a": "Bhutan",
+"w": [
+"Nepal",
+"Tibet",
+"Mongolia"
+],
+"cat": "Nicknames",
+"note": "The dragon appears on Bhutan's flag."
+},
+{
+"id": "t031",
+"q": "Which country is called 'The Land of Fire and Ice'?",
+"a": "Iceland",
+"w": [
+"Norway",
+"Chile",
+"New Zealand"
+],
+"cat": "Nicknames",
+"note": "Glaciers sit on top of active volcanoes there."
+},
+{
+"id": "t032",
+"q": "Which country is called the 'Pearl of Africa'?",
+"a": "Uganda",
+"w": [
+"Rwanda",
+"Kenya",
+"Malawi"
+],
+"cat": "Nicknames",
+"note": "Winston Churchill popularized the nickname."
+},
+{
+"id": "t033",
+"q": "Which country is called 'The Land of a Thousand Hills'?",
+"a": "Rwanda",
+"w": [
+"Burundi",
+"Uganda",
+"Lesotho"
+],
+"cat": "Nicknames",
+"note": "Rwanda is very hilly and densely populated."
+},
+{
+"id": "t034",
+"q": "Which country is called 'The Warm Heart of Africa'?",
+"a": "Malawi",
+"w": [
+"Zambia",
+"Ghana",
+"Tanzania"
+],
+"cat": "Nicknames",
+"note": "The nickname honors the friendliness of its people."
+},
+{
+"id": "t035",
+"q": "Which country is known as the 'Land of the Rising Sun'?",
+"a": "Japan",
+"w": [
+"South Korea",
+"Philippines",
+"Taiwan"
+],
+"cat": "Nicknames",
+"note": "Nihon literally means 'origin of the sun'."
+},
+{
+"id": "t036",
+"q": "Which country is known as the 'Land of Smiles'?",
+"a": "Thailand",
+"w": [
+"Cambodia",
+"Laos",
+"Philippines"
+],
+"cat": "Nicknames",
+"note": "Thailand was called Siam until 1939."
+},
+{
+"id": "t037",
+"q": "Which country is called the 'Hermit Kingdom' historically and today?",
+"a": "North Korea",
+"w": [
+"Bhutan",
+"Myanmar",
+"Turkmenistan"
+],
+"cat": "Nicknames",
+"note": "The term originally applied to Joseon Korea."
+},
+{
+"id": "t038",
+"q": "Which European country is called the 'Emerald Isle'?",
+"a": "Ireland",
+"w": [
+"Scotland",
+"Iceland",
+"Wales"
+],
+"cat": "Nicknames",
+"note": "Its green comes from mild, rainy weather."
+},
+{
+"id": "t039",
+"q": "What is the only country named after a woman?",
+"a": "Saint Lucia",
+"w": [
+"Maria Island",
+"Victoria",
+"Georgia"
+],
+"cat": "Names",
+"note": "Named after Saint Lucy of Syracuse."
+},
+{
+"id": "t040",
+"q": "Which country is named after the Latin word for 'silver'?",
+"a": "Argentina",
+"w": [
+"Uruguay",
+"Paraguay",
+"Chile"
+],
+"cat": "Names",
+"note": "Early explorers hoped the region held silver."
+},
+{
+"id": "t041",
+"q": "Which country's name means 'land of the free'?",
+"a": "Thailand",
+"w": [
+"Liberia",
+"Freeland",
+"Laos"
+],
+"cat": "Names",
+"note": "Thai people take pride in never having been colonized."
+},
+{
+"id": "t042",
+"q": "Which country's name means 'little Venice'?",
+"a": "Venezuela",
+"w": [
+"Colombia",
+"Bolivia",
+"Ecuador"
+],
+"cat": "Names",
+"note": "Stilt houses on Lake Maracaibo reminded explorers of Venice."
+},
+{
+"id": "t043",
+"q": "Which country is named after a line of latitude?",
+"a": "Ecuador",
+"w": [
+"Colombia",
+"Gabon",
+"Kenya"
+],
+"cat": "Names",
+"note": "Ecuador is Spanish for equator."
+},
+{
+"id": "t044",
+"q": "Which country is named after a man who liberated much of South America?",
+"a": "Bolivia",
+"w": [
+"Colombia",
+"Venezuela",
+"Peru"
+],
+"cat": "Names",
+"note": "Simón Bolívar also gave his name to Venezuela's currency."
+},
+{
+"id": "t045",
+"q": "Colombia is named after?",
+"a": "Christopher Columbus",
+"w": [
+"Amerigo Vespucci",
+"A river",
+"A Muisca chief"
+],
+"cat": "Names",
+"note": "Columbus himself never set foot there."
+},
+{
+"id": "t046",
+"q": "The Philippines is named after which king?",
+"a": "Philip II of Spain",
+"w": [
+"Philip IV of France",
+"Philip I of Castile",
+"Philip of Macedon"
+],
+"cat": "Names",
+"note": "The name was given by explorer Ruy López de Villalobos."
+},
+{
+"id": "t047",
+"q": "Which country's name means 'land of the Franks'?",
+"a": "France",
+"w": [
+"Germany",
+"Belgium",
+"Luxembourg"
+],
+"cat": "Names",
+"note": "The Franks were a Germanic people."
+},
+{
+"id": "t048",
+"q": "Which country is named after a river whose name meant 'black'?",
+"a": "Niger",
+"w": [
+"Sudan",
+"Chad",
+"Senegal"
+],
+"cat": "Names",
+"note": "Nigeria is also named after the Niger River."
+},
+{
+"id": "t049",
+"q": "Which country is named after a tree?",
+"a": "Brazil",
+"w": [
+"Lebanon",
+"Palau",
+"Chile"
+],
+"cat": "Names",
+"note": "Brazilwood produced a valuable red dye."
+},
+{
+"id": "t050",
+"q": "Which country's name comes from a Taíno word meaning 'land of wood and water'?",
+"a": "Jamaica",
+"w": [
+"Haiti",
+"Cuba",
+"Bahamas"
+],
+"cat": "Names",
+"note": "Xaymaca was the Taíno name."
+},
+{
+"id": "t051",
+"q": "Which country is the only one whose English name ends in 'h'?",
+"a": "Bangladesh",
+"w": [
+"Nepal",
+"Kazakhstan",
+"Moldova"
+],
+"cat": "Names",
+"note": "A classic pub quiz question."
+},
+{
+"id": "t052",
+"q": "Which country has the most official languages?",
+"a": "Zimbabwe",
+"w": [
+"India",
+"South Africa",
+"Switzerland"
+],
+"cat": "Languages",
+"note": "Zimbabwe recognizes 16 official languages."
+},
+{
+"id": "t053",
+"q": "Which country has the most languages spoken?",
+"a": "Papua New Guinea",
+"w": [
+"India",
+"Nigeria",
+"Indonesia"
+],
+"cat": "Languages",
+"note": "Around 840 languages are spoken there."
+},
+{
+"id": "t054",
+"q": "Which language has the most native speakers?",
+"a": "Mandarin Chinese",
+"w": [
+"English",
+"Spanish",
+"Hindi"
+],
+"cat": "Languages",
+"note": "Spanish is second by native speakers."
+},
+{
+"id": "t055",
+"q": "Which country is the largest Portuguese-speaking country?",
+"a": "Brazil",
+"w": [
+"Portugal",
+"Angola",
+"Mozambique"
+],
+"cat": "Languages",
+"note": "Brazil has about 20 times Portugal's population."
+},
+{
+"id": "t056",
+"q": "Which country is home to the largest French-speaking city in the world?",
+"a": "DR Congo",
+"w": [
+"Canada",
+"Belgium",
+"Senegal"
+],
+"cat": "Languages",
+"note": "Kinshasa is larger than Paris itself."
+},
+{
+"id": "t057",
+"q": "In which country is Afrikaans primarily spoken?",
+"a": "South Africa",
+"w": [
+"Kenya",
+"Nigeria",
+"Ghana"
+],
+"cat": "Languages",
+"note": "It developed from 17th century Dutch."
+},
+{
+"id": "t058",
+"q": "Which European language is not related to any other European language family?",
+"a": "Basque",
+"w": [
+"Hungarian",
+"Finnish",
+"Maltese"
+],
+"cat": "Languages",
+"note": "Basque is a language isolate."
+},
+{
+"id": "t059",
+"q": "Which is the only Semitic language written in Latin script and an official EU language?",
+"a": "Maltese",
+"w": [
+"Hebrew",
+"Arabic",
+"Amharic"
+],
+"cat": "Languages",
+"note": "Maltese has Arabic roots with Italian and English borrowings."
+},
+{
+"id": "t060",
+"q": "Which country uses the Tugrik as currency?",
+"a": "Mongolia",
+"w": [
+"Kazakhstan",
+"Kyrgyzstan",
+"Bhutan"
+],
+"cat": "Currency",
+"note": "The name means 'circle' or 'round thing'."
+},
+{
+"id": "t061",
+"q": "The Rand is the currency of which country?",
+"a": "South Africa",
+"w": [
+"Namibia",
+"Zambia",
+"Botswana"
+],
+"cat": "Currency",
+"note": "Named after the Witwatersrand, where gold was discovered."
+},
+{
+"id": "t062",
+"q": "The Pula, meaning 'rain', is the currency of?",
+"a": "Botswana",
+"w": [
+"Namibia",
+"Lesotho",
+"Zimbabwe"
+],
+"cat": "Currency",
+"note": "Rain is precious in the Kalahari."
+},
+{
+"id": "t063",
+"q": "The Kwacha is the currency of Zambia and which other country?",
+"a": "Malawi",
+"w": [
+"Zimbabwe",
+"Mozambique",
+"Angola"
+],
+"cat": "Currency",
+"note": "Kwacha means 'dawn' in several local languages."
+},
+{
+"id": "t064",
+"q": "Which country's currency is the Lek?",
+"a": "Albania",
+"w": [
+"North Macedonia",
+"Kosovo",
+"Montenegro"
+],
+"cat": "Currency",
+"note": "Named after Alexander the Great, Leka."
+},
+{
+"id": "t065",
+"q": "The Dong is the currency of?",
+"a": "Vietnam",
+"w": [
+"Laos",
+"Cambodia",
+"Myanmar"
+],
+"cat": "Currency",
+"note": "Prices are often in the tens of thousands."
+},
+{
+"id": "t066",
+"q": "The Kyat is the currency of?",
+"a": "Myanmar",
+"w": [
+"Thailand",
+"Laos",
+"Cambodia"
+],
+"cat": "Currency",
+"note": "Pronounced roughly 'chat'."
+},
+{
+"id": "t067",
+"q": "Which country uses the Lempira, named after a native chief?",
+"a": "Honduras",
+"w": [
+"Guatemala",
+"El Salvador",
+"Nicaragua"
+],
+"cat": "Currency",
+"note": "Lempira resisted Spanish conquest in the 1500s."
+},
+{
+"id": "t068",
+"q": "Which country's currency is named after an explorer and called the Colón?",
+"a": "Costa Rica",
+"w": [
+"Panama",
+"Nicaragua",
+"Honduras"
+],
+"cat": "Currency",
+"note": "Colón is the Spanish form of Columbus."
+},
+{
+"id": "t069",
+"q": "Panama uses its own Balboa alongside which currency?",
+"a": "US dollar",
+"w": [
+"Euro",
+"Mexican peso",
+"Colombian peso"
+],
+"cat": "Currency",
+"note": "Balboa coins exist but notes are US dollars."
+},
+{
+"id": "t070",
+"q": "Ecuador and El Salvador both use which currency?",
+"a": "US dollar",
+"w": [
+"Euro",
+"Peso",
+"Colón"
+],
+"cat": "Currency",
+"note": "Ecuador adopted it in 2000."
+},
+{
+"id": "t071",
+"q": "Montenegro and Kosovo use which currency without being EU members?",
+"a": "Euro",
+"w": [
+"Swiss franc",
+"Serbian dinar",
+"US dollar"
+],
+"cat": "Currency",
+"note": "They adopted the Deutsche Mark first, then switched."
+},
+{
+"id": "t072",
+"q": "Which island country's currency is the Pa'anga?",
+"a": "Tonga",
+"w": [
+"Samoa",
+"Fiji",
+"Tuvalu"
+],
+"cat": "Currency",
+"note": "Tonga is the only Pacific kingdom."
+},
+{
+"id": "t073",
+"q": "Which country has the most pyramids?",
+"a": "Sudan",
+"w": [
+"Egypt",
+"Mexico",
+"Peru"
+],
+"cat": "Landmarks",
+"note": "Sudan has over 200 Nubian pyramids."
+},
+{
+"id": "t074",
+"q": "Which country has the most UNESCO World Heritage Sites?",
+"a": "Italy",
+"w": [
+"China",
+"Spain",
+"France"
+],
+"cat": "Landmarks",
+"note": "Italy and China trade the lead."
+},
+{
+"id": "t075",
+"q": "Which country has the most active volcanoes?",
+"a": "Indonesia",
+"w": [
+"Japan",
+"Iceland",
+"Chile"
+],
+"cat": "Volcanoes",
+"note": "Indonesia has about 130 active volcanoes."
+},
+{
+"id": "t076",
+"q": "Which country has the most active volcanoes on the Ring of Fire in the Americas?",
+"a": "Chile",
+"w": [
+"Mexico",
+"Ecuador",
+"Peru"
+],
+"cat": "Volcanoes",
+"note": "Chile has around 90 potentially active volcanoes."
+},
+{
+"id": "t077",
+"q": "What is the only continent without a desert?",
+"a": "Europe",
+"w": [
+"Australia",
+"South America",
+"Antarctica"
+],
+"cat": "Continents",
+"note": "Antarctica is actually the largest desert of all."
+},
+{
+"id": "t078",
+"q": "What is the largest desert on Earth?",
+"a": "Antarctic Desert",
+"w": [
+"Sahara",
+"Arctic Desert",
+"Gobi"
+],
+"cat": "Deserts",
+"note": "Deserts are defined by low precipitation, not heat."
+},
+{
+"id": "t079",
+"q": "Which continent has the most countries?",
+"a": "Africa",
+"w": [
+"Asia",
+"Europe",
+"South America"
+],
+"cat": "Continents",
+"note": "Africa has 54 sovereign countries."
+},
+{
+"id": "t080",
+"q": "How many countries border Germany?",
+"a": "9",
+"w": [
+"7",
+"8",
+"10"
+],
+"cat": "Borders",
+"note": "Germany has one of the most neighbors in Europe."
+},
+{
+"id": "t081",
+"q": "Which two countries share the longest international border?",
+"a": "Canada and United States",
+"w": [
+"Russia and Kazakhstan",
+"Argentina and Chile",
+"China and Mongolia"
+],
+"cat": "Borders",
+"note": "It runs about 8,891 km including Alaska."
+},
+{
+"id": "t082",
+"q": "Which countries share the most neighbors, 14 each?",
+"a": "China and Russia",
+"w": [
+"Brazil and Germany",
+"China and Brazil",
+"Russia and Germany"
+],
+"cat": "Borders",
+"note": "Both border 14 countries."
+},
+{
+"id": "t083",
+"q": "How many countries border Brazil?",
+"a": "10",
+"w": [
+"8",
+"9",
+"12"
+],
+"cat": "Borders",
+"note": "Only Ecuador and Chile in South America do not."
+},
+{
+"id": "t084",
+"q": "Which two South American countries do not border Brazil?",
+"a": "Chile and Ecuador",
+"w": [
+"Chile and Peru",
+"Ecuador and Colombia",
+"Uruguay and Chile"
+],
+"cat": "Borders",
+"note": "Every other South American country touches Brazil."
+},
+{
+"id": "t085",
+"q": "Which two countries share Hispaniola?",
+"a": "Haiti and Dominican Republic",
+"w": [
+"Cuba and Jamaica",
+"Haiti and Cuba",
+"Dominican Republic and Puerto Rico"
+],
+"cat": "Islands",
+"note": "Haiti was the first Black-led republic, independent in 1804."
+},
+{
+"id": "t086",
+"q": "Which island is split between Ireland and the UK?",
+"a": "Ireland",
+"w": [
+"Great Britain",
+"Isle of Man",
+"Anglesey"
+],
+"cat": "Islands",
+"note": "Northern Ireland is part of the UK."
+},
+{
+"id": "t087",
+"q": "Which island is shared by Indonesia and East Timor?",
+"a": "Timor",
+"w": [
+"Borneo",
+"New Guinea",
+"Sumatra"
+],
+"cat": "Islands",
+"note": "East Timor also has an exclave, Oecusse, on the western side."
+},
+{
+"id": "t088",
+"q": "Which island is shared by France and the Netherlands in the Caribbean?",
+"a": "Saint Martin",
+"w": [
+"Aruba",
+"Guadeloupe",
+"Curaçao"
+],
+"cat": "Islands",
+"note": "It is the smallest island shared by two nations."
+},
+{
+"id": "t089",
+"q": "Which is the most populous landlocked country?",
+"a": "Ethiopia",
+"w": [
+"Uganda",
+"Afghanistan",
+"Kazakhstan"
+],
+"cat": "Borders",
+"note": "Ethiopia lost its coastline when Eritrea became independent in 1993."
+},
+{
+"id": "t090",
+"q": "Which is the largest landlocked country by area?",
+"a": "Kazakhstan",
+"w": [
+"Mongolia",
+"Chad",
+"Niger"
+],
+"cat": "Borders",
+"note": "It is the ninth largest country overall."
+},
+{
+"id": "t091",
+"q": "Bolivia lost its coastline to which country in the War of the Pacific?",
+"a": "Chile",
+"w": [
+"Peru",
+"Argentina",
+"Paraguay"
+],
+"cat": "History",
+"note": "Bolivia still maintains a navy on Lake Titicaca."
+},
+{
+"id": "t092",
+"q": "Which Russian exclave sits between Poland and Lithuania?",
+"a": "Kaliningrad Oblast",
+"w": [
+"Königsberg Republic",
+"Karelia",
+"Pskov"
+],
+"cat": "Enclaves",
+"note": "It sits between Poland and Lithuania."
+},
+{
+"id": "t093",
+"q": "Which Spanish cities sit on the African mainland?",
+"a": "Ceuta and Melilla",
+"w": [
+"Tangier and Tetouan",
+"Oran and Algiers",
+"Tripoli and Tunis"
+],
+"cat": "Enclaves",
+"note": "They border Morocco."
+},
+{
+"id": "t094",
+"q": "Which country is completely surrounded by Italy, besides Vatican City?",
+"a": "San Marino",
+"w": [
+"Monaco",
+"Malta",
+"Andorra"
+],
+"cat": "Enclaves",
+"note": "San Marino claims to be the oldest surviving republic, founded in 301."
+},
+{
+"id": "t095",
+"q": "Llívia is a Spanish town surrounded by which country?",
+"a": "France",
+"w": [
+"Andorra",
+"Portugal",
+"Italy"
+],
+"cat": "Enclaves",
+"note": "A treaty only ceded 'villages', and Llívia was a town."
+},
+{
+"id": "t096",
+"q": "Baarle-Hertog and Baarle-Nassau have a famously tangled border between?",
+"a": "Belgium and Netherlands",
+"w": [
+"Germany and Denmark",
+"France and Switzerland",
+"Austria and Germany"
+],
+"cat": "Borders",
+"note": "Some houses have the border running through them."
+},
+{
+"id": "t097",
+"q": "Which country is shaped like a boot?",
+"a": "Italy",
+"w": [
+"Chile",
+"Greece",
+"Croatia"
+],
+"cat": "Shapes",
+"note": "Sicily is the 'football' being kicked."
+},
+{
+"id": "t098",
+"q": "Which country is the longest north to south?",
+"a": "Chile",
+"w": [
+"Argentina",
+"Norway",
+"Brazil"
+],
+"cat": "Shapes",
+"note": "About 4,300 km long but averaging only 177 km wide."
+},
+{
+"id": "t099",
+"q": "The Gambia is almost completely surrounded by which country?",
+"a": "Senegal",
+"w": [
+"Guinea",
+"Mali",
+"Mauritania"
+],
+"cat": "Enclaves",
+"note": "The Gambia follows the Gambia River inland."
+},
+{
+"id": "t100",
+"q": "What is the least densely populated country?",
+"a": "Mongolia",
+"w": [
+"Namibia",
+"Australia",
+"Iceland"
+],
+"cat": "People",
+"note": "Around two people per square kilometer."
+},
+{
+"id": "t101",
+"q": "What is the most densely populated country?",
+"a": "Monaco",
+"w": [
+"Singapore",
+"Bangladesh",
+"Vatican City"
+],
+"cat": "People",
+"note": "Among larger countries, Bangladesh leads."
+},
+{
+"id": "t102",
+"q": "Which country has more pigs than people, by some counts?",
+"a": "Denmark",
+"w": [
+"Germany",
+"Netherlands",
+"Spain"
+],
+"cat": "Oddities",
+"note": "Denmark is one of the largest pork exporters."
+},
+{
+"id": "t103",
+"q": "Which country has more sheep than people by a wide margin?",
+"a": "New Zealand",
+"w": [
+"Scotland",
+"Uruguay",
+"Ireland"
+],
+"cat": "Oddities",
+"note": "The ratio has fallen but is still several to one."
+},
+{
+"id": "t104",
+"q": "Which country has no rivers?",
+"a": "Saudi Arabia",
+"w": [
+"Egypt",
+"Libya",
+"Chad"
+],
+"cat": "Oddities",
+"note": "Saudi Arabia is the largest country with no permanent rivers."
+},
+{
+"id": "t105",
+"q": "Which country has no permanent army, having abolished it in 1948?",
+"a": "Costa Rica",
+"w": [
+"Panama",
+"Iceland",
+"Andorra"
+],
+"cat": "Oddities",
+"note": "The money was redirected to education and health."
+},
+{
+"id": "t106",
+"q": "Which country switched from left to right-hand driving in 1967?",
+"a": "Sweden",
+"w": [
+"Norway",
+"Iceland",
+"Finland"
+],
+"cat": "Oddities",
+"note": "The day was called Dagen H."
+},
+{
+"id": "t107",
+"q": "Which country contains the geographic center of North America, near Rugby?",
+"a": "United States",
+"w": [
+"Canada",
+"Mexico",
+"Guatemala"
+],
+"cat": "Oddities",
+"note": "Rugby, North Dakota has a monument, though the claim is debated."
+},
+{
+"id": "t108",
+"q": "Which country has a 'Four Corners' where four states meet at one point?",
+"a": "United States",
+"w": [
+"Canada",
+"Australia",
+"Mexico"
+],
+"cat": "Oddities",
+"note": "Arizona, Colorado, New Mexico and Utah."
+},
+{
+"id": "t109",
+"q": "Which country has the world's northernmost permanent settlement, Alert?",
+"a": "Canada",
+"w": [
+"Russia",
+"Norway",
+"Greenland (Denmark)"
+],
+"cat": "Extremes",
+"note": "Alert is a military station about 817 km from the North Pole."
+},
+{
+"id": "t110",
+"q": "Which country contains the wettest inhabited place, Mawsynram?",
+"a": "India",
+"w": [
+"Colombia",
+"Indonesia",
+"Bangladesh"
+],
+"cat": "Extremes",
+"note": "Mawsynram averages over 11,000 mm of rain a year."
+},
+{
+"id": "t111",
+"q": "The Arctic Circle passes through which country's Grimsey island?",
+"a": "Iceland",
+"w": [
+"Norway",
+"Faroe Islands",
+"Greenland"
+],
+"cat": "Extremes",
+"note": "Mainland Iceland lies just south of the circle."
+},
+{
+"id": "t112",
+"q": "Which country is crossed by both the equator and the Tropic of Capricorn?",
+"a": "Brazil",
+"w": [
+"Ecuador",
+"Indonesia",
+"Kenya"
+],
+"cat": "Extremes",
+"note": "Brazil is the only country crossed by both."
+},
+{
+"id": "t113",
+"q": "Which country lies in all four hemispheres?",
+"a": "Kiribati",
+"w": [
+"Fiji",
+"Tuvalu",
+"Samoa"
+],
+"cat": "Extremes",
+"note": "It spans both the equator and the 180th meridian."
+},
+{
+"id": "t114",
+"q": "Which country was first to see the new millennium, having moved the date line?",
+"a": "Kiribati",
+"w": [
+"New Zealand",
+"Tonga",
+"Fiji"
+],
+"cat": "Extremes",
+"note": "Its Line Islands are in UTC+14."
+},
+{
+"id": "t115",
+"q": "Samoa skipped which day in 2011 to switch sides of the Date Line?",
+"a": "December 30",
+"w": [
+"December 31",
+"January 1",
+"February 29"
+],
+"cat": "Oddities",
+"note": "It jumped from December 29 straight to December 31."
+},
+{
+"id": "t116",
+"q": "Which country has the oldest national flag still in use?",
+"a": "Denmark",
+"w": [
+"Scotland",
+"Austria",
+"Netherlands"
+],
+"cat": "Flags",
+"note": "The Dannebrog dates to at least the 1300s."
+},
+{
+"id": "t117",
+"q": "Which country's flag is nicknamed the 'Maple Leaf'?",
+"a": "Canada",
+"w": [
+"Lebanon",
+"Japan",
+"Norway"
+],
+"cat": "Flags",
+"note": "Adopted in 1965."
+},
+{
+"id": "t118",
+"q": "Which country's flag features a cedar tree?",
+"a": "Lebanon",
+"w": [
+"Cyprus",
+"Belize",
+"Canada"
+],
+"cat": "Flags",
+"note": "The Lebanon cedar appears in the Bible."
+},
+{
+"id": "t119",
+"q": "Which flag features a dragon?",
+"a": "Bhutan",
+"w": [
+"China",
+"Mongolia",
+"Vietnam"
+],
+"cat": "Flags",
+"note": "Wales is not a sovereign state, though its flag has a dragon too."
+},
+{
+"id": "t120",
+"q": "Which country's flag features a bird of paradise?",
+"a": "Papua New Guinea",
+"w": [
+"Dominica",
+"Uganda",
+"Zambia"
+],
+"cat": "Flags",
+"note": "Dominica has a Sisserou parrot and Uganda a crane."
+},
+{
+"id": "t121",
+"q": "Which country's flag features a double-headed eagle?",
+"a": "Albania",
+"w": [
+"Serbia",
+"Montenegro",
+"Russia"
+],
+"cat": "Flags",
+"note": "Serbia and Montenegro use one in their coats of arms too."
+},
+{
+"id": "t122",
+"q": "Which country's flag features a Star of David?",
+"a": "Israel",
+"w": [
+"Ethiopia",
+"Burundi",
+"Morocco"
+],
+"cat": "Flags",
+"note": "Designed for the Zionist movement in 1891."
+},
+{
+"id": "t123",
+"q": "Which country's flag features a Shahada inscription and sword?",
+"a": "Saudi Arabia",
+"w": [
+"Iraq",
+"Afghanistan",
+"Iran"
+],
+"cat": "Flags",
+"note": "It is never flown at half mast."
+},
+{
+"id": "t124",
+"q": "Which country's flag was a plain green field from 1977 to 2011?",
+"a": "Libya",
+"w": [
+"Mauritania",
+"Algeria",
+"Sudan"
+],
+"cat": "Flags",
+"note": "From 1977 to 2011 Libya's flag was solid green."
+},
+{
+"id": "t125",
+"q": "Which country's flag features a trident?",
+"a": "Barbados",
+"w": [
+"Belize",
+"Bahamas",
+"Grenada"
+],
+"cat": "Flags",
+"note": "The broken trident symbolizes a break from colonial history."
+},
+{
+"id": "t126",
+"q": "Which country's flag has 'blue, black and white' horizontal stripes?",
+"a": "Estonia",
+"w": [
+"Botswana",
+"Finland",
+"Latvia"
+],
+"cat": "Flags",
+"note": "Black represents the soil and white snow or aspirations."
+},
+{
+"id": "t127",
+"q": "Which national flag features a machete and gear, and was inspired by the Soviet flag?",
+"a": "Angola",
+"w": [
+"Mozambique",
+"Vietnam",
+"Laos"
+],
+"cat": "Flags",
+"note": "The half gear stands for industry workers."
+},
+{
+"id": "t128",
+"q": "Indonesia's and Monaco's flags are nearly identical. How do they differ?",
+"a": "Proportions",
+"w": [
+"Colors",
+"Stripe order",
+"Emblem"
+],
+"cat": "Flags",
+"note": "Monaco is 4:5 and Indonesia is 2:3. Poland's is the reverse."
+},
+{
+"id": "t129",
+"q": "Chad's flag is almost identical to the flag of?",
+"a": "Romania",
+"w": [
+"Moldova",
+"Andorra",
+"Belgium"
+],
+"cat": "Flags",
+"note": "The blue shade is marginally different."
+},
+{
+"id": "t130",
+"q": "The flags of Ireland and Côte d'Ivoire differ in?",
+"a": "Stripe order (mirror image)",
+"w": [
+"Colors",
+"Shape",
+"Emblem"
+],
+"cat": "Flags",
+"note": "Ireland has green at the hoist; Côte d'Ivoire has orange."
+},
+{
+"id": "t131",
+"q": "Which country's flag has 50 stars?",
+"a": "United States",
+"w": [
+"Brazil",
+"Micronesia",
+"Australia"
+],
+"cat": "Flags",
+"note": "Brazil's flag has 27 stars for its states and capital."
+},
+{
+"id": "t132",
+"q": "Which flag shows the night sky over Rio on a specific date?",
+"a": "Brazil",
+"w": [
+"Argentina",
+"Uruguay",
+"Australia"
+],
+"cat": "Flags",
+"note": "The sky as it looked on 15 November 1889."
+},
+{
+"id": "t133",
+"q": "Which country's flag shows the Southern Cross with a large seven-pointed Commonwealth star?",
+"a": "Australia",
+"w": [
+"New Zealand",
+"Samoa",
+"Papua New Guinea"
+],
+"cat": "Flags",
+"note": "New Zealand's has four red stars and no Commonwealth star."
+},
+{
+"id": "t134",
+"q": "What is the longest river in Europe?",
+"a": "Volga",
+"w": [
+"Danube",
+"Rhine",
+"Dnieper"
+],
+"cat": "Rivers",
+"note": "It flows entirely within Russia."
+},
+{
+"id": "t135",
+"q": "What is the only major river flowing both north and south of the equator twice?",
+"a": "Congo",
+"w": [
+"Amazon",
+"Nile",
+"Niger"
+],
+"cat": "Rivers",
+"note": "The Congo crosses the equator twice."
+},
+{
+"id": "t136",
+"q": "Which river flows through the most capital cities?",
+"a": "Danube",
+"w": [
+"Rhine",
+"Nile",
+"Mekong"
+],
+"cat": "Rivers",
+"note": "Vienna, Bratislava, Budapest and Belgrade."
+},
+{
+"id": "t137",
+"q": "What is the source of the Blue Nile?",
+"a": "Lake Tana",
+"w": [
+"Lake Victoria",
+"Lake Albert",
+"Lake Turkana"
+],
+"cat": "Rivers",
+"note": "Lake Tana is in Ethiopia; the Blue and White Nile meet at Khartoum."
+},
+{
+"id": "t138",
+"q": "At which city do the Blue and White Nile meet?",
+"a": "Khartoum",
+"w": [
+"Cairo",
+"Juba",
+"Aswan"
+],
+"cat": "Rivers",
+"note": "Khartoum means 'elephant trunk', from the shape of the confluence."
+},
+{
+"id": "t139",
+"q": "Which river forms much of the border between Mexico and the United States?",
+"a": "Rio Grande",
+"w": [
+"Colorado",
+"Pecos",
+"Gila"
+],
+"cat": "Rivers",
+"note": "Mexicans call it Río Bravo del Norte."
+},
+{
+"id": "t140",
+"q": "Which river forms much of the border between Germany and Poland?",
+"a": "Oder",
+"w": [
+"Elbe",
+"Vistula",
+"Neisse only"
+],
+"cat": "Rivers",
+"note": "The Oder–Neisse line was set after World War II."
+},
+{
+"id": "t141",
+"q": "Which river does Budapest straddle?",
+"a": "Danube",
+"w": [
+"Tisza",
+"Drava",
+"Sava"
+],
+"cat": "Rivers",
+"note": "Buda is on the west bank and Pest on the east."
+},
+{
+"id": "t142",
+"q": "Which river flows through Baghdad?",
+"a": "Tigris",
+"w": [
+"Euphrates",
+"Jordan",
+"Karun"
+],
+"cat": "Rivers",
+"note": "Ancient Babylon was on the Euphrates."
+},
+{
+"id": "t143",
+"q": "Which river flows through Lisbon?",
+"a": "Tagus",
+"w": [
+"Douro",
+"Guadiana",
+"Minho"
+],
+"cat": "Rivers",
+"note": "The Tagus is the longest river on the Iberian Peninsula."
+},
+{
+"id": "t144",
+"q": "Which river flows through Florence?",
+"a": "Arno",
+"w": [
+"Tiber",
+"Po",
+"Adige"
+],
+"cat": "Rivers",
+"note": "Rome's river is the Tiber."
+},
+{
+"id": "t145",
+"q": "Which river flows through Prague?",
+"a": "Vltava",
+"w": [
+"Elbe",
+"Danube",
+"Morava"
+],
+"cat": "Rivers",
+"note": "Smetana's famous symphonic poem is named after it."
+},
+{
+"id": "t146",
+"q": "Which river flows through Warsaw?",
+"a": "Vistula",
+"w": [
+"Oder",
+"Warta",
+"Bug"
+],
+"cat": "Rivers",
+"note": "It is Poland's longest river."
+},
+{
+"id": "t147",
+"q": "Which river flows through Kyiv?",
+"a": "Dnieper",
+"w": [
+"Dniester",
+"Don",
+"Bug"
+],
+"cat": "Rivers",
+"note": "It is Europe's fourth longest river."
+},
+{
+"id": "t148",
+"q": "Which river flows through Cairo?",
+"a": "Nile",
+"w": [
+"Suez",
+"Red",
+"Jordan"
+],
+"cat": "Rivers",
+"note": "Cairo sits at the start of the Nile Delta."
+},
+{
+"id": "t149",
+"q": "Which river flows through Buenos Aires?",
+"a": "Río de la Plata (estuary)",
+"w": [
+"Paraná",
+"Uruguay",
+"Salado"
+],
+"cat": "Rivers",
+"note": "The Plata is the widest river estuary in the world."
+},
+{
+"id": "t150",
+"q": "What is the largest lake in Africa?",
+"a": "Lake Victoria",
+"w": [
+"Lake Tanganyika",
+"Lake Malawi",
+"Lake Chad"
+],
+"cat": "Lakes",
+"note": "It is the world's largest tropical lake."
+},
+{
+"id": "t151",
+"q": "What is the deepest lake in the world?",
+"a": "Lake Baikal",
+"w": [
+"Lake Tanganyika",
+"Caspian Sea",
+"Crater Lake"
+],
+"cat": "Lakes",
+"note": "About 1,642 m deep."
+},
+{
+"id": "t152",
+"q": "Which of the Great Lakes is entirely within the United States?",
+"a": "Lake Michigan",
+"w": [
+"Lake Superior",
+"Lake Erie",
+"Lake Huron"
+],
+"cat": "Lakes",
+"note": "The others are shared with Canada."
+},
+{
+"id": "t153",
+"q": "What is the largest lake in South America?",
+"a": "Lake Maracaibo",
+"w": [
+"Lake Titicaca",
+"Lake Poopó",
+"Lago Argentino"
+],
+"cat": "Lakes",
+"note": "Some say it is really a lagoon since it connects to the sea."
+},
+{
+"id": "t154",
+"q": "What is the highest mountain in Africa?",
+"a": "Kilimanjaro",
+"w": [
+"Mount Kenya",
+"Rwenzori",
+"Ras Dashen"
+],
+"cat": "Mountains",
+"note": "Its summit is Uhuru Peak."
+},
+{
+"id": "t155",
+"q": "What is the highest mountain in South America?",
+"a": "Aconcagua",
+"w": [
+"Chimborazo",
+"Huascarán",
+"Ojos del Salado"
+],
+"cat": "Mountains",
+"note": "It is in Argentina near the Chilean border."
+},
+{
+"id": "t156",
+"q": "What is the highest peak in the contiguous United States?",
+"a": "Mount Whitney",
+"w": [
+"Mount Rainier",
+"Mount Elbert",
+"Pikes Peak"
+],
+"cat": "Mountains",
+"note": "It is less than 140 km from Death Valley's Badwater Basin."
+},
+{
+"id": "t157",
+"q": "What is the highest mountain in Japan?",
+"a": "Mount Fuji",
+"w": [
+"Kita-dake",
+"Mount Aso",
+"Hotaka"
+],
+"cat": "Mountains",
+"note": "At 3,776 m."
+},
+{
+"id": "t158",
+"q": "What is the highest peak in Canada?",
+"a": "Mount Logan",
+"w": [
+"Mount Robson",
+"Mount Columbia",
+"Mount Waddington"
+],
+"cat": "Mountains",
+"note": "It is in Yukon and has one of the largest bases of any mountain."
+},
+{
+"id": "t159",
+"q": "What is the highest peak in the Alps outside France and Italy?",
+"a": "Dufourspitze",
+"w": [
+"Matterhorn",
+"Eiger",
+"Grossglockner"
+],
+"cat": "Mountains",
+"note": "It is Switzerland's highest point."
+},
+{
+"id": "t160",
+"q": "What is the name of the world's largest coral reef system?",
+"a": "Great Barrier Reef",
+"w": [
+"Belize Barrier Reef",
+"Red Sea Reef",
+"New Caledonia Barrier Reef"
+],
+"cat": "Oceans",
+"note": "It is visible from space."
+},
+{
+"id": "t161",
+"q": "Which is the largest ocean?",
+"a": "Pacific",
+"w": [
+"Atlantic",
+"Indian",
+"Southern"
+],
+"cat": "Oceans",
+"note": "It covers about a third of Earth's surface."
+},
+{
+"id": "t162",
+"q": "Which is the smallest ocean?",
+"a": "Arctic",
+"w": [
+"Southern",
+"Indian",
+"Atlantic"
+],
+"cat": "Oceans",
+"note": "It is mostly covered by sea ice."
+},
+{
+"id": "t163",
+"q": "Which sea is bordered by the most countries?",
+"a": "Mediterranean",
+"w": [
+"Caribbean",
+"Baltic",
+"Black"
+],
+"cat": "Seas",
+"note": "Over 20 countries border it."
+},
+{
+"id": "t164",
+"q": "What body of water separates Saudi Arabia from Africa?",
+"a": "Red Sea",
+"w": [
+"Persian Gulf",
+"Arabian Sea",
+"Gulf of Aden"
+],
+"cat": "Seas",
+"note": "The Gulf of Aden separates Yemen from Somalia."
+},
+{
+"id": "t165",
+"q": "Which gulf is also called the Arabian Gulf in Arab countries?",
+"a": "Persian Gulf",
+"w": [
+"Gulf of Oman",
+"Gulf of Aden",
+"Red Sea"
+],
+"cat": "Seas",
+"note": "The naming is politically sensitive."
+},
+{
+"id": "t166",
+"q": "What strait separates Asia from North America?",
+"a": "Bering Strait",
+"w": [
+"Tsugaru Strait",
+"Strait of Georgia",
+"Davis Strait"
+],
+"cat": "Straits",
+"note": "About 82 km wide."
+},
+{
+"id": "t167",
+"q": "What strait separates Sicily from mainland Italy?",
+"a": "Strait of Messina",
+"w": [
+"Strait of Otranto",
+"Strait of Bonifacio",
+"Sicily Channel"
+],
+"cat": "Straits",
+"note": "Mythical home of Scylla and Charybdis."
+},
+{
+"id": "t168",
+"q": "What strait separates Corsica and Sardinia?",
+"a": "Strait of Bonifacio",
+"w": [
+"Strait of Messina",
+"Ligurian Strait",
+"Strait of Sicily"
+],
+"cat": "Straits",
+"note": "Corsica is French and Sardinia is Italian."
+},
+{
+"id": "t169",
+"q": "What water body separates Denmark from Sweden at Copenhagen?",
+"a": "Øresund",
+"w": [
+"Kattegat",
+"Skagerrak",
+"Great Belt"
+],
+"cat": "Straits",
+"note": "Crossed by the Øresund Bridge and tunnel."
+},
+{
+"id": "t170",
+"q": "What is the only country with a coastline on the Caspian Sea and the Persian Gulf?",
+"a": "Iran",
+"w": [
+"Iraq",
+"Turkmenistan",
+"Azerbaijan"
+],
+"cat": "Coasts",
+"note": "Iran touches both seas."
+},
+{
+"id": "t171",
+"q": "Which African country borders the most countries, nine in total?",
+"a": "DR Congo",
+"w": [
+"Nigeria",
+"Sudan",
+"Chad"
+],
+"cat": "Borders",
+"note": "DR Congo borders 9 countries."
+},
+{
+"id": "t172",
+"q": "Which African country was never colonized, apart from a brief Italian occupation?",
+"a": "Ethiopia",
+"w": [
+"Liberia",
+"Morocco",
+"Egypt"
+],
+"cat": "History",
+"note": "Ethiopia defeated Italy at Adwa in 1896."
+},
+{
+"id": "t173",
+"q": "Liberia was founded by?",
+"a": "Freed American slaves",
+"w": [
+"British abolitionists",
+"French missionaries",
+"Portuguese traders"
+],
+"cat": "History",
+"note": "Its capital Monrovia is named after US President James Monroe."
+},
+{
+"id": "t174",
+"q": "Which country was formerly called Siam?",
+"a": "Thailand",
+"w": [
+"Cambodia",
+"Myanmar",
+"Laos"
+],
+"cat": "Former names",
+"note": "Renamed in 1939."
+},
+{
+"id": "t175",
+"q": "Which country was formerly called Ceylon?",
+"a": "Sri Lanka",
+"w": [
+"Maldives",
+"Bangladesh",
+"Myanmar"
+],
+"cat": "Former names",
+"note": "Renamed in 1972."
+},
+{
+"id": "t176",
+"q": "Which country was formerly called Burma?",
+"a": "Myanmar",
+"w": [
+"Thailand",
+"Bangladesh",
+"Laos"
+],
+"cat": "Former names",
+"note": "Renamed in 1989."
+},
+{
+"id": "t177",
+"q": "Which country was formerly called Persia?",
+"a": "Iran",
+"w": [
+"Iraq",
+"Afghanistan",
+"Turkey"
+],
+"cat": "Former names",
+"note": "Iran asked foreign countries to use its native name in 1935."
+},
+{
+"id": "t178",
+"q": "Which country was formerly Zaire?",
+"a": "DR Congo",
+"w": [
+"Republic of the Congo",
+"Zambia",
+"Central African Republic"
+],
+"cat": "Former names",
+"note": "Called Zaire from 1971 to 1997."
+},
+{
+"id": "t179",
+"q": "Which country was formerly Rhodesia?",
+"a": "Zimbabwe",
+"w": [
+"Zambia",
+"Malawi",
+"Botswana"
+],
+"cat": "Former names",
+"note": "Northern Rhodesia became Zambia."
+},
+{
+"id": "t180",
+"q": "Which country was formerly Dahomey?",
+"a": "Benin",
+"w": [
+"Togo",
+"Ghana",
+"Burkina Faso"
+],
+"cat": "Former names",
+"note": "Renamed in 1975."
+},
+{
+"id": "t181",
+"q": "Which country was formerly Upper Volta?",
+"a": "Burkina Faso",
+"w": [
+"Mali",
+"Niger",
+"Chad"
+],
+"cat": "Former names",
+"note": "Burkina Faso means 'land of upright people'."
+},
+{
+"id": "t182",
+"q": "Which country was formerly Gold Coast?",
+"a": "Ghana",
+"w": [
+"Côte d'Ivoire",
+"Nigeria",
+"Sierra Leone"
+],
+"cat": "Former names",
+"note": "The first sub-Saharan colony to gain independence, in 1957."
+},
+{
+"id": "t183",
+"q": "Which country was formerly Swaziland?",
+"a": "Eswatini",
+"w": [
+"Lesotho",
+"Botswana",
+"Namibia"
+],
+"cat": "Former names",
+"note": "Renamed in 2018."
+},
+{
+"id": "t184",
+"q": "Which country was formerly Kampuchea?",
+"a": "Cambodia",
+"w": [
+"Laos",
+"Vietnam",
+"Myanmar"
+],
+"cat": "Former names",
+"note": "Used under the Khmer Rouge."
+},
+{
+"id": "t185",
+"q": "Which country was formerly Abyssinia?",
+"a": "Ethiopia",
+"w": [
+"Eritrea",
+"Somalia",
+"Sudan"
+],
+"cat": "Former names",
+"note": "A name used mainly by outsiders."
+},
+{
+"id": "t186",
+"q": "Which country was formerly Dutch Guiana?",
+"a": "Suriname",
+"w": [
+"Guyana",
+"French Guiana",
+"Belize"
+],
+"cat": "Former names",
+"note": "Suriname is the smallest country in South America."
+},
+{
+"id": "t187",
+"q": "Which country was formerly British Honduras?",
+"a": "Belize",
+"w": [
+"Honduras",
+"Guyana",
+"Jamaica"
+],
+"cat": "Former names",
+"note": "Belize is the only Central American country with English as its official language."
+},
+{
+"id": "t188",
+"q": "Which country was formerly New Hebrides?",
+"a": "Vanuatu",
+"w": [
+"Fiji",
+"Solomon Islands",
+"New Caledonia"
+],
+"cat": "Former names",
+"note": "Once ruled jointly by Britain and France."
+},
+{
+"id": "t189",
+"q": "Which country was formerly Formosa (in European usage)?",
+"a": "Taiwan",
+"w": [
+"Philippines",
+"Okinawa",
+"Hainan"
+],
+"cat": "Former names",
+"note": "Formosa means 'beautiful' in Portuguese."
+},
+{
+"id": "t190",
+"q": "Which country was formerly Bechuanaland?",
+"a": "Botswana",
+"w": [
+"Lesotho",
+"Zambia",
+"Namibia"
+],
+"cat": "Former names",
+"note": "Became independent in 1966."
+},
+{
+"id": "t191",
+"q": "Which country was formerly Nyasaland?",
+"a": "Malawi",
+"w": [
+"Zambia",
+"Tanzania",
+"Mozambique"
+],
+"cat": "Former names",
+"note": "Lake Nyasa is now Lake Malawi."
+},
+{
+"id": "t192",
+"q": "Which country was formerly South West Africa?",
+"a": "Namibia",
+"w": [
+"Angola",
+"Botswana",
+"South Africa"
+],
+"cat": "Former names",
+"note": "Independent from South Africa in 1990."
+},
+{
+"id": "t193",
+"q": "Which city was formerly called Constantinople?",
+"a": "Istanbul",
+"w": [
+"Ankara",
+"Athens",
+"Izmir"
+],
+"cat": "Former names",
+"note": "Before that it was Byzantium."
+},
+{
+"id": "t194",
+"q": "Which city was formerly called Edo?",
+"a": "Tokyo",
+"w": [
+"Kyoto",
+"Osaka",
+"Nara"
+],
+"cat": "Former names",
+"note": "Renamed in 1868."
+},
+{
+"id": "t195",
+"q": "Which city was formerly called Saigon?",
+"a": "Ho Chi Minh City",
+"w": [
+"Hanoi",
+"Da Nang",
+"Hue"
+],
+"cat": "Former names",
+"note": "Many locals still say Saigon."
+},
+{
+"id": "t196",
+"q": "Which city was formerly called Bombay?",
+"a": "Mumbai",
+"w": [
+"Chennai",
+"Kolkata",
+"Pune"
+],
+"cat": "Former names",
+"note": "Renamed in 1995."
+},
+{
+"id": "t197",
+"q": "Which city was formerly called Leningrad?",
+"a": "Saint Petersburg",
+"w": [
+"Moscow",
+"Volgograd",
+"Kaliningrad"
+],
+"cat": "Former names",
+"note": "Also Petrograd from 1914 to 1924."
+},
+{
+"id": "t198",
+"q": "Which city was formerly Batavia?",
+"a": "Jakarta",
+"w": [
+"Surabaya",
+"Bandung",
+"Singapore"
+],
+"cat": "Former names",
+"note": "Indonesia is building a new capital, Nusantara, on Borneo."
+},
+{
+"id": "t199",
+"q": "Which country is building a new capital called Nusantara?",
+"a": "Indonesia",
+"w": [
+"Malaysia",
+"Egypt",
+"Philippines"
+],
+"cat": "Capitals",
+"note": "It is on the island of Borneo, in East Kalimantan."
+},
+{
+"id": "t200",
+"q": "Egypt is building a new administrative capital east of which city?",
+"a": "Cairo",
+"w": [
+"Alexandria",
+"Giza",
+"Suez"
+],
+"cat": "Capitals",
+"note": "Often called the New Administrative Capital."
+},
+{
+"id": "t201",
+"q": "Which country has the capital Ngerulmud?",
+"a": "Palau",
+"w": [
+"Micronesia",
+"Marshall Islands",
+"Nauru"
+],
+"cat": "Capitals",
+"note": "One of the least populous capitals."
+},
+{
+"id": "t202",
+"q": "Which country has no official capital?",
+"a": "Nauru",
+"w": [
+"Tuvalu",
+"Monaco",
+"Vatican City"
+],
+"cat": "Capitals",
+"note": "Government offices are in the Yaren district."
+},
+{
+"id": "t203",
+"q": "What is the capital of Bhutan?",
+"a": "Thimphu",
+"w": [
+"Paro",
+"Punakha",
+"Kathmandu"
+],
+"cat": "Capitals",
+"note": "One of few capitals with no traffic lights."
+},
+{
+"id": "t204",
+"q": "What is the capital of Burkina Faso?",
+"a": "Ouagadougou",
+"w": [
+"Bobo-Dioulasso",
+"Niamey",
+"Bamako"
+],
+"cat": "Capitals",
+"note": "A favorite of trivia fans for its spelling."
+},
+{
+"id": "t205",
+"q": "What is the capital of Turkmenistan?",
+"a": "Ashgabat",
+"w": [
+"Tashkent",
+"Dushanbe",
+"Merv"
+],
+"cat": "Capitals",
+"note": "It holds a record for the most white marble buildings."
+},
+{
+"id": "t206",
+"q": "What is the capital of Eritrea?",
+"a": "Asmara",
+"w": [
+"Massawa",
+"Djibouti",
+"Addis Ababa"
+],
+"cat": "Capitals",
+"note": "Famous for Italian modernist architecture, a UNESCO site."
+},
+{
+"id": "t207",
+"q": "What is the capital of Liechtenstein?",
+"a": "Vaduz",
+"w": [
+"Schaan",
+"Bern",
+"Innsbruck"
+],
+"cat": "Capitals",
+"note": "The prince lives in a castle above it."
+},
+{
+"id": "t208",
+"q": "What is the capital of Vanuatu?",
+"a": "Port Vila",
+"w": [
+"Suva",
+"Honiara",
+"Nouméa"
+],
+"cat": "Capitals",
+"note": "On the island of Efate."
+},
+{
+"id": "t209",
+"q": "What is the capital of Suriname?",
+"a": "Paramaribo",
+"w": [
+"Georgetown",
+"Cayenne",
+"Nieuw Nickerie"
+],
+"cat": "Capitals",
+"note": "Its colonial wooden center is a UNESCO site."
+},
+{
+"id": "t210",
+"q": "What is the capital of Slovenia?",
+"a": "Ljubljana",
+"w": [
+"Maribor",
+"Zagreb",
+"Bled"
+],
+"cat": "Capitals",
+"note": "Its symbol is a dragon."
+},
+{
+"id": "t211",
+"q": "What is the capital of Moldova?",
+"a": "Chișinău",
+"w": [
+"Tiraspol",
+"Bălți",
+"Iași"
+],
+"cat": "Capitals",
+"note": "Moldova has a famous underground wine cellar, Mileștii Mici."
+},
+{
+"id": "t212",
+"q": "What is the capital of Malta?",
+"a": "Valletta",
+"w": [
+"Mdina",
+"Sliema",
+"Birkirkara"
+],
+"cat": "Capitals",
+"note": "One of the smallest capitals in the EU."
+},
+{
+"id": "t213",
+"q": "Which country's capital is Tbilisi?",
+"a": "Georgia",
+"w": [
+"Armenia",
+"Azerbaijan",
+"Turkmenistan"
+],
+"cat": "Capitals",
+"note": "Tbilisi means 'warm place', for its sulfur springs."
+},
+{
+"id": "t214",
+"q": "Which country's capital is Dushanbe?",
+"a": "Tajikistan",
+"w": [
+"Kyrgyzstan",
+"Uzbekistan",
+"Turkmenistan"
+],
+"cat": "Capitals",
+"note": "Dushanbe means 'Monday', after a Monday market."
+},
+{
+"id": "t215",
+"q": "Which country's capital is Mbabane?",
+"a": "Eswatini",
+"w": [
+"Lesotho",
+"Botswana",
+"Malawi"
+],
+"cat": "Capitals",
+"note": "Lobamba is the royal and legislative capital."
+},
+{
+"id": "t216",
+"q": "Which country's capital is Honiara?",
+"a": "Solomon Islands",
+"w": [
+"Vanuatu",
+"Fiji",
+"Papua New Guinea"
+],
+"cat": "Capitals",
+"note": "On the island of Guadalcanal, famous from World War II."
+},
+{
+"id": "t217",
+"q": "Which country's capital is Nouakchott?",
+"a": "Mauritania",
+"w": [
+"Mali",
+"Senegal",
+"Niger"
+],
+"cat": "Capitals",
+"note": "Built from a small village when Mauritania became independent in 1960."
+},
+{
+"id": "t218",
+"q": "Which country's capital is Bandar Seri Begawan?",
+"a": "Brunei",
+"w": [
+"Malaysia",
+"Indonesia",
+"Singapore"
+],
+"cat": "Capitals",
+"note": "Home to Kampong Ayer, a huge water village on stilts."
+},
+{
+"id": "t219",
+"q": "Which country's capital is Funafuti?",
+"a": "Tuvalu",
+"w": [
+"Kiribati",
+"Nauru",
+"Tonga"
+],
+"cat": "Capitals",
+"note": "Its airstrip doubles as a playground and sports field."
+},
+{
+"id": "t220",
+"q": "Which country's capital is Majuro?",
+"a": "Marshall Islands",
+"w": [
+"Micronesia",
+"Palau",
+"Kiribati"
+],
+"cat": "Capitals",
+"note": "It is an atoll."
+},
+{
+"id": "t221",
+"q": "Which country has the world's oldest continuously inhabited capital, Damascus?",
+"a": "Syria",
+"w": [
+"Lebanon",
+"Jordan",
+"Iraq"
+],
+"cat": "Capitals",
+"note": "Damascus is among the oldest continuously inhabited cities."
+},
+{
+"id": "t222",
+"q": "Which is the most populous country in Africa?",
+"a": "Nigeria",
+"w": [
+"Ethiopia",
+"Egypt",
+"DR Congo"
+],
+"cat": "People",
+"note": "Nigeria has over 200 million people."
+},
+{
+"id": "t223",
+"q": "Which is the most populous country in South America?",
+"a": "Brazil",
+"w": [
+"Colombia",
+"Argentina",
+"Peru"
+],
+"cat": "People",
+"note": "Brazil has over 200 million people."
+},
+{
+"id": "t224",
+"q": "Which country overtook China as the most populous in 2023?",
+"a": "India",
+"w": [
+"Indonesia",
+"United States",
+"Pakistan"
+],
+"cat": "People",
+"note": "Both have over 1.4 billion people."
+},
+{
+"id": "t225",
+"q": "Which is the most populous Muslim-majority country?",
+"a": "Indonesia",
+"w": [
+"Pakistan",
+"Bangladesh",
+"Egypt"
+],
+"cat": "People",
+"note": "About 87 percent of Indonesians are Muslim."
+},
+{
+"id": "t226",
+"q": "Which US state is closest to Africa?",
+"a": "Maine",
+"w": [
+"Florida",
+"Massachusetts",
+"North Carolina"
+],
+"cat": "Oddities",
+"note": "Quoddy Head, Maine is closer to Morocco than Florida is."
+},
+{
+"id": "t227",
+"q": "Reno, Nevada is farther west than which major city?",
+"a": "Los Angeles",
+"w": [
+"San Diego",
+"Seattle",
+"Portland"
+],
+"cat": "Oddities",
+"note": "Much of California's coast curves east."
+},
+{
+"id": "t228",
+"q": "Windsor, Ontario lies directly south of which US city?",
+"a": "Detroit",
+"w": [
+"Buffalo",
+"Cleveland",
+"Chicago"
+],
+"cat": "Oddities",
+"note": "Detroit is one of the few places where you look south into Canada."
+},
+{
+"id": "t229",
+"q": "Which European capital is the farthest west?",
+"a": "Reykjavík",
+"w": [
+"Lisbon",
+"Dublin",
+"Madrid"
+],
+"cat": "Oddities",
+"note": "Iceland's capital sits at about 21.9 degrees west."
+},
+{
+"id": "t230",
+"q": "Which country has the southernmost city with over 50,000 people, Punta Arenas?",
+"a": "Chile",
+"w": [
+"Argentina",
+"New Zealand",
+"Australia"
+],
+"cat": "Extremes",
+"note": "Punta Arenas is on the Strait of Magellan."
+},
+{
+"id": "t231",
+"q": "Which country is home to the world's highest waterfall?",
+"a": "Venezuela",
+"w": [
+"Brazil",
+"Norway",
+"South Africa"
+],
+"cat": "Waterfalls",
+"note": "Angel Falls, 979 m."
+},
+{
+"id": "t232",
+"q": "What is the coldest capital city in the world by average temperature?",
+"a": "Ulaanbaatar",
+"w": [
+"Moscow",
+"Reykjavík",
+"Astana"
+],
+"cat": "Extremes",
+"note": "Mongolia's capital averages below freezing across the year."
+},
+{
+"id": "t233",
+"q": "What country is home to Oymyakon, the coldest inhabited village?",
+"a": "Russia",
+"w": [
+"Canada",
+"Mongolia",
+"Kazakhstan"
+],
+"cat": "Extremes",
+"note": "It has recorded temperatures around minus 67.7 C."
+},
+{
+"id": "t234",
+"q": "The Tropic of Cancer passes through how many continents?",
+"a": "3",
+"w": [
+"2",
+"4",
+"5"
+],
+"cat": "Lines",
+"note": "Africa, Asia and North America."
+},
+{
+"id": "t235",
+"q": "Which line divides the world into Eastern and Western Hemispheres by convention?",
+"a": "Prime Meridian",
+"w": [
+"Equator",
+"International Date Line",
+"Tropic of Cancer"
+],
+"cat": "Lines",
+"note": "It runs through Greenwich, London."
+},
+{
+"id": "t236",
+"q": "The Prime Meridian and Equator cross in which body of water?",
+"a": "Gulf of Guinea",
+"w": [
+"Atlantic off Brazil",
+"Indian Ocean",
+"Mediterranean"
+],
+"cat": "Lines",
+"note": "A spot jokingly called Null Island."
+},
+{
+"id": "t237",
+"q": "What is the largest island in the Mediterranean?",
+"a": "Sicily",
+"w": [
+"Sardinia",
+"Cyprus",
+"Crete"
+],
+"cat": "Islands",
+"note": "About 25,000 km²."
+},
+{
+"id": "t238",
+"q": "What is the largest island in the Caribbean?",
+"a": "Cuba",
+"w": [
+"Hispaniola",
+"Jamaica",
+"Puerto Rico"
+],
+"cat": "Islands",
+"note": "Cuba is about 1,250 km long."
+},
+{
+"id": "t239",
+"q": "What is the largest island in the Baltic Sea?",
+"a": "Gotland",
+"w": [
+"Öland",
+"Saaremaa",
+"Bornholm"
+],
+"cat": "Islands",
+"note": "Gotland belongs to Sweden."
+},
+{
+"id": "t240",
+"q": "What is the northernmost island of Japan's four main islands?",
+"a": "Hokkaido",
+"w": [
+"Honshu",
+"Kyushu",
+"Shikoku"
+],
+"cat": "Islands",
+"note": "Home to the Sapporo Snow Festival."
+},
+{
+"id": "t241",
+"q": "What country owns the Azores and Madeira?",
+"a": "Portugal",
+"w": [
+"Spain",
+"France",
+"United Kingdom"
+],
+"cat": "Territories",
+"note": "Both are autonomous regions."
+},
+{
+"id": "t242",
+"q": "What country owns the Falkland Islands?",
+"a": "United Kingdom",
+"w": [
+"Argentina",
+"Chile",
+"France"
+],
+"cat": "Territories",
+"note": "Argentina claims them as the Malvinas."
+},
+{
+"id": "t243",
+"q": "What country owns Greenland?",
+"a": "Denmark",
+"w": [
+"Norway",
+"Iceland",
+"Canada"
+],
+"cat": "Territories",
+"note": "Greenland has extensive self-rule."
+},
+{
+"id": "t244",
+"q": "What country owns New Caledonia?",
+"a": "France",
+"w": [
+"Australia",
+"United Kingdom",
+"Vanuatu"
+],
+"cat": "Territories",
+"note": "It holds about a tenth of the world's nickel reserves."
+},
+{
+"id": "t245",
+"q": "What country owns Guam?",
+"a": "United States",
+"w": [
+"Japan",
+"Philippines",
+"Australia"
+],
+"cat": "Territories",
+"note": "Guam's slogan: 'Where America's day begins'."
+},
+{
+"id": "t246",
+"q": "What country owns Aruba and Curaçao?",
+"a": "Kingdom of the Netherlands",
+"w": [
+"Venezuela",
+"Spain",
+"United Kingdom"
+],
+"cat": "Territories",
+"note": "They are constituent countries of the kingdom."
+},
+{
+"id": "t247",
+"q": "What country owns the Canary Islands?",
+"a": "Spain",
+"w": [
+"Portugal",
+"Morocco",
+"France"
+],
+"cat": "Territories",
+"note": "Despite being closer to Africa."
+},
+{
+"id": "t248",
+"q": "What country owns Réunion?",
+"a": "France",
+"w": [
+"Mauritius",
+"Madagascar",
+"United Kingdom"
+],
+"cat": "Territories",
+"note": "It is fully part of the EU, using the euro."
+},
+{
+"id": "t249",
+"q": "Who controls the Svalbard archipelago?",
+"a": "Norway",
+"w": [
+"Russia",
+"Denmark",
+"Iceland"
+],
+"cat": "Territories",
+"note": "A treaty lets citizens of signatory countries live and work there."
+},
+{
+"id": "t250",
+"q": "Which territory has the internet domain .tv, lucratively licensed?",
+"a": "Tuvalu",
+"w": [
+"Tonga",
+"Trinidad and Tobago",
+"Tokelau"
+],
+"cat": "Internet",
+"note": "Licensing .tv brings in a sizable share of government revenue."
+},
+{
+"id": "t251",
+"q": "Which country's domain is .io, popular with tech startups?",
+"a": "British Indian Ocean Territory",
+"w": [
+"Isle of Man",
+"India",
+"Iceland"
+],
+"cat": "Internet",
+"note": "The territory has no permanent civilian residents."
+},
+{
+"id": "t252",
+"q": "Which country's domain is .ai?",
+"a": "Anguilla",
+"w": [
+"Albania",
+"Antigua",
+"Austria"
+],
+"cat": "Internet",
+"note": "The AI boom made it a big earner."
+},
+{
+"id": "t253",
+"q": "Which country's domain is .me?",
+"a": "Montenegro",
+"w": [
+"Mexico",
+"Malaysia",
+"Maldives"
+],
+"cat": "Internet",
+"note": "Popular for personal sites."
+},
+{
+"id": "t254",
+"q": "Which country's domain is .ly, used by URL shorteners?",
+"a": "Libya",
+"w": [
+"Lebanon",
+"Lithuania",
+"Liberia"
+],
+"cat": "Internet",
+"note": "Bit.ly made it famous."
+},
+{
+"id": "t255",
+"q": "Which country's domain is .co?",
+"a": "Colombia",
+"w": [
+"Cook Islands",
+"Congo",
+"Costa Rica"
+],
+"cat": "Internet",
+"note": "Marketed as an alternative to .com."
+},
+{
+"id": "t256",
+"q": "Which country has the domain .de?",
+"a": "Germany",
+"w": [
+"Denmark",
+"Delaware",
+"Dominica"
+],
+"cat": "Internet",
+"note": "One of the most registered country domains."
+},
+{
+"id": "t257",
+"q": "Which country's calling code is +7?",
+"a": "Russia and Kazakhstan",
+"w": [
+"Mongolia",
+"Ukraine",
+"Belarus"
+],
+"cat": "Codes",
+"note": "A leftover from the Soviet numbering plan."
+},
+{
+"id": "t258",
+"q": "Which country uses calling code +1 along with the US?",
+"a": "Canada and many Caribbean nations",
+"w": [
+"Mexico",
+"United Kingdom",
+"Australia"
+],
+"cat": "Codes",
+"note": "The North American Numbering Plan."
+}
+]
