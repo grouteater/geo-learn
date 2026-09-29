@@ -179,3 +179,30 @@ h1,h2,h3{font-family:var(--display);font-weight:400;text-wrap:balance;margin:0;l
 .sheet-bar .title{flex:1;min-width:0;font-family:var(--display);font-size:20px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 html.sheet-open body{overflow:hidden}
 .wiki.full p{color:var(--ink);font-size:15px;line-height:1.6}
+
+/* badges */
+.stat b small{font-size:.6em;color:var(--muted)}
+.medal{flex:none;display:block}
+.medal .face{fill:var(--paper)}
+.medal.bronze .rim{fill:#B87A45}
+.medal.silver .rim{fill:#A7B3B8}
+.medal.gold .rim{fill:#D9AE3A}
+.medal.plat .rim{fill:#8FD0E0}
+.medal.locked .rim{fill:var(--line)}
+.medal.locked .face{fill:var(--muted)}
+.medal.locked g{opacity:.35;filter:grayscale(1)}
+.badges{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.badge{display:grid;grid-template-columns:48px minmax(0,1fr) auto;gap:12px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.badge.locked{background:transparent}
+.badge.locked .badge-name{color:var(--muted)}
+.badge-name{font-weight:700}
+.badge-desc{font-size:14px;color:var(--muted);line-height:1.35}
+.badge-prog{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;margin-top:6px}
+.badge-pts{font-family:var(--mono);font-size:14px;font-variant-numeric:tabular-nums;border:1px solid var(--line);border-radius:99px;padding:2px 9px}
+.ach-toast{position:fixed;left:50%;top:calc(14px + env(safe-area-inset-top,0px));transform:translateX(-50%);z-index:40;display:flex;align-items:center;gap:12px;background:#1B262B;color:#F2F5F3;border-radius:99px;padding:8px 22px 8px 8px;box-shadow:0 10px 30px rgba(0,0,0,.35);animation:achin .45s cubic-bezier(.2,.9,.3,1.2);max-width:calc(100vw - 32px)}
+.ach-toast.out{transition:opacity .3s,transform .3s;opacity:0;transform:translateX(-50%) translateY(-12px)}
+@keyframes achin{from{opacity:0;transform:translateX(-50%) scale(.6)}to{opacity:1;transform:translateX(-50%) scale(1)}}
+.ach-kicker{font-size:12px;opacity:.75}
+.ach-name{font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ach-name .pts{font-family:var(--mono);font-weight:500;color:#D9AE3A;margin-right:4px}
+.ach-name .pts::after{content:" pts ·";color:#F2F5F3;opacity:.6}

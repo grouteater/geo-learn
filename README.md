@@ -17,6 +17,7 @@ A mobile-friendly geography practice app: flags, capitals, maps, physical geogra
 | **Mixed** | All of the above, mixed. |
 | **Atlas** | Every country's flag, facts, map and Wikipedia photo, plus **Wander**, which drops you on a random real place on Earth. |
 | **Progress** | A world map colored by how well you know each country. |
+| **Badges** | 82 unlockable badges worth points, from first answers to full regional sweeps, plus 11 secret ones. |
 
 ## Question selection
 

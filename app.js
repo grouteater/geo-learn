@@ -208,7 +208,7 @@ function mountCountryCard(c, p, root = document){
   wikiIntro($(`#${p}wiki`, root), wikiTitle(c));
 }
 const sheet = [];
-function openCountry(cca3){ if (!BY[cca3]) return; if (sheet[sheet.length - 1] !== cca3) sheet.push(cca3); drawSheet(); }
+function openCountry(cca3){ if (!BY[cca3]) return; if (sheet[sheet.length - 1] !== cca3) sheet.push(cca3); drawSheet(); const e = EV(); e.chain = Math.max(e.chain, sheet.length); evBump('profiles'); }
 function closeSheet(){ sheet.length = 0; drawSheet(); }
 function drawSheet(){
   let el = $('#sheet');
@@ -362,21 +362,165 @@ function nextQ(gens){
   const q = G[g].make(id); q.id = id; q.fresh = !S.seen[id]; return q;
 }
 function record(q, ok){
-  const r = S.seen[q.id] || { n:0, c:0, t:0 }; r.n++; if (ok) r.c++; r.t = Date.now(); S.seen[q.id] = r;
+  const r = S.seen[q.id] || { n:0, c:0, t:0 };
+  const e = EV(); if (ok && r.n > r.c) e.comeback = 1;
+  if (ok) { e.run++; e.missRun = 0; e.bestRun = Math.max(e.bestRun, e.run); } else { e.missRun++; e.run = 0; e.bestMiss = Math.max(e.bestMiss, e.missRun); }
+  const hr = new Date().getHours(); if (hr >= 1 && hr < 4) e.night = 1;
+  r.n++; if (ok) r.c++; r.t = Date.now(); S.seen[q.id] = r;
   S.xp += ok ? (q.fresh ? 15 : 8) : 2;
   const d = today(); if (S.days[S.days.length - 1] !== d) S.days.push(d);
   const c = q.learn && (q.learn.c || null); if (c) S.visited[c.cca3] = 1;
-  save();
+  save(); checkAch();
 }
 function streak(){ let n = 0; const set = new Set(S.days); const d = new Date(); if (!set.has(today())) d.setDate(d.getDate() - 1);
   for (;;) { const k = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`; if (!set.has(k)) break; n++; d.setDate(d.getDate() - 1); } return n; }
 function totals(){ let pool_ = 0; const gens = Object.keys(G).filter(g => !G[g].dyn && active(g)); gens.forEach(g => pool_ += ids(g).length);
   const seen = gens.reduce((a, g) => a + ids(g).filter(i => S.seen[i]).length, 0); return { pool:pool_, seen }; }
 
+/* ---------- achievements ---------- */
+const EV = () => (S.ev = S.ev || { run:0, bestRun:0, missRun:0, bestMiss:0, profiles:0, chain:0, wander:0, dailies:0, perfect:0, comeback:0, night:0, water:0 });
+function tallies(){
+  const t = { n:0, c:0, seen:0, gs:{}, gc:{}, ok:new Set(), flagOk:new Set(), capOk:new Set(), mapOk:new Set(), featSeen:new Set(), featOk:new Set() };
+  for (const id in S.seen) {
+    const r = S.seen[id], [g, k] = id.split(':');
+    t.n += r.n; t.c += r.c; t.seen++; t.gs[g] = (t.gs[g] || 0) + 1;
+    if (g === 'fp' || g === 'fw' || g === 'fpin') t.featSeen.add(k);
+    if (!r.c) continue;
+    t.gc[g] = (t.gc[g] || 0) + 1;
+    if (BY[k]) t.ok.add(k);
+    if (g === 'flag' || g === 'flagr') t.flagOk.add(k);
+    if (g === 'cap' || g === 'capr') t.capOk.add(k);
+    if (g === 'map' || g === 'find') t.mapOk.add(k);
+    if (g === 'fp' || g === 'fw' || g === 'fpin') t.featOk.add(k);
+  }
+  t.ev = EV(); return t;
+}
+const sov = r => C.filter(c => c.independent && (!r || c.region === r));
+const allIn = (set, list) => list.every(c => set.has(c.cca3));
+const countIn = (set, list) => list.filter(c => set.has(c.cca3)).length;
+const byName = (...n) => n.map(x => C.find(c => c.name === x)).filter(Boolean);
+const featsOf = re => FEAT.filter(f => re.test(f.type));
+const G_ = (t, ...gs) => gs.reduce((a, g) => a + (t.gc[g] || 0), 0);
+
+/* [id, name, description, points, icon, check(t) -> bool | [current, goal], secret] */
+const ACH_DEF = [
+  ['first', 'First Steps', 'Answer your first question.', 5, 'mix', t => t.n >= 1],
+  ['q50', 'Getting Oriented', 'Answer 50 questions.', 10, 'mix', t => [t.n, 50]],
+  ['q250', 'Well Traveled', 'Answer 250 questions.', 20, 'mix', t => [t.n, 250]],
+  ['q1000', 'Seasoned Navigator', 'Answer 1,000 questions.', 30, 'mix', t => [t.n, 1000]],
+  ['q2500', 'Globetrotter', 'Answer 2,500 questions.', 50, 'mix', t => [t.n, 2500]],
+  ['seenall', 'Encyclopedic', 'See every question in the game.', 100, 'mix', t => [t.seen, totals().pool]],
+  ['run10', 'Hot Streak', 'Get 10 answers right in a row.', 10, 'star', t => [t.ev.bestRun, 10]],
+  ['run25', 'On a Roll', 'Get 25 answers right in a row.', 25, 'star', t => [t.ev.bestRun, 25]],
+  ['run50', 'Unstoppable', 'Get 50 answers right in a row.', 50, 'star', t => [t.ev.bestRun, 50]],
+  ['run100', 'Infallible', 'Get 100 answers right in a row.', 100, 'star', t => [t.ev.bestRun, 100]],
+  ['day3', 'Habit Forming', 'Play 3 days in a row.', 10, 'star', () => [streak(), 3]],
+  ['day7', 'Weekly Regular', 'Play 7 days in a row.', 20, 'star', () => [streak(), 7]],
+  ['day30', 'Month of Maps', 'Play 30 days in a row.', 50, 'star', () => [streak(), 30]],
+  ['day100', 'Centurion', 'Play 100 days in a row.', 100, 'star', () => [streak(), 100]],
+  ['daily1', 'Daily Driver', 'Finish a daily challenge.', 10, 'star', t => t.ev.dailies >= 1],
+  ['daily10', 'Creature of Habit', 'Finish 10 daily challenges.', 25, 'star', t => [t.ev.dailies, 10]],
+  ['daily50', 'Daily Devotee', 'Finish 50 daily challenges.', 50, 'star', t => [t.ev.dailies, 50]],
+  ['perfect', 'Flawless', 'Score 10/10 on a daily challenge.', 30, 'star', t => t.ev.perfect >= 1],
+  ['perfect5', 'Flawless Five', 'Score 10/10 on five daily challenges.', 50, 'star', t => [t.ev.perfect, 5]],
+  ['flag25', 'Vexillology 101', 'Get 25 flag questions right.', 10, 'flag', t => [G_(t, 'flag', 'flagr'), 25]],
+  ['flag100', 'Flag Bearer', 'Get 100 flag questions right.', 25, 'flag', t => [G_(t, 'flag', 'flagr'), 100]],
+  ['flagEU', 'European Colors', 'Identify every flag in Europe.', 30, 'flag', t => [countIn(t.flagOk, sov('Europe')), sov('Europe').length]],
+  ['flagAF', 'African Colors', 'Identify every flag in Africa.', 30, 'flag', t => [countIn(t.flagOk, sov('Africa')), sov('Africa').length]],
+  ['flagAS', 'Asian Colors', 'Identify every flag in Asia.', 30, 'flag', t => [countIn(t.flagOk, sov('Asia')), sov('Asia').length]],
+  ['flagAM', 'American Colors', 'Identify every flag in the Americas.', 30, 'flag', t => [countIn(t.flagOk, sov('Americas')), sov('Americas').length]],
+  ['flagOC', 'Pacific Colors', 'Identify every flag in Oceania.', 25, 'flag', t => [countIn(t.flagOk, sov('Oceania')), sov('Oceania').length]],
+  ['flagall', 'Vexillologist', 'Identify every sovereign flag.', 100, 'flag', t => [countIn(t.flagOk, sov()), sov().length]],
+  ['cap25', 'Capital Idea', 'Get 25 capital questions right.', 10, 'cap', t => [G_(t, 'cap', 'capr'), 25]],
+  ['cap100', 'Seat of Government', 'Get 100 capital questions right.', 25, 'cap', t => [G_(t, 'cap', 'capr'), 100]],
+  ['capEU', 'Grand Tour', 'Know every capital in Europe.', 30, 'cap', t => [countIn(t.capOk, sov('Europe')), sov('Europe').length]],
+  ['capAF', 'Pan-African', 'Know every capital in Africa.', 30, 'cap', t => [countIn(t.capOk, sov('Africa')), sov('Africa').length]],
+  ['capAS', 'Silk Road', 'Know every capital in Asia.', 30, 'cap', t => [countIn(t.capOk, sov('Asia')), sov('Asia').length]],
+  ['capAM', 'Pan-American', 'Know every capital in the Americas.', 30, 'cap', t => [countIn(t.capOk, sov('Americas')), sov('Americas').length]],
+  ['capall', 'Head of State', 'Know every sovereign capital.', 100, 'cap', t => [countIn(t.capOk, sov().filter(c => c.capital.length)), sov().filter(c => c.capital.length).length]],
+  ['find1', 'X Marks the Spot', 'Tap the right country on the map.', 5, 'globe', t => (t.gc.find || 0) >= 1],
+  ['find50', 'Sharpshooter', 'Locate 50 countries on the map.', 25, 'globe', t => [t.gc.find || 0, 50]],
+  ['map100', 'Cartographer', 'Get 100 map questions right.', 30, 'globe', t => [G_(t, 'map', 'find', 'nb'), 100]],
+  ['nb25', 'Good Neighbors', 'Get 25 border questions right.', 15, 'globe', t => [t.gc.nb || 0, 25]],
+  ['world5', 'Around the World', 'Get a question right about a country on every inhabited continent.', 10, 'globe', t => ['Africa','Americas','Asia','Europe','Oceania'].every(r => sov(r).some(c => t.ok.has(c.cca3)))],
+  ['shape25', 'Shape Shifter', 'Identify 25 countries by outline.', 15, 'shape', t => [t.gc.shape || 0, 25]],
+  ['shape100', 'Silhouette Savant', 'Identify 100 countries by outline.', 40, 'shape', t => [t.gc.shape || 0, 100]],
+  ['feat25', 'Field Guide', 'Get 25 physical geography questions right.', 15, 'peak', t => [G_(t, 'fp', 'fw', 'fpin'), 25]],
+  ['feat100', 'Surveyor', 'Get 100 physical geography questions right.', 30, 'peak', t => [G_(t, 'fp', 'fw', 'fpin'), 100]],
+  ['rivers', 'Downstream', 'Get a question right on every river.', 30, 'peak', t => [countIn2(t.featOk, featsOf(/^River$/)), featsOf(/^River$/).length]],
+  ['peaks', 'Summit Fever', 'Get a question right on every mountain.', 30, 'peak', t => [countIn2(t.featOk, featsOf(/^Mountain$/)), featsOf(/^Mountain$/).length]],
+  ['volc', 'Ring of Fire', 'Get a question right on every volcano.', 25, 'peak', t => [countIn2(t.featOk, featsOf(/Volcano/)), featsOf(/Volcano/).length]],
+  ['lakes', 'Still Waters', 'Get a question right on every lake.', 25, 'peak', t => [countIn2(t.featOk, featsOf(/^Lakes?$/)), featsOf(/^Lakes?$/).length]],
+  ['deserts', 'Dry Spell', 'Get a question right on every desert.', 20, 'peak', t => [countIn2(t.featOk, featsOf(/Desert/)), featsOf(/Desert/).length]],
+  ['straits', 'Chokepoint', 'Get a question right on every strait and canal.', 20, 'peak', t => [countIn2(t.featOk, featsOf(/Strait|Canal/)), featsOf(/Strait|Canal/).length]],
+  ['islands', 'Castaway', 'Get a question right on every island and archipelago.', 25, 'peak', t => [countIn2(t.featOk, featsOf(/Island|Archipelago/)), featsOf(/Island|Archipelago/).length]],
+  ['featall', 'Physical Geographer', 'Get a question right on every physical feature.', 100, 'peak', t => [t.featOk.size, FEAT.length]],
+  ['triv25', 'Pub Quizzer', 'Get 25 trivia questions right.', 15, 'deep', t => [t.gc.triv || 0, 25]],
+  ['triv100', 'Quiz Night Legend', 'Get 100 trivia questions right.', 40, 'deep', t => [t.gc.triv || 0, 100]],
+  ['trivall', 'Know-It-All', 'See every trivia question.', 50, 'deep', t => [t.gs.triv || 0, TRIV.length]],
+  ['money', 'Money Talks', 'Get 20 currency questions right.', 15, 'deep', t => [t.gc.cur || 0, 20]],
+  ['polyglot', 'Polyglot', 'Get 20 language questions right.', 15, 'deep', t => [t.gc.lang || 0, 20]],
+  ['dotcom', 'Dot Com', 'Get 25 web domain questions right.', 15, 'deep', t => [t.gc.tld || 0, 25]],
+  ['dial', 'Long Distance', 'Get 25 dialing code questions right.', 15, 'deep', t => [t.gc.tel || 0, 25]],
+  ['demonym', 'What Do You Call Them', 'Get 20 demonym questions right.', 15, 'deep', t => [t.gc.dem || 0, 20]],
+  ['size5', 'Measuring Up', 'Reach a streak of 5 in Area Comparison.', 10, 'size', () => [S.bestSize || 0, 5]],
+  ['size15', 'Land Surveyor', 'Reach a streak of 15 in Area Comparison.', 25, 'size', () => [S.bestSize || 0, 15]],
+  ['size30', 'Sense of Scale', 'Reach a streak of 30 in Area Comparison.', 50, 'size', () => [S.bestSize || 0, 30]],
+  ['prof10', 'Curious', 'Open 10 country profiles.', 5, 'globe', t => [t.ev.profiles, 10]],
+  ['prof100', 'Researcher', 'Open 100 country profiles.', 20, 'globe', t => [t.ev.profiles, 100]],
+  ['studyall', 'Every Corner', 'Study every sovereign country.', 50, 'globe', () => [sov().filter(c => S.visited[c.cca3]).length, sov().length]],
+  ['chain5', 'Rabbit Hole', 'Follow country links five profiles deep.', 15, 'globe', t => [t.ev.chain, 5]],
+  ['wander1', 'Wanderer', 'Visit a random location.', 5, 'compass', t => t.ev.wander >= 1],
+  ['wander25', 'Drifter', 'Visit 25 random locations.', 20, 'compass', t => [t.ev.wander, 25]],
+  ['wander100', 'Nomad', 'Visit 100 random locations.', 40, 'compass', t => [t.ev.wander, 100]],
+  ['big5', 'Heavyweights', 'Get questions right about Russia, Canada, China, the US and Brazil.', 10, 'size', t => allIn(t.ok, byName('Russia','Canada','China','United States','Brazil'))],
+  ['tiny', 'Micro Manager', 'Get questions right about Vatican City, Monaco, San Marino, Liechtenstein, Nauru and Tuvalu.', 20, 'size', t => allIn(t.ok, byName('Vatican City','Monaco','San Marino','Liechtenstein','Nauru','Tuvalu')), true],
+  ['stans', 'Stan Clan', 'Get questions right about all seven countries ending in -stan.', 20, 'secret', t => allIn(t.ok, C.filter(c => /stan$/.test(c.name))), true],
+  ['dbl', 'Doubly Landlocked', 'Get questions right about Liechtenstein and Uzbekistan.', 15, 'secret', t => allIn(t.ok, byName('Liechtenstein','Uzbekistan')), true],
+  ['twins', 'Seeing Double', 'Identify the flags of Chad and Romania.', 15, 'secret', t => allIn(t.flagOk, byName('Chad','Romania')), true],
+  ['twins2', 'Red Over White', 'Identify the flags of Indonesia, Monaco and Poland.', 15, 'secret', t => allIn(t.flagOk, byName('Indonesia','Monaco','Poland')), true],
+  ['nordic', 'Nordic Cross', 'Identify the flags of Denmark, Norway, Sweden, Finland and Iceland.', 15, 'secret', t => allIn(t.flagOk, byName('Denmark','Norway','Sweden','Finland','Iceland')), true],
+  ['comeback', 'Redemption', 'Get a question right that you missed before.', 10, 'secret', t => t.ev.comeback >= 1, true],
+  ['water', 'Man Overboard', 'Tap open ocean when asked to find a country.', 5, 'secret', t => t.ev.water >= 1, true],
+  ['miss5', 'Lost at Sea', 'Miss 5 questions in a row.', 5, 'secret', t => t.ev.bestMiss >= 5, true],
+  ['night', 'Night Owl', 'Answer a question between 1 and 4 AM.', 10, 'secret', t => t.ev.night >= 1, true],
+  ['antarctica', 'Southern Exposure', 'Get questions right about Mount Erebus, Vinson Massif and Lambert Glacier.', 15, 'secret', t => ['erebus','vinson','lambert'].every(x => t.featOk.has(x)), true],
+  ['completionist', 'Completionist', 'Unlock every other badge.', 100, 'star', () => [ACH.filter(a => a.id !== 'completionist' && S.ach[a.id]).length, ACH.length - 1]],
+];
+function countIn2(set, feats){ return feats.filter(f => set.has(f.id)).length; }
+const ACH = ACH_DEF.map(([id, name, desc, pts, icon, check, secret]) => ({ id, name, desc, pts, icon, check, secret:!!secret }));
+const done = v => Array.isArray(v) ? v[0] >= v[1] && v[1] > 0 : !!v;
+const achQueue = [];
+function checkAch(){
+  S.ach = S.ach || {};
+  if (!C.length) return;
+  const t = tallies(); const fresh = [];
+  for (let pass = 0; pass < 2; pass++) for (const a of ACH) {
+    if (S.ach[a.id]) continue;
+    let v; try { v = a.check(t); } catch (e) { v = false; }
+    if (done(v)) { S.ach[a.id] = Date.now(); fresh.push(a); }
+  }
+  if (fresh.length) { save(); fresh.forEach(a => achQueue.push(a)); if (achQueue.length === fresh.length) showAch(); }
+}
+function tier(p){ return p >= 100 ? 'plat' : p >= 30 ? 'gold' : p >= 15 ? 'silver' : 'bronze'; }
+function medal(a, locked){
+  const inner = a.icon === 'secret' && locked ? '<text x="24" y="28" text-anchor="middle" font-size="18" font-family="var(--display)" fill="var(--ink)">?</text>' : `<g transform="translate(8 10) scale(.66)">${(GLYPH[a.icon] || GLYPH.mix).replace(/<svg[^>]*>|<\/svg>/g, '')}</g>`;
+  return `<svg class="medal ${locked ? 'locked' : tier(a.pts)}" viewBox="0 0 48 48" width="48" height="48" aria-hidden="true"><circle cx="24" cy="24" r="22" class="rim"/><circle cx="24" cy="24" r="17" class="face"/>${inner}</svg>`;
+}
+function showAch(){
+  const a = achQueue[0]; if (!a) return;
+  const el = document.createElement('div'); el.className = 'ach-toast'; el.setAttribute('role', 'status');
+  el.innerHTML = `${medal(a)}<div><div class="ach-kicker">Badge unlocked</div><div class="ach-name"><span class="pts">${a.pts}</span> ${esc(a.name)}</div></div>`;
+  document.body.appendChild(el);
+  setTimeout(() => { el.classList.add('out'); setTimeout(() => { el.remove(); achQueue.shift(); showAch(); }, 350); }, 3400);
+}
+function evBump(k, v = 1){ const e = EV(); e[k] = (e[k] || 0) + v; save(); checkAch(); }
+function achPoints(){ return ACH.reduce((a, x) => a + (S.ach?.[x.id] ? x.pts : 0), 0); }
+
 /* ---------- views ---------- */
 const app = $('#app');
 let view = null;
-function go(v, arg){ closeSheet(); window.scrollTo(0, 0); rnd = Math.random; view = v; ({ hub, play, daily, atlas, progress })[v](arg); }
+function go(v, arg){ closeSheet(); window.scrollTo(0, 0); rnd = Math.random; view = v; ({ hub, play, daily, atlas, progress, badges })[v](arg); }
 
 const GLYPH = {
   flag:'<svg viewBox="0 0 48 40" width="48"><rect x="4" y="6" width="36" height="24" rx="2" fill="var(--mark)"/><rect x="4" y="14" width="36" height="8" fill="var(--paper)"/><rect x="3" y="4" width="2" height="34" fill="var(--ink)"/></svg>',
@@ -386,6 +530,8 @@ const GLYPH = {
   peak:'<svg viewBox="0 0 48 40" width="48"><path d="M2 36 18 10l7 10 5-6 16 22z" fill="var(--sea)"/><path d="M18 10l4 6-4-1-3 3z" fill="var(--paper)"/></svg>',
   deep:'<svg viewBox="0 0 48 40" width="48"><circle cx="20" cy="18" r="11" fill="none" stroke="var(--ink)" stroke-width="3"/><path d="M28 26l10 10" stroke="var(--mark)" stroke-width="5" stroke-linecap="round"/></svg>',
   size:'<svg viewBox="0 0 48 40" width="48"><rect x="4" y="18" width="14" height="16" fill="var(--sea)"/><rect x="22" y="6" width="22" height="28" fill="var(--mark)"/></svg>',
+  star:'<svg viewBox="0 0 48 40" width="48"><path d="M24 3l5.6 11.4 12.6 1.8-9.1 8.9 2.1 12.5L24 31.7l-11.2 5.9 2.1-12.5-9.1-8.9 12.6-1.8z" fill="var(--mark)"/></svg>',
+  compass:'<svg viewBox="0 0 48 40" width="48"><circle cx="24" cy="20" r="17" fill="none" stroke="var(--ink)" stroke-width="2.5"/><path d="M24 6l5 14-5 14-5-14z" fill="var(--sea)"/><path d="M24 6l5 14h-10z" fill="var(--mark)"/></svg>',
   mix:'<svg viewBox="0 0 48 40" width="48"><rect x="4" y="4" width="18" height="14" rx="2" fill="var(--mark)"/><rect x="26" y="4" width="18" height="14" rx="2" fill="var(--sea)"/><rect x="4" y="22" width="18" height="14" rx="2" fill="var(--ink)"/><rect x="26" y="22" width="18" height="14" rx="2" fill="var(--land)"/></svg>',
 };
 
@@ -402,7 +548,7 @@ function hub(){
       <div class="stat"><b>${fmt(t.seen)}</b><span>questions seen</span></div>
       <div class="stat"><b>${Object.keys(S.visited).length}</b><span>countries studied</span></div>
       <div class="stat"><b>${streak()}</b><span>day streak</span></div>
-      <div class="stat"><b>${fmt(S.xp)}</b><span>XP</span></div>
+      <div class="stat"><b>${Object.keys(S.ach || {}).length}<small>/${ACH.length}</small></b><span>badges</span></div>
     </div>
     <div class="meter" aria-label="questions seen"><i style="width:${(pct*100).toFixed(1)}%"></i></div>
     <div class="coord">${fmt(t.seen)} of ${fmt(t.pool)} questions seen</div>
@@ -417,6 +563,7 @@ function hub(){
   <div class="modes">
     <button class="mode" data-go="atlas"><div class="glyph">${GLYPH.globe}</div><h3>Atlas</h3><p>Browse every country and territory, or explore random locations with Wander.</p></button>
     <button class="mode" data-go="progress"><div class="glyph">${GLYPH.size}</div><h3>Progress</h3><p>Coverage map, stats and settings.</p></button>
+    <button class="mode wide" data-go="badges"><div class="glyph">${GLYPH.star}</div><div><h3>Badges</h3><p>${Object.keys(S.ach || {}).length} of ${ACH.length} unlocked · ${achPoints()} of ${ACH.reduce((a, x) => a + x.pts, 0)} points</p></div></button>
   </div>`;
   const g = new Globe($('#heroGlobe'));
   const known = {}; Object.keys(S.visited).forEach(k => known[k] = 'right');
@@ -504,7 +651,7 @@ function renderQ(q, host, done, { nextLabel = 'Next' } = {}){
     const hit = WORLD.find(w => d3.geoContains(w, ll));
     const ok = (f && d3.geoContains(f, ll)) || (t.area < 30000 && d3.geoDistance(ll, center(t)) < 0.03);
     if (!ok && hit && hit.cca3) mediaGlobe.cls = { [hit.cca3]:'wrong' };
-    const tapped = hit && hit.cca3 ? BY[hit.cca3] : null;
+    const tapped = hit && hit.cca3 ? BY[hit.cca3] : null; if (!hit && !ok) EV().water = 1;
     const hint = $('#taphint', host); if (hint) hint.innerHTML = ok ? 'Correct location.' : tapped ? `You tapped ${clink(tapped)}.` : 'You tapped open water.';
     finish(ok, ll);
   }
@@ -519,7 +666,7 @@ function play(modeKey){
   const step = () => {
     const q = nextQ(m.gens);
     renderQ(q, $('#stage'), ok => { total++; if (ok) { right++; run++; best = Math.max(best, run); } else run = 0;
-      if (m.key === 'size' && best > (S.bestSize || 0)) { S.bestSize = best; save(); }
+      if (m.key === 'size' && best > (S.bestSize || 0)) { S.bestSize = best; save(); checkAch(); }
       $('#tally').innerHTML = tallyHTML(); window.scrollTo(0, 0); step(); });
   };
   step();
@@ -538,7 +685,7 @@ function daily(){
   const step = () => {
     $('#tally').innerHTML = `<b>${i + 1}</b>/10`;
     renderQ(qs[i], $('#stage'), ok => { marks.push(ok ? 1 : 0); i++; window.scrollTo(0, 0);
-      if (i < qs.length) step(); else { const res = { score:marks.reduce((a, b) => a + b, 0), marks }; S.daily[d] = res; save(); dailyResult(res); } }, { nextLabel: i === 9 ? 'See result' : 'Next' });
+      if (i < qs.length) step(); else { const res = { score:marks.reduce((a, b) => a + b, 0), marks }; S.daily[d] = res; if (res.score === 10) EV().perfect++; evBump('dailies'); dailyResult(res); } }, { nextLabel: i === 9 ? 'See result' : 'Next' });
   };
   step();
 }
@@ -576,7 +723,7 @@ function atlasCountries(){
   $('#surprise').onclick = () => { const u = pool().filter(c => !S.visited[c.cca3]); dossier(pick(u.length ? u : pool())); };
 }
 function dossier(c){
-  S.visited[c.cca3] = 1; save();
+  S.visited[c.cca3] = 1; evBump('profiles');
   app.innerHTML = bar(c.name) + `<div class="qwrap"><div class="learn"><div class="learn-body">${countryCard(c, 'd')}</div></div>
     <div class="btnrow"><button class="btn primary" id="another">Random unstudied country</button><button class="btn" id="toAtlas">All countries</button></div></div>`;
   mountCountryCard(c, 'd');
@@ -607,7 +754,7 @@ async function wander(){
     }
     btn.disabled = false; btn.textContent = 'Another location';
     if (!found) { $('#wl').innerHTML = '<p class="muted">No articles found near that spot. Try another.</p>'; return; }
-    S.wander = [...(S.wander || []), ...found.pages.map(p => p.pageid)].slice(-600); S.visited[found.c.cca3] = 1; save();
+    S.wander = [...(S.wander || []), ...found.pages.map(p => p.pageid)].slice(-600); S.visited[found.c.cca3] = 1; evBump('wander');
     g.view({ ll:[found.lng, found.lat], ang:0.5, cls:{ [found.c.cca3]:'hl' }, marks:[{ ll:[found.lng, found.lat], type:'pin', label:found.c.name }] });
     $('#wl').innerHTML = `<div class="eyebrow">${clink(found.c)} · <span class="coord">${ll2txt(found.lat, found.lng)}</span></div>` +
       found.pages.map(p => `<article class="wander-card"><img src="${esc(p.thumbnail.source)}" alt="${esc(p.title)}" loading="lazy"><h3>${esc(p.title)}</h3><p class="note">${linkify(p.extract)}</p>
@@ -647,8 +794,32 @@ function progress(){
     S = { seen:{}, xp:0, days:[], daily:{}, visited:{}, terr:S.terr, wander:[] }; save(); toast('Progress reset'); go('hub'); };
 }
 
+
+/* ---------- badges ---------- */
+function badges(filter = 'all'){
+  S.ach = S.ach || {};
+  const t = tallies(); const total = ACH.reduce((a, x) => a + x.pts, 0); const got = achPoints(); const n = Object.keys(S.ach).length;
+  const list = ACH.filter(a => filter === 'all' || (filter === 'got') === !!S.ach[a.id]);
+  const row = a => {
+    const u = S.ach[a.id]; const hide = a.secret && !u;
+    let v; try { v = a.check(t); } catch (e) { v = false; }
+    const prog = !u && !hide && Array.isArray(v) && v[1] > 1 ? `<div class="meter"><i style="width:${Math.min(100, v[0] / v[1] * 100)}%"></i></div><span class="coord">${fmt(Math.min(v[0], v[1]))}/${fmt(v[1])}</span>` : '';
+    return `<li class="badge${u ? '' : ' locked'}">${medal(a, !u)}<div class="badge-text"><div class="badge-name">${hide ? 'Secret badge' : esc(a.name)}</div>
+      <div class="badge-desc">${hide ? 'Keep playing to reveal this one.' : esc(a.desc)}</div>${prog ? `<div class="badge-prog">${prog}</div>` : ''}
+      ${u ? `<div class="coord">Unlocked ${new Date(u).toLocaleDateString('en-US', { month:'short', day:'numeric', year:'numeric' })}</div>` : ''}</div><div class="badge-pts">${a.pts}</div></li>`;
+  };
+  app.innerHTML = bar('Badges', `<span class="tally"><b>${got}</b>/${total} pts</span>`) + `<div class="qwrap">
+    <div class="stats"><div class="stat"><b>${n}<small>/${ACH.length}</small></b><span>unlocked</span></div><div class="stat"><b>${got}</b><span>points</span></div>
+    <div class="stat"><b>${ACH.filter(a => a.secret && S.ach[a.id]).length}<small>/${ACH.filter(a => a.secret).length}</small></b><span>secrets found</span></div></div>
+    <div class="meter"><i style="width:${got / total * 100}%"></i></div>
+    <div class="tabs" role="tablist">${[['all','All'],['got','Unlocked'],['todo','Locked']].map(([k, l]) => `<button class="tab" role="tab" data-f="${k}" aria-selected="${filter === k}">${l}</button>`).join('')}</div>
+    <ul class="badges">${list.map(row).join('')}</ul></div>`;
+  $('#back').onclick = () => go('hub');
+  app.querySelectorAll('[data-f]').forEach(b => b.onclick = () => badges(b.dataset.f));
+}
+
 /* ---------- boot ---------- */
-Promise.all([loadData(), probeWiki()]).then(() => go('hub')).catch(e => {
+Promise.all([loadData(), probeWiki()]).then(() => { go('hub'); checkAch(); }).catch(e => {
   app.innerHTML = `<div class="boot"><p>Couldn't load data (${esc(e.message)}). Serve this folder over http, for example with <code>python3 -m http.server</code>.</p></div>`;
 });
 })();
