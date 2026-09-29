@@ -1,4 +1,4 @@
-/* Geo Learn: a geography game suite that always prefers things you haven't seen yet. */
+/* Geo Learn: geography practice. */
 (() => {
 'use strict';
 
@@ -33,6 +33,7 @@ async function loadData(){
   const byN = {}; WORLD.forEach(f => { if (f.id) byN[f.id] = f; if (f.properties.name === 'Kosovo') byN.KOS = f; });
   C.forEach(c => { const f = c.cca3 === 'UNK' ? byN.KOS : byN[c.ccn3]; if (f) { GEOM[c.cca3] = f; f.cca3 = c.cca3; } });
   for (const k in GEOM) MAIN[k] = mainland(GEOM[k]);
+  buildNames();
 }
 /* keep the polygons near the largest one so far-flung islands don't wreck shapes and globe framing */
 function mainland(f){
@@ -86,12 +87,12 @@ const wikiTitle = c => ({ GEO:'Georgia (country)', COG:'Republic of the Congo', 
 function wikiBlock(el, title, opts = {}){
   if (!el) return;
   if (WIKI_OK === false) { el.innerHTML = `<p><a href="https://en.wikipedia.org/wiki/${encodeURIComponent(title)}" target="_blank" rel="noopener">Read about ${esc(title)} on Wikipedia</a></p>`; return; }
-  el.innerHTML = '<p class="muted">Fetching a picture…</p>';
+  el.innerHTML = '<p class="muted">Loading…</p>';
   wiki(title).then(d => {
     if (!d) { el.innerHTML = ''; return; }
     const img = (d.originalimage && d.originalimage.width < 2600 ? d.originalimage.source : d.thumbnail && d.thumbnail.source);
     const ex = opts.short ? (d.extract || '').split(/(?<=\.)\s/).slice(0,2).join(' ') : d.extract;
-    el.innerHTML = `${img ? `<img src="${esc(img)}" alt="${esc(d.title)}" loading="lazy">` : ''}<p>${esc(ex)}</p>
+    el.innerHTML = `${img ? `<img src="${esc(img)}" alt="${esc(d.title)}" loading="lazy">` : ''}<p>${linkify(ex)}</p>
       <p><a href="${esc(d.content_urls?.desktop?.page || '')}" target="_blank" rel="noopener">More on Wikipedia</a></p>`;
   });
 }
@@ -159,11 +160,74 @@ function countryFacts(c){
   const rows = [
     ['Capital', c.capital.join(', ') || 'None'], ['Region', c.subregion || c.region],
     ['Area', fmt(c.area) + ' km²'], ['Languages', c.languages.join(', ')], ['Currency', c.currencies.join(', ')],
-    ['People', c.demonym], ['Borders', nb.length ? nb.join(', ') : (c.landlocked ? 'Landlocked' : 'None (island or coast only)')],
+    ['People', c.demonym], ['Borders', nb.length ? { html: c.borders.filter(b => BY[b]).map(b => clink(BY[b])).join(', ') } : (c.landlocked ? 'Landlocked' : 'None (island or coast only)')],
     ['Domain · Dial', `${c.tld || '–'} · ${c.phone || '–'}`], ['Status', c.independent ? (c.un ? 'Sovereign, UN member' : 'Sovereign, not in the UN') : 'Territory or dependency'],
   ];
-  return `<dl class="facts">${rows.filter(r => r[1]).map(r => `<dt>${r[0]}</dt><dd>${esc(r[1])}</dd>`).join('')}</dl>`;
+  return `<dl class="facts">${rows.filter(r => r[1]).map(r => `<dt>${r[0]}</dt><dd>${r[1].html || esc(r[1])}</dd>`).join('')}</dl>`;
 }
+
+/* ---------- country links: any country name in the app opens a profile panel ---------- */
+const clink = (c, label) => `<button type="button" class="clink" data-country="${c.cca3}">${esc(label || c.name)}</button>`;
+let NAME_RE = null; const NAME_MAP = {};
+function buildNames(){
+  C.forEach(c => NAME_MAP[c.name] = c.cca3);
+  Object.assign(NAME_MAP, { "Côte d'Ivoire":'CIV', 'Democratic Republic of the Congo':'COD', 'Czech Republic':'CZE', 'East Timor':'TLS', 'Burma':'MMR', 'Swaziland':'SWZ', 'Vatican':'VAT', 'UK':'GBR', 'USA':'USA', 'US':'USA', 'Persia':'IRN', 'Siam':'THA', 'Ceylon':'LKA' });
+  const names = Object.keys(NAME_MAP).sort((a, b) => b.length - a.length).map(n => n.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+  NAME_RE = new RegExp(`(?<![\\p{L}])(?<!New |Gulf of |Northern |Lake |Mount |Sea of |South )(${names.join('|')})(?![\\p{L}])(?! River| Delta| Basin| Canal)`, 'gu');
+}
+function linkify(text){
+  text = String(text ?? ''); if (!NAME_RE) return esc(text);
+  let out = '', last = 0;
+  for (const m of text.matchAll(NAME_RE)) { out += esc(text.slice(last, m.index)) + clink(BY[NAME_MAP[m[0]]], m[0]); last = m.index + m[0].length; }
+  return out + esc(text.slice(last));
+}
+async function wikiIntro(el, title){
+  if (!el) return;
+  const link = `https://en.wikipedia.org/wiki/${encodeURIComponent(title.replace(/ /g, '_'))}`;
+  if (WIKI_OK === false) { el.innerHTML = `<p><a href="${link}" target="_blank" rel="noopener">Read about ${esc(title)} on Wikipedia</a></p>`; return; }
+  el.innerHTML = '<p class="muted">Loading…</p>';
+  try {
+    const u = `https://en.wikipedia.org/w/api.php?action=query&format=json&origin=*&redirects=1&prop=extracts|pageimages&exintro=1&explaintext=1&piprop=thumbnail&pithumbsize=900&titles=${encodeURIComponent(title)}`;
+    const d = await (await fetch(u)).json();
+    const p = Object.values(d.query?.pages || {})[0];
+    if (!p || p.missing !== undefined) throw new Error('missing');
+    const paras = (p.extract || '').split(/\n+/).filter(x => x.trim());
+    el.innerHTML = `${p.thumbnail ? `<img src="${esc(p.thumbnail.source)}" alt="${esc(p.title)}" loading="lazy">` : ''}
+      ${paras.map(x => `<p>${linkify(x)}</p>`).join('')}<p><a href="https://en.wikipedia.org/?curid=${p.pageid}" target="_blank" rel="noopener">Continue reading on Wikipedia</a></p>`;
+  } catch (e) { el.innerHTML = `<p><a href="${link}" target="_blank" rel="noopener">Read about ${esc(title)} on Wikipedia</a></p>`; }
+}
+function countryCard(c, p){
+  const feats = FEAT.filter(f => f.where.includes(c.name));
+  return `<div class="learn-head">${flagBox(c.cca3)}<div><h3>${esc(c.name)}</h3><div class="muted" style="font-size:13px">${esc(c.official)}</div><div class="coord">${ll2txt(c.latlng[0], c.latlng[1])}</div></div></div>
+    <div id="${p}globe"></div>${countryFacts(c)}
+    ${feats.length ? `<div><div class="eyebrow">Physical features</div><p class="note">${feats.map(f => esc(f.name)).join(' · ')}</p></div>` : ''}
+    <div class="wiki full" id="${p}wiki"></div>`;
+}
+function mountCountryCard(c, p, root = document){
+  const g = new Globe($(`#${p}globe`, root)); g.view({ ll:center(c), ang:Math.max(angOf(c) * 1.4, 0.25), cls:{ [c.cca3]:'hl' }, marks:countryMarks(c), dur:0 });
+  wikiIntro($(`#${p}wiki`, root), wikiTitle(c));
+}
+const sheet = [];
+function openCountry(cca3){ if (!BY[cca3]) return; if (sheet[sheet.length - 1] !== cca3) sheet.push(cca3); drawSheet(); }
+function closeSheet(){ sheet.length = 0; drawSheet(); }
+function drawSheet(){
+  let el = $('#sheet');
+  if (!sheet.length) { if (el) el.remove(); document.documentElement.classList.remove('sheet-open'); return; }
+  if (!el) { el = document.createElement('div'); el.id = 'sheet'; el.className = 'sheet-wrap'; document.body.appendChild(el);
+    el.addEventListener('click', e => { if (e.target === el) closeSheet(); }); }
+  document.documentElement.classList.add('sheet-open');
+  const c = BY[sheet[sheet.length - 1]]; S.visited[c.cca3] = 1; save();
+  el.innerHTML = `<div class="sheet" role="dialog" aria-modal="true" aria-label="${esc(c.name)}">
+    <div class="sheet-bar">${sheet.length > 1 ? `<button class="iconbtn" data-sheet="back" aria-label="Back to ${esc(BY[sheet[sheet.length - 2]].name)}">←</button>` : ''}<div class="title">${esc(c.name)}</div><button class="iconbtn" data-sheet="close" aria-label="Close">✕</button></div>
+    <div class="learn-body" style="padding:0">${countryCard(c, 's')}</div></div>`;
+  mountCountryCard(c, 's', el);
+  $('.sheet', el).scrollTop = 0; $('[data-sheet="close"]', el).focus({ preventScroll:true });
+}
+document.addEventListener('click', e => {
+  const b = e.target.closest('[data-country]'); if (b) { e.preventDefault(); openCountry(b.dataset.country); return; }
+  const s = e.target.closest('[data-sheet]'); if (s) { if (s.dataset.sheet === 'back') { sheet.pop(); drawSheet(); } else closeSheet(); }
+});
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && sheet.length) { sheet.pop(); drawSheet(); } });
 const ll2txt = (lat, lng) => `${Math.abs(lat).toFixed(1)}°${lat >= 0 ? 'N' : 'S'} ${Math.abs(lng).toFixed(1)}°${lng >= 0 ? 'E' : 'W'}`;
 
 /* ---------- question generators ----------
@@ -197,21 +261,21 @@ const G = {
   capr: { label:'Capital → country', ids: () => pool().filter(c => c.capital.length).map(c => 'capr:' + c.cca3), make(id){
     const c = BY[id.slice(5)]; const m = mcq(c, others(c, 3), x => ({ text:x.name, cca3:x.cca3 }));
     return { eyebrow:'Capital city', title:`${c.capital[0]} is the capital of…`, ...m, learn:countryLearn(c) }; } },
-  map: { label:'Spot the highlight', ids: () => pool().filter(c => GEOM[c.cca3] || c.area < 25000).map(c => 'map:' + c.cca3), make(id){
+  map: { label:'Highlighted country', ids: () => pool().filter(c => GEOM[c.cca3] || c.area < 25000).map(c => 'map:' + c.cca3), make(id){
     const c = BY[id.slice(4)];
     const nb = shuffle(c.borders.map(b => BY[b]).filter(x => x && pool().includes(x))).slice(0, 2);
     const m = mcq(c, [...nb, ...others(c, 3 - nb.length, x => !nb.includes(x))], x => ({ text:x.name, cca3:x.cca3 }));
-    return { eyebrow:'On the globe', title:'Which country is highlighted?', media:{ kind:'globe', view:{ ll:center(c), ang:Math.max(angOf(c), 0.25), cls:{[c.cca3]:'hl'}, marks:countryMarks(c) } }, ...m, learn:countryLearn(c) }; } },
-  find: { label:'Tap the country', ids: () => pool().filter(c => GEOM[c.cca3] && c.area > 1500).map(c => 'find:' + c.cca3), make(id){
+    return { eyebrow:'Map', title:'Which country is highlighted?', media:{ kind:'globe', view:{ ll:center(c), ang:Math.max(angOf(c), 0.25), cls:{[c.cca3]:'hl'}, marks:countryMarks(c) } }, ...m, learn:countryLearn(c) }; } },
+  find: { label:'Locate on map', ids: () => pool().filter(c => GEOM[c.cca3] && c.area > 1500).map(c => 'find:' + c.cca3), make(id){
     const c = BY[id.slice(5)];
     const peers = pool().filter(x => x.subregion === c.subregion && GEOM[x.cca3]);
     const pts = peers.map(center); const avg = [d3.mean(pts, p => p[0]), d3.mean(pts, p => p[1])];
     if (Math.max(...pts.map(p => p[0])) - Math.min(...pts.map(p => p[0])) > 180) avg[0] = center(c)[0];
     const reach = Math.max(...pts.map(p => d3.geoDistance(p, avg)), d3.geoDistance(center(c), avg)) + 0.12;
-    return { eyebrow:`Tap the map · ${c.subregion || c.region}`, title:`Find ${c.name}`, tap:true, target:c, media:{ kind:'globe', view:{ ll:avg, ang:Math.min(1.5, Math.max(0.3, reach)) } }, learn:countryLearn(c) }; } },
-  shape: { label:'Silhouettes', ids: () => pool().filter(c => MAIN[c.cca3] && c.area > 900 && c.region !== 'Antarctic').map(c => 'shape:' + c.cca3), make(id){
+    return { eyebrow:`Map · ${c.subregion || c.region}`, title:`Find ${c.name}`, tap:true, target:c, media:{ kind:'globe', view:{ ll:avg, ang:Math.min(1.5, Math.max(0.3, reach)) } }, learn:countryLearn(c) }; } },
+  shape: { label:'Outlines', ids: () => pool().filter(c => MAIN[c.cca3] && c.area > 900 && c.region !== 'Antarctic').map(c => 'shape:' + c.cca3), make(id){
     const c = BY[id.slice(6)]; const m = mcq(c, others(c, 3, x => MAIN[x.cca3] && x.region !== 'Antarctic'), x => ({ text:x.name, cca3:x.cca3 }));
-    return { eyebrow:'Silhouette', title:'Whose outline is this?', media:{ kind:'shape', cca3:c.cca3 }, ...m, learn:countryLearn(c) }; } },
+    return { eyebrow:'Outline', title:'Whose outline is this?', media:{ kind:'shape', cca3:c.cca3 }, ...m, learn:countryLearn(c) }; } },
   nb: { label:'Neighbors', ids: () => pool().filter(c => c.borders.some(b => BY[b])).map(c => 'nb:' + c.cca3), make(id){
     const c = BY[id.slice(3)]; const nbs = c.borders.map(b => BY[b]).filter(Boolean); const a = pick(nbs);
     const m = mcq(a, others(c, 3, x => !c.borders.includes(x.cca3) && x !== a), x => ({ text:x.name, cca3:x.cca3 }));
@@ -244,23 +308,23 @@ const G = {
       return pool().filter(c => c.phone && cnt[c.phone] === 1).map(c => 'tel:' + c.cca3); }, make(id){
     const c = BY[id.slice(4)]; const m = mcq(c, others(c, 3), x => ({ text:x.name, cca3:x.cca3 }));
     return { eyebrow:'Dialing codes', title:`Calls to ${c.phone} ring in…`, ...m, learn:countryLearn(c) }; } },
-  trivia: { label:'Deep cuts', ids: () => TRIV.map(t => 'triv:' + t.id), make(id){
+  trivia: { label:'Trivia', ids: () => TRIV.map(t => 'triv:' + t.id), make(id){
     const t = TRIV.find(x => x.id === id.slice(5)); const m = mcq(t.a, t.w, x => ({ text:x }));
-    return { eyebrow:`Deep cut · ${t.cat}`, title:t.q, ...m, learn:{ kind:'note', title:t.a, note:t.note } }; } },
-  featphoto: { label:'Name the wonder', needsWiki:true, ids: () => FEAT.map(f => 'fp:' + f.id), make(id){
+    return { eyebrow:`Trivia · ${t.cat}`, title:t.q, ...m, learn:{ kind:'note', title:t.a, note:t.note } }; } },
+  featphoto: { label:'Photo ID', needsWiki:true, ids: () => FEAT.map(f => 'fp:' + f.id), make(id){
     const f = FEAT.find(x => x.id === id.slice(3)); const m = mcq(f, featOthers(f, 3), x => ({ text:x.name }));
-    return { eyebrow:`Wonders · ${f.type}`, title:'What are you looking at?', media:{ kind:'photo', wiki:f.wiki }, ...m, learn:featLearn(f) }; } },
+    return { eyebrow:f.type, title:`Identify this ${f.type.toLowerCase()}`, media:{ kind:'photo', wiki:f.wiki }, ...m, learn:featLearn(f) }; } },
   featwhere: { label:'Where is it?', ids: () => FEAT.map(f => 'fw:' + f.id), make(id){
     const f = FEAT.find(x => x.id === id.slice(3)); const m = mcq(f, featOthers(f, 3, 'where'), x => ({ text:x.where }));
-    return { eyebrow:`Wonders · ${f.type}`, title:`Where would you find ${f.name}?`, ...m, learn:featLearn(f) }; } },
-  featpin: { label:'Pin drop', ids: () => FEAT.map(f => 'fpin:' + f.id), make(id){
+    return { eyebrow:f.type, title:`Where would you find ${f.name}?`, ...m, learn:featLearn(f) }; } },
+  featpin: { label:'Map pin', ids: () => FEAT.map(f => 'fpin:' + f.id), make(id){
     const f = FEAT.find(x => x.id === id.slice(5)); const m = mcq(f, featOthers(f, 3), x => ({ text:x.name }));
-    return { eyebrow:`Wonders · ${f.type}`, title:`Which ${f.type.toLowerCase()} is at the pin?`, media:{ kind:'globe', view:{ ll:[f.lng, f.lat], ang:0.45, marks:[{ ll:[f.lng, f.lat], type:'pin' }] } }, ...m, learn:featLearn(f) }; } },
-  size: { label:'Bigger or smaller', dyn:true, make(){
+    return { eyebrow:f.type, title:`Which ${f.type.toLowerCase()} is at the pin?`, media:{ kind:'globe', view:{ ll:[f.lng, f.lat], ang:0.45, marks:[{ ll:[f.lng, f.lat], type:'pin' }] } }, ...m, learn:featLearn(f) }; } },
+  size: { label:'Area comparison', dyn:true, make(){
     const big = pool().filter(c => c.independent && c.area > 5000);
     let a, b; do { a = pick(big); b = pick(big); } while (a === b || Math.max(a.area, b.area) / Math.min(a.area, b.area) > 6);
     const win = a.area > b.area ? a : b;
-    return { id:`size:${a.cca3}:${b.cca3}`, eyebrow:'Bigger or smaller', title:'Which country covers more land?', duel:[a, b], ans: win === a ? 0 : 1,
+    return { id:`size:${a.cca3}:${b.cca3}`, eyebrow:'Area comparison', title:'Which country covers more land?', duel:[a, b], ans: win === a ? 0 : 1,
       opts:[a, b].map(x => ({ text:x.name, cca3:x.cca3 })), learn:{ kind:'duel', a, b,
       title:`${win.name} is ${(Math.max(a.area,b.area)/Math.min(a.area,b.area)).toFixed(1)}× larger`,
       globe:{ ll:d3.geoInterpolate(center(a), center(b))(0.5), ang:Math.min(1.5, Math.max(angOf(a), angOf(b), d3.geoDistance(center(a), center(b)) * 0.75)), cls:{[a.cca3]:'hl',[b.cca3]:'right'}, marks:[] } } }; } },
@@ -268,14 +332,14 @@ const G = {
 function featLearn(f){ return { kind:'feature', f, title:f.name, globe:{ ll:[f.lng, f.lat], ang:0.5, marks:[{ ll:[f.lng, f.lat], type:'pin', label:f.name }] }, wiki:f.wiki }; }
 
 const MODES = [
-  { key:'flags', name:'Flags', blurb:'Every flag on Earth, both directions.', gens:['flag','flagr'], glyph:'flag' },
-  { key:'capitals', name:'Capitals', blurb:'From Ouagadougou to Ngerulmud.', gens:['cap','capr'], glyph:'cap' },
-  { key:'globe', name:'Globe Hunt', blurb:'Spot highlights, tap countries, learn neighbors.', gens:['map','find','nb'], glyph:'globe' },
-  { key:'shapes', name:'Silhouettes', blurb:'Recognize countries by outline alone.', gens:['shape'], glyph:'shape' },
-  { key:'wonders', name:'Wonders', blurb:'Rivers, peaks, deserts, straits and oddities.', gens:['featphoto','featwhere','featpin'], glyph:'peak' },
-  { key:'deep', name:'Deep Cuts', blurb:'Trivia-night facts, money, languages, domains.', gens:['trivia','cur','lang','dem','tld','tel','sub'], glyph:'deep' },
-  { key:'size', name:'Bigger or Smaller', blurb:'Streak game on land area.', gens:['size'], glyph:'size' },
-  { key:'mix', name:'Shuffle Everything', blurb:'Every question type, always something new.', gens:['flag','flagr','cap','capr','map','find','nb','shape','featphoto','featwhere','featpin','trivia','cur','lang','dem','tld','tel','sub'], glyph:'mix', wide:true },
+  { key:'flags', name:'Flags', blurb:'Identify flags, or pick the flag for a country.', gens:['flag','flagr'], glyph:'flag' },
+  { key:'capitals', name:'Capitals', blurb:'Capitals to countries and back.', gens:['cap','capr'], glyph:'cap' },
+  { key:'globe', name:'Maps', blurb:'Identify and locate countries, and learn their borders.', gens:['map','find','nb'], glyph:'globe' },
+  { key:'shapes', name:'Outlines', blurb:'Identify countries by shape.', gens:['shape'], glyph:'shape' },
+  { key:'wonders', name:'Physical Geography', blurb:'Rivers, mountains, lakes, deserts, islands and straits.', gens:['featphoto','featwhere','featpin'], glyph:'peak' },
+  { key:'deep', name:'Trivia', blurb:'General facts, currencies, languages, domains and dialing codes.', gens:['trivia','cur','lang','dem','tld','tel','sub'], glyph:'deep' },
+  { key:'size', name:'Area Comparison', blurb:'Pick the larger country. Build a streak.', gens:['size'], glyph:'size' },
+  { key:'mix', name:'Mixed', blurb:'Questions from every category.', gens:['flag','flagr','cap','capr','map','find','nb','shape','featphoto','featwhere','featpin','trivia','cur','lang','dem','tld','tel','sub'], glyph:'mix', wide:true },
 ];
 const DAILY_PLAN = ['flag','cap','map','featphoto','trivia','shape','nb','featwhere','lang','trivia'];
 
@@ -312,7 +376,7 @@ function totals(){ let pool_ = 0; const gens = Object.keys(G).filter(g => !G[g].
 /* ---------- views ---------- */
 const app = $('#app');
 let view = null;
-function go(v, arg){ window.scrollTo(0, 0); rnd = Math.random; view = v; ({ hub, play, daily, atlas, progress })[v](arg); }
+function go(v, arg){ closeSheet(); window.scrollTo(0, 0); rnd = Math.random; view = v; ({ hub, play, daily, atlas, progress })[v](arg); }
 
 const GLYPH = {
   flag:'<svg viewBox="0 0 48 40" width="48"><rect x="4" y="6" width="36" height="24" rx="2" fill="var(--mark)"/><rect x="4" y="14" width="36" height="8" fill="var(--paper)"/><rect x="3" y="4" width="2" height="34" fill="var(--ink)"/></svg>',
@@ -331,27 +395,28 @@ function hub(){
   const fresh = m => m.gens.filter(active).reduce((a, g) => a + (G[g].dyn ? 0 : ids(g).filter(i => !S.seen[i]).length), 0);
   app.innerHTML = `
   <header class="hero">
-    <div class="eyebrow">Geo Learn · ${new Date().toLocaleDateString('en-US', { weekday:'long', month:'long', day:'numeric' })}</div>
-    <h1>The whole world, one new thing at a time.</h1>
+    <div class="eyebrow">${new Date().toLocaleDateString('en-US', { weekday:'long', month:'long', day:'numeric' })}</div>
+    <h1>Geo Learn</h1>
     <div class="hero-globe" id="heroGlobe"></div>
     <div class="stats">
-      <div class="stat"><b>${fmt(t.seen)}</b><span>of ${fmt(t.pool)} questions discovered</span></div>
+      <div class="stat"><b>${fmt(t.seen)}</b><span>questions seen</span></div>
       <div class="stat"><b>${Object.keys(S.visited).length}</b><span>countries studied</span></div>
       <div class="stat"><b>${streak()}</b><span>day streak</span></div>
       <div class="stat"><b>${fmt(S.xp)}</b><span>XP</span></div>
     </div>
-    <div class="meter" aria-label="discovery progress"><i style="width:${(pct*100).toFixed(1)}%"></i></div>
+    <div class="meter" aria-label="questions seen"><i style="width:${(pct*100).toFixed(1)}%"></i></div>
+    <div class="coord">${fmt(t.seen)} of ${fmt(t.pool)} questions seen</div>
   </header>
   <button class="daily" id="dailyBtn">
-    <div><div class="eyebrow" style="color:inherit;opacity:.7">Daily expedition</div><h2>${dd ? `Today: ${dd.score}/10` : 'Ten questions, one of each kind'}</h2>
-    <p>${dd ? 'Come back tomorrow for a fresh route. Tap to see your result.' : 'A new route every day, built from things you have never seen.'}</p></div>
-    <span class="go">${dd ? 'Result' : 'Start'}</span></button>
-  <div class="section-h"><h2 style="font-size:22px">Games</h2><span class="eyebrow">new left</span></div>
-  <div class="modes">${MODES.map(m => `<button class="mode${m.wide ? ' wide' : ''}" data-mode="${m.key}"><div class="glyph">${GLYPH[m.glyph]}</div><div><h3>${m.name}</h3><p>${m.blurb}</p>${m.key !== 'size' ? `<div class="left">${fmt(fresh(m))} unseen</div>` : '<div class="left">endless</div>'}</div></button>`).join('')}</div>
-  <div class="section-h" style="margin-top:22px"><h2 style="font-size:22px">Explore</h2></div>
+    <div><div class="eyebrow" style="color:inherit;opacity:.7">Daily challenge</div><h2>${dd ? `Completed: ${dd.score}/10` : '10 questions'}</h2>
+    <p>${dd ? 'Next challenge tomorrow.' : 'Mixed categories. Resets at midnight.'}</p></div>
+    <span class="go">${dd ? 'Results' : 'Start'}</span></button>
+  <div class="section-h"><h2 style="font-size:22px">Practice</h2></div>
+  <div class="modes">${MODES.map(m => `<button class="mode${m.wide ? ' wide' : ''}" data-mode="${m.key}"><div class="glyph">${GLYPH[m.glyph]}</div><div><h3>${m.name}</h3><p>${m.blurb}</p>${m.key !== 'size' ? `<div class="left">${fmt(fresh(m))} new</div>` : ''}</div></button>`).join('')}</div>
+  <div class="section-h" style="margin-top:22px"><h2 style="font-size:22px">Reference</h2></div>
   <div class="modes">
-    <button class="mode" data-go="atlas"><div class="glyph">${GLYPH.globe}</div><h3>Atlas</h3><p>Every country's flag, facts, photo and place. Plus Wander: random real places on Earth.</p></button>
-    <button class="mode" data-go="progress"><div class="glyph">${GLYPH.size}</div><h3>Your map</h3><p>See which parts of the world you know, and settings.</p></button>
+    <button class="mode" data-go="atlas"><div class="glyph">${GLYPH.globe}</div><h3>Atlas</h3><p>Browse every country and territory, or explore random locations with Wander.</p></button>
+    <button class="mode" data-go="progress"><div class="glyph">${GLYPH.size}</div><h3>Progress</h3><p>Coverage map, stats and settings.</p></button>
   </div>`;
   const g = new Globe($('#heroGlobe'));
   const known = {}; Object.keys(S.visited).forEach(k => known[k] = 'right');
@@ -371,7 +436,7 @@ function bar(title, right = ''){ return `<div class="bar"><button class="iconbtn
 function renderQ(q, host, done, { nextLabel = 'Next' } = {}){
   host.innerHTML = `<div class="qwrap">
     ${q.media ? `<div class="media ${q.media.kind}" id="media"></div>` : ''}
-    <div class="prompt"><div class="eyebrow">${esc(q.eyebrow)} ${q.fresh ? '<span class="pill new">New</span>' : q.fresh === false ? '<span class="pill">Review</span>' : ''}</div><h2>${esc(q.title)}</h2></div>
+    <div class="prompt"><div class="eyebrow">${esc(q.eyebrow)} ${q.fresh === false ? '<span class="pill">Review</span>' : ''}</div><h2>${esc(q.title)}</h2></div>
     ${q.duel ? `<div class="duel" id="opts"></div>` : q.tap ? '<p class="muted" id="taphint">Tap the country on the globe.</p>' : `<div class="opts ${q.grid ? 'grid' : ''}" id="opts"></div>`}
     <div id="learnSlot"></div></div>`;
   let mediaGlobe = null;
@@ -398,21 +463,22 @@ function renderQ(q, host, done, { nextLabel = 'Next' } = {}){
       opts.appendChild(b);
     });
   }
-  const keyH = ev => { if (answered) { if (ev.key === 'Enter' || ev.key === ' ') { const n = $('#nextBtn', host); if (n) { ev.preventDefault(); n.click(); } } return; }
+  const keyH = ev => { if (sheet.length) return; if (answered) { if (ev.key === 'Enter' || ev.key === ' ') { const n = $('#nextBtn', host); if (n) { ev.preventDefault(); n.click(); } } return; }
     const i = 'abcd'.indexOf(ev.key.toLowerCase()); const j = '1234'.indexOf(ev.key); const k = i >= 0 ? i : j; if (k >= 0 && q.opts && k < q.opts.length) answer(k); };
   document.addEventListener('keydown', keyH);
-  function finish(ok, tapLL){
+  function finish(ok, tapLL, chosen){
     answered = true;
     if (q.id) record(q, ok);
     const L = q.learn;
-    const verdict = ok ? `<div class="verdict ok">Correct${q.fresh ? ' · new discovery' : ''}</div>` : `<div class="verdict no">Not quite. It's ${esc(q.opts ? (q.opts[q.ans].text) : L.title)}.</div>`;
+    const optHTML = o => o.cca3 && BY[o.cca3] && o.text === BY[o.cca3].name ? clink(BY[o.cca3]) : linkify(o.text);
+    const verdict = ok ? `<div class="verdict ok">Correct</div>` : `<div class="verdict no"><span>It's ${q.opts ? optHTML(q.opts[q.ans]) : q.target ? clink(q.target) : esc(L.title)}.${chosen != null ? ` You chose ${optHTML(q.opts[chosen])}.` : ''}</span></div>`;
     let body = '';
-    if (L.kind === 'country') body = `<div class="learn-head">${flagBox(L.c.cca3)}<div><h3>${esc(L.title)}</h3>${L.sub ? `<div class="muted" style="font-size:13px">${esc(L.sub)}</div>` : ''}</div></div>
-      ${L.extra ? `<p class="note">${esc(L.extra)}</p>` : ''}<div id="lglobe"></div>${countryFacts(L.c)}<div class="wiki" id="lwiki"></div>`;
-    if (L.kind === 'feature') body = `<div><div class="eyebrow">${esc(L.f.type)} · ${esc(L.f.where)}</div><h3>${esc(L.title)}</h3><div class="coord">${ll2txt(L.f.lat, L.f.lng)}</div></div>
-      <p class="note">${esc(L.f.fact)}</p><div id="lglobe"></div><div class="wiki" id="lwiki"></div>`;
-    if (L.kind === 'note') body = `<h3>${esc(L.title)}</h3><p class="note">${esc(L.note)}</p>`;
-    if (L.kind === 'duel') body = `<h3>${esc(L.title)}</h3><p class="note">${esc(L.a.name)}: ${fmt(L.a.area)} km². ${esc(L.b.name)}: ${fmt(L.b.area)} km².</p><div id="lglobe"></div>`;
+    if (L.kind === 'country') body = `<div class="learn-head">${flagBox(L.c.cca3)}<div><h3>${clink(L.c, L.title)}</h3>${L.sub ? `<div class="muted" style="font-size:13px">${esc(L.sub)}</div>` : ''}</div></div>
+      ${L.extra ? `<p class="note">${linkify(L.extra)}</p>` : ''}<div id="lglobe"></div>${countryFacts(L.c)}<div class="wiki" id="lwiki"></div>`;
+    if (L.kind === 'feature') body = `<div><div class="eyebrow">${esc(L.f.type)}</div><h3>${esc(L.title)}</h3><div class="muted" style="font-size:14px">${linkify(L.f.where)}</div><div class="coord">${ll2txt(L.f.lat, L.f.lng)}</div></div>
+      <p class="note">${linkify(L.f.fact)}</p><div id="lglobe"></div><div class="wiki" id="lwiki"></div>`;
+    if (L.kind === 'note') body = `<h3>${linkify(L.title)}</h3><p class="note">${linkify(L.note)}</p>`;
+    if (L.kind === 'duel') body = `<h3>${esc(L.title)}</h3><p class="note">${clink(L.a)}: ${fmt(L.a.area)} km². ${clink(L.b)}: ${fmt(L.b.area)} km².</p><div id="lglobe"></div>`;
     $('#learnSlot', host).innerHTML = `<div class="learn">${verdict}<div class="learn-body">${body}</div></div><div style="height:12px"></div><button class="next" id="nextBtn">${nextLabel}</button>`;
     if (L.globe) {
       if (mediaGlobe && q.media.kind === 'globe') { // reuse the question globe; fly to the answer
@@ -430,7 +496,7 @@ function renderQ(q, host, done, { nextLabel = 'Next' } = {}){
   function answer(i){
     if (answered) return;
     host.querySelectorAll('.opt').forEach((b, k) => { b.disabled = true; if (k === q.ans) b.classList.add('right'); else if (k === i) b.classList.add('wrong'); else b.classList.add('dim'); });
-    finish(i === q.ans);
+    finish(i === q.ans, null, i === q.ans ? null : i);
   }
   function answerTap(ll){
     if (answered) return;
@@ -439,7 +505,7 @@ function renderQ(q, host, done, { nextLabel = 'Next' } = {}){
     const ok = (f && d3.geoContains(f, ll)) || (t.area < 30000 && d3.geoDistance(ll, center(t)) < 0.03);
     if (!ok && hit && hit.cca3) mediaGlobe.cls = { [hit.cca3]:'wrong' };
     const tapped = hit && hit.cca3 ? BY[hit.cca3] : null;
-    const hint = $('#taphint', host); if (hint) hint.textContent = ok ? 'Right on target.' : tapped ? `You tapped ${tapped.name}.` : 'You tapped open water.';
+    const hint = $('#taphint', host); if (hint) hint.innerHTML = ok ? 'Correct location.' : tapped ? `You tapped ${clink(tapped)}.` : 'You tapped open water.';
     finish(ok, ll);
   }
 }
@@ -467,7 +533,7 @@ function daily(){
   for (const g of DAILY_PLAN) { const gg = active(g) ? g : 'featpin'; qs.push(nextQ([gg])); }
   rnd = Math.random;
   const marks = []; let i = 0;
-  app.innerHTML = bar('Daily expedition', `<span class="tally" id="tally"><b>1</b>/10</span>`) + '<div id="stage"></div>';
+  app.innerHTML = bar('Daily challenge', `<span class="tally" id="tally"><b>1</b>/10</span>`) + '<div id="stage"></div>';
   $('#back').onclick = () => go('hub');
   const step = () => {
     $('#tally').innerHTML = `<b>${i + 1}</b>/10`;
@@ -479,10 +545,10 @@ function daily(){
 function dailyResult(r){
   const sq = r.marks.map(x => x ? '🟩' : '🟥').join('');
   const text = `Geo Learn ${today()}\n${r.score}/10 ${sq}`;
-  app.innerHTML = bar('Daily expedition') + `<div class="result">
+  app.innerHTML = bar('Daily challenge') + `<div class="result">
     <div class="eyebrow">${today()}</div><div class="big">${r.score}/10</div><div class="squares">${sq}</div>
-    <p class="muted">${r.score >= 9 ? 'Cartographer grade.' : r.score >= 6 ? 'Solid navigation.' : 'Every miss is now a thing you know.'} A new route opens tomorrow.</p>
-    <div class="btnrow"><button class="btn" id="copy">Copy result</button><button class="btn primary" id="more">Keep exploring</button></div>
+    <p class="muted">Next challenge available tomorrow.</p>
+    <div class="btnrow"><button class="btn" id="copy">Copy result</button><button class="btn primary" id="more">Play mixed</button></div>
     <pre id="shareText" class="coord" style="white-space:pre-wrap">${esc(text)}</pre></div>`;
   $('#back').onclick = () => go('hub');
   $('#more').onclick = () => go('play', 'mix');
@@ -501,7 +567,7 @@ function atlas(tab = 'countries'){
 function atlasCountries(){
   const pane = $('#pane');
   const list = C.slice().sort((a, b) => a.name.localeCompare(b.name));
-  pane.innerHTML = `<div class="btnrow" style="justify-content:flex-start;margin-bottom:12px"><button class="btn primary" id="surprise">Show me one I haven't studied</button></div>
+  pane.innerHTML = `<div class="btnrow" style="justify-content:flex-start;margin-bottom:12px"><button class="btn primary" id="surprise">Random unstudied country</button></div>
     <input class="search" id="q" type="search" placeholder="Search ${list.length} countries and territories" aria-label="Search countries"><div class="flaggrid" id="grid"></div>`;
   const draw = f => { $('#grid').innerHTML = list.filter(c => !f || c.name.toLowerCase().includes(f) || c.capital.join(' ').toLowerCase().includes(f))
     .map(c => `<button class="fcell${S.visited[c.cca3] ? '' : ' unvisited'}" data-c="${c.cca3}">${flagSvg(c.cca3)}<span>${esc(c.name)}</span></button>`).join('');
@@ -511,26 +577,22 @@ function atlasCountries(){
 }
 function dossier(c){
   S.visited[c.cca3] = 1; save();
-  app.innerHTML = bar(c.name) + `<div class="qwrap"><div class="learn"><div class="learn-body">
-    <div class="learn-head">${flagBox(c.cca3)}<div><h3>${esc(c.name)}</h3><div class="muted" style="font-size:13px">${esc(c.official)}</div><div class="coord">${ll2txt(c.latlng[0], c.latlng[1])}</div></div></div>
-    <div id="dglobe"></div>${countryFacts(c)}<div class="wiki" id="dwiki"></div>
-    ${FEAT.filter(f => f.where.includes(c.name)).length ? `<div><div class="eyebrow">Wonders here</div><p class="note">${FEAT.filter(f => f.where.includes(c.name)).map(f => esc(f.name)).join(' · ')}</p></div>` : ''}
-    </div></div><div class="btnrow"><button class="btn primary" id="another">Another unstudied country</button><button class="btn" id="toAtlas">All countries</button></div></div>`;
-  const g = new Globe($('#dglobe')); g.view({ ll:center(c), ang:Math.max(angOf(c) * 1.4, 0.25), cls:{ [c.cca3]:'hl' }, marks:countryMarks(c), dur:0 });
-  wikiBlock($('#dwiki'), wikiTitle(c));
+  app.innerHTML = bar(c.name) + `<div class="qwrap"><div class="learn"><div class="learn-body">${countryCard(c, 'd')}</div></div>
+    <div class="btnrow"><button class="btn primary" id="another">Random unstudied country</button><button class="btn" id="toAtlas">All countries</button></div></div>`;
+  mountCountryCard(c, 'd');
   $('#back').onclick = () => atlas('countries'); $('#toAtlas').onclick = () => atlas('countries');
   $('#another').onclick = () => { const u = pool().filter(x => !S.visited[x.cca3]); window.scrollTo(0, 0); dossier(pick(u.length ? u : pool())); };
 }
 /* Wander: drop onto a random real place and read what Wikipedia knows about its surroundings */
 async function wander(){
   const pane = $('#pane');
-  pane.innerHTML = `<p class="muted" style="margin-top:0">Drops you somewhere random on Earth and shows real places nearby. Endless and never the same twice.</p>
-    <div id="wglobe"></div><div class="btnrow" style="margin:12px 0"><button class="btn primary" id="drop">Drop me somewhere</button></div><div class="wander-list" id="wl"></div>`;
+  pane.innerHTML = `<p class="muted" style="margin-top:0">Picks a random location and shows notable places nearby, from Wikipedia.</p>
+    <div id="wglobe"></div><div class="btnrow" style="margin:12px 0"><button class="btn primary" id="drop">Random location</button></div><div class="wander-list" id="wl"></div>`;
   const g = new Globe($('#wglobe')); g.view({ ll:[0, 20], ang:Math.PI/2, dur:0 });
   const btn = $('#drop');
   const drop = async () => {
     if (WIKI_OK === false) { $('#wl').innerHTML = '<p class="muted">Wander needs Wikipedia, which this copy of the page cannot reach. Open the GitHub Pages version to use it.</p>'; return; }
-    btn.disabled = true; btn.textContent = 'Flying…'; $('#wl').innerHTML = '';
+    btn.disabled = true; btn.textContent = 'Loading…'; $('#wl').innerHTML = '';
     let found = null;
     for (let k = 0; k < 8 && !found; k++) {
       const c = pick(pool().filter(x => GEOM[x.cca3]));
@@ -543,12 +605,12 @@ async function wander(){
         if (pages.length) found = { c, lat, lng, pages: shuffle(pages).slice(0, 4) };
       } catch (e) {}
     }
-    btn.disabled = false; btn.textContent = 'Drop me somewhere else';
-    if (!found) { $('#wl').innerHTML = '<p class="muted">Landed somewhere empty. Try again.</p>'; return; }
+    btn.disabled = false; btn.textContent = 'Another location';
+    if (!found) { $('#wl').innerHTML = '<p class="muted">No articles found near that spot. Try another.</p>'; return; }
     S.wander = [...(S.wander || []), ...found.pages.map(p => p.pageid)].slice(-600); S.visited[found.c.cca3] = 1; save();
     g.view({ ll:[found.lng, found.lat], ang:0.5, cls:{ [found.c.cca3]:'hl' }, marks:[{ ll:[found.lng, found.lat], type:'pin', label:found.c.name }] });
-    $('#wl').innerHTML = `<div class="eyebrow">${esc(found.c.name)} · <span class="coord">${ll2txt(found.lat, found.lng)}</span></div>` +
-      found.pages.map(p => `<article class="wander-card"><img src="${esc(p.thumbnail.source)}" alt="${esc(p.title)}" loading="lazy"><h3>${esc(p.title)}</h3><p class="note">${esc(p.extract)}</p>
+    $('#wl').innerHTML = `<div class="eyebrow">${clink(found.c)} · <span class="coord">${ll2txt(found.lat, found.lng)}</span></div>` +
+      found.pages.map(p => `<article class="wander-card"><img src="${esc(p.thumbnail.source)}" alt="${esc(p.title)}" loading="lazy"><h3>${esc(p.title)}</h3><p class="note">${linkify(p.extract)}</p>
       <a href="https://en.wikipedia.org/?curid=${p.pageid}" target="_blank" rel="noopener">Read more</a></article>`).join('');
   };
   btn.onclick = drop;
@@ -561,13 +623,13 @@ function progress(){
   const t = totals();
   const acc = Object.values(S.seen).reduce((a, r) => [a[0] + r.c, a[1] + r.n], [0, 0]);
   const gens = Object.keys(G).filter(g => !G[g].dyn && active(g));
-  app.innerHTML = bar('Your map') + `<div class="qwrap">
-    <div class="stats"><div class="stat"><b>${fmt(t.seen)}</b><span>discovered of ${fmt(t.pool)}</span></div>
+  app.innerHTML = bar('Progress') + `<div class="qwrap">
+    <div class="stats"><div class="stat"><b>${fmt(t.seen)}</b><span>seen of ${fmt(t.pool)}</span></div>
     <div class="stat"><b>${acc[1] ? Math.round(acc[0] / acc[1] * 100) : 0}%</b><span>accuracy</span></div>
     <div class="stat"><b>${streak()}</b><span>day streak</span></div><div class="stat"><b>${S.bestSize || 0}</b><span>best size streak</span></div></div>
     <div class="media" id="pmap"></div>
-    <div class="legend"><span><i style="background:var(--land)"></i>Untouched</span><span><i style="background:var(--bad)"></i>Shaky</span><span><i style="background:var(--mark)"></i>Learning</span><span><i style="background:var(--good)"></i>Known</span></div>
-    <div><div class="eyebrow" style="margin-bottom:8px">Discovery by question type</div>
+    <div class="legend"><span><i style="background:var(--land)"></i>Not seen</span><span><i style="background:var(--bad)"></i>Under 40% correct</span><span><i style="background:var(--mark)"></i>40 to 75%</span><span><i style="background:var(--good)"></i>Over 75%</span></div>
+    <div><div class="eyebrow" style="margin-bottom:8px">Coverage by category</div>
     ${gens.map(g => { const a = ids(g); const s = a.filter(i => S.seen[i]).length; return `<div style="display:grid;grid-template-columns:130px 1fr 70px;gap:10px;align-items:center;font-size:14px;margin-bottom:6px"><span>${G[g].label}</span><div class="meter"><i style="width:${a.length ? s / a.length * 100 : 0}%"></i></div><span class="coord" style="text-align:right">${s}/${a.length}</span></div>`; }).join('')}</div>
     <label class="toggle"><input type="checkbox" id="terr" ${S.terr ? 'checked' : ''}><span>Include territories and dependencies (Guam, Aruba, Réunion…)</span></label>
     <div class="toggle"><button class="btn" id="reset">Reset all progress</button><span class="muted" id="resetMsg" style="font-size:13px"></span></div></div>`;
@@ -587,6 +649,6 @@ function progress(){
 
 /* ---------- boot ---------- */
 Promise.all([loadData(), probeWiki()]).then(() => go('hub')).catch(e => {
-  app.innerHTML = `<div class="boot"><p>Couldn't load the atlas data (${esc(e.message)}). Serve this folder over http, for example with <code>python3 -m http.server</code>.</p></div>`;
+  app.innerHTML = `<div class="boot"><p>Couldn't load data (${esc(e.message)}). Serve this folder over http, for example with <code>python3 -m http.server</code>.</p></div>`;
 });
 })();

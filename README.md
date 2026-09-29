@@ -1,28 +1,28 @@
 # Geo Learn
 
-A geography game suite built to keep showing you things you haven't seen yet. Open it on your phone, play for five minutes a day, and slowly fill in the whole map.
+A mobile-friendly geography practice app: flags, capitals, maps, physical geography and trivia. Tap any country name to open its profile.
 
 ## Games
 
 | Game | What you learn |
 |---|---|
-| **Daily Expedition** | Ten questions, one of each kind, on a new route every day. Shareable score. |
+| **Daily Challenge** | 10 mixed questions, reset daily. Shareable score. |
 | **Flags** | Flag to country and country to flag, for all 250 countries and territories. |
 | **Capitals** | Capital to country and back, from Ouagadougou to Ngerulmud. |
-| **Globe Hunt** | Name the highlighted country, tap a country on the globe, and learn who borders whom. |
-| **Silhouettes** | Recognize countries by outline alone. |
-| **Wonders** | 228 rivers, peaks, volcanoes, deserts, straits, lakes, islands and oddities, with photos and pin drops. |
-| **Deep Cuts** | 259 hand-written trivia-night facts plus currencies, languages, demonyms, web domains, dialing codes and regions. |
-| **Bigger or Smaller** | Endless streak game on land area. |
-| **Shuffle Everything** | All of the above, mixed. |
+| **Maps** | Name the highlighted country, tap a country on the globe, and learn who borders whom. |
+| **Outlines** | Recognize countries by outline alone. |
+| **Physical Geography** | 228 rivers, peaks, volcanoes, deserts, straits, lakes, islands and oddities, with photos and pin drops. |
+| **Trivia** | 259 hand-written trivia-night facts plus currencies, languages, demonyms, web domains, dialing codes and regions. |
+| **Area Comparison** | Endless streak game on land area. |
+| **Mixed** | All of the above, mixed. |
 | **Atlas** | Every country's flag, facts, map and Wikipedia photo, plus **Wander**, which drops you on a random real place on Earth. |
-| **Your map** | A world map colored by how well you know each country. |
+| **Progress** | A world map colored by how well you know each country. |
 
-## How "no repeats" works
+## Question selection
 
-Every question has a stable ID (for example `flag:BTN` or `fp:angel`). The picker always serves an ID you have never seen before. Only after you have seen every question of a type does it bring back your weakest ones. Over 3,400 fixed questions ship with the app, plus the endless Wander and Bigger or Smaller modes. Progress is stored in your browser's local storage.
+Every question has a stable ID (for example `flag:BTN` or `fp:angel`). The picker serves unseen questions first; once a category is exhausted it brings back the ones you missed most. About 3,400 fixed questions ship with the app. Progress is stored in your browser's local storage.
 
-After every answer you get a learn card: flag, location on a globe, key facts, and a photo and summary pulled live from Wikipedia.
+After each answer you get a card with the flag, location, key facts and a Wikipedia summary. Country names throughout the app open a profile panel with the full Wikipedia introduction.
 
 ## Run it
 
